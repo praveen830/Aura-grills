@@ -236,18 +236,18 @@ export default function BangalorePlacesDashboard({
         <div className="space-y-8 sm:space-y-16">
           
           {/* =========================================================================
-              THE 6 MAIN BANGALORE PLACES (Full Screen in Mobile View - Little Bit Text Style)
-              - Requested: "mana images full scrren loo kvali mobile view with liitle bit text style"
+              THE 6 MAIN BANGALORE PLACES (Full Screen Mobile View with All Previous Features)
               - Full mobile viewport height: h-[calc(100dvh-4rem)]
-              - Smooth snap scroll between places on mobile
-              - Clean subtle text styling; no duplicated buttons on images
+              - Smooth, natural scroll through all 6 places on mobile
+              - Name badge placed at the bottom border of the image (above display name)
+              - All previous features preserved: stats badge, display name, zone & tagline, tap link
               ========================================================================= */}
-          <div className="w-full snap-y snap-mandatory overflow-y-auto space-y-0 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="w-full space-y-3 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             {BANGALORE_PLACES.map((place) => (
               <div
                 key={place.id}
                 onClick={() => handleOpenPlace(place.id)}
-                className="group relative w-full h-[calc(100dvh-4rem)] sm:h-auto sm:aspect-[9/14] sm:rounded-3xl overflow-hidden shadow-2xl bg-zinc-950 snap-start snap-always cursor-pointer"
+                className="group relative w-full h-[calc(100dvh-4rem)] sm:h-auto sm:aspect-[9/14] sm:rounded-3xl overflow-hidden shadow-2xl bg-zinc-950 cursor-pointer"
               >
                 {/* Full-bleed vertical photo */}
                 <img
@@ -259,20 +259,20 @@ export default function BangalorePlacesDashboard({
 
                 {/* Subtle top & bottom gradients for elegant contrast */}
                 <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/15 to-transparent pointer-events-none" />
-                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-black/90 via-black/45 to-transparent pointer-events-none" />
 
-                {/* Top-Left: Place Name Badge (Little Bit Text Style) */}
-                <div className="absolute top-4 left-4 z-20 pointer-events-none">
-                  <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wider uppercase text-white border border-white/20 shadow-md">
-                    {place.name}
-                  </span>
-                </div>
+                {/* Bottom Border: Place Name & Info (Requested: name kindha unta baguthundhi) */}
+                <div className="absolute inset-x-4 bottom-22 sm:bottom-6 z-20 space-y-2 pointer-events-none">
+                  {/* Name badge at bottom border alongside stats */}
+                  <div className="flex items-center gap-2">
+                    <span className="px-3.5 py-1.5 rounded-full bg-black/85 backdrop-blur-md text-xs sm:text-sm font-black tracking-wider uppercase text-white border border-white/25 shadow-lg inline-block">
+                      {place.name}
+                    </span>
+                    <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] sm:text-xs font-black uppercase tracking-wider backdrop-blur-md">
+                      {place.stats}
+                    </span>
+                  </div>
 
-                {/* Bottom: Place Info (Little Bit Text Style - elevated above floating call/whatsapp) */}
-                <div className="absolute inset-x-4 bottom-22 sm:bottom-6 z-20 space-y-1.5 pointer-events-none">
-                  <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] sm:text-xs font-black uppercase tracking-wider backdrop-blur-md">
-                    {place.stats}
-                  </span>
                   <h2 className="text-xl sm:text-2xl font-black text-white leading-tight drop-shadow-md">
                     {place.displayName}
                   </h2>
@@ -324,22 +324,18 @@ export default function BangalorePlacesDashboard({
                   {/* Bottom Vignette */}
                   <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
-                  {/* Service Name Pill */}
-                  <div className="absolute top-4 left-4 z-10 pointer-events-none">
-                    <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md">
+                  {/* Service Info at Bottom (Name at bottom, not covering top of image) */}
+                  <div className="absolute inset-x-4 bottom-5 z-20 space-y-1.5 pointer-events-none">
+                    <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] sm:text-xs font-black tracking-wide uppercase text-white border border-white/20 shadow-md inline-block">
                       {srv.name}
                     </span>
-                  </div>
-
-                  {/* Service Info at Bottom */}
-                  <div className="absolute inset-x-4 bottom-5 z-20 space-y-1 pointer-events-none">
                     <h3 className="text-base sm:text-lg font-black text-white leading-snug drop-shadow-sm">
                       {srv.displayName}
                     </h3>
                     <p className="text-xs text-zinc-300 line-clamp-1 font-medium">
                       {srv.tagline || 'Engineered Balcony Safety'}
                     </p>
-                    <div className="pt-1 flex items-center gap-1.5 text-emerald-400 text-xs font-bold">
+                    <div className="pt-0.5 flex items-center gap-1.5 text-emerald-400 text-xs font-bold">
                       <span>View Service Details &amp; Models</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </div>
@@ -373,13 +369,6 @@ export default function BangalorePlacesDashboard({
                 className="w-full h-full object-cover object-center"
                 loading="eager"
               />
-
-              {/* Place Name Tag at Top-Left */}
-              <div className="absolute top-4 left-4 z-20 pointer-events-none">
-                <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md">
-                  {selectedPlace.name}
-                </span>
-              </div>
 
               {/* Bottom Vignette for Buttons Contrast */}
               <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-black/85 via-black/40 to-transparent pointer-events-none" />
@@ -426,8 +415,13 @@ export default function BangalorePlacesDashboard({
             </div>
           </div>
 
-          {/* 3. 1 or 2 Lines H1 & H2 INSERTED BELOW THE IMAGE (Requested: above text must insert below the images) */}
-          <div className="text-center sm:text-left space-y-0.5 pt-1 max-w-md sm:max-w-xl mx-auto w-full">
+          {/* 3. Place Name Badge & 1 or 2 Lines H1 & H2 INSERTED BELOW THE IMAGE (Requested: name kindha unta baguthundhi) */}
+          <div className="text-center sm:text-left space-y-1.5 pt-2 max-w-md sm:max-w-xl mx-auto w-full">
+            <div>
+              <span className="px-4 py-1.5 rounded-full bg-zinc-950 text-white font-black text-xs sm:text-sm tracking-wider uppercase shadow-md inline-block">
+                {selectedPlace.name}
+              </span>
+            </div>
             <h1 className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tight leading-tight">
               {selectedPlace.displayName}
             </h1>

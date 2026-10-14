@@ -207,7 +207,12 @@ export default function AurabServiceDetailView({
         </div>
 
         {/* 1 or 2 Lines H1 & H2 INSERTED BELOW THE IMAGES (Requested: above text must insert below the images) */}
-        <div className="text-center sm:text-left space-y-0.5 pt-2 max-w-md sm:max-w-lg mx-auto w-full">
+        <div className="text-center sm:text-left space-y-1.5 pt-2 max-w-md sm:max-w-lg mx-auto w-full">
+          <div>
+            <span className="px-4 py-1.5 rounded-full bg-zinc-950 text-white font-black text-xs sm:text-sm tracking-wider uppercase shadow-md inline-block">
+              {service.name}
+            </span>
+          </div>
           <h1 className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tight leading-tight">
             {service.displayName}
           </h1>
