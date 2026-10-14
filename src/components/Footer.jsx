@@ -60,10 +60,10 @@ export default function Footer({ onOpenBooking }) {
               <AurabLogo className="w-8 h-8 shrink-0 drop-shadow-sm" />
               <div className="flex flex-col">
                 <span className="text-lg font-black tracking-tight text-white leading-none">
-                  AURAB <span className="text-emerald-400">GRILLS</span>
+                  AURA <span className="text-emerald-400">GRILLS</span>
                 </span>
                 <span className="text-[9px] uppercase tracking-wider font-bold text-zinc-400 pt-0.5">
-                  Aurab Invisible Grills • For Your Safety
+                  Aura Invisible Grills • For Your Safety
                 </span>
               </div>
             </div>
@@ -114,7 +114,7 @@ export default function Footer({ onOpenBooking }) {
               </a>
 
               <a
-                href="https://wa.me/918523068882?text=Hello%20Aurab%20Grills!%20I%20am%20looking%20for%20balcony%20invisible%20safety%20grills%20and%20cloth%20hangers%20in%20Bangalore."
+                href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20am%20looking%20for%20balcony%20invisible%20safety%20grills%20and%20cloth%20hangers%20in%20Bangalore."
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2.5 p-3 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 text-white transition group"
@@ -129,11 +129,11 @@ export default function Footer({ onOpenBooking }) {
               </a>
 
               <a
-                href="mailto:aurabgrills@gmail.com"
+                href="mailto:auragrills@gmail.com"
                 className="flex items-center gap-2 text-zinc-400 hover:text-white transition pt-1"
               >
                 <Mail className="w-3.5 h-3.5 text-emerald-500" />
-                <span>aurabgrills@gmail.com</span>
+                <span>auragrills@gmail.com</span>
               </a>
             </div>
           </div>
@@ -213,7 +213,7 @@ export default function Footer({ onOpenBooking }) {
         {/* Bottom Legal, Privacy & Sitemap Bar */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <p>
-            © 2026 <strong>Aurab Grills™</strong> Architectural Safety. All Rights Reserved. Protecting Families Across Bengaluru.
+            © 2026 <strong>Aura Grills™</strong> Architectural Safety. All Rights Reserved. Protecting Families Across Bengaluru.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 text-[11px]">
@@ -250,7 +250,7 @@ export default function Footer({ onOpenBooking }) {
                 <Network className="w-5 h-5 text-emerald-400" />
                 <div>
                   <h3 className="text-base sm:text-lg font-black text-white">
-                    Aurab Grills™ Architecture &amp; Site Mapping Diagram
+                    Aura Grills™ Architecture &amp; Site Mapping Diagram
                   </h3>
                   <p className="text-[11px] text-zinc-400">
                     Comprehensive visual hierarchy of systems, Bangalore regions &amp; engineering
@@ -270,7 +270,7 @@ export default function Footer({ onOpenBooking }) {
               
               {/* Root */}
               <div className="p-3.5 rounded-2xl bg-zinc-950 border border-emerald-500/40 text-center font-bold text-emerald-400 shadow-md">
-                [AURAB GRILLS ROOT: BANGALORE BALCONY ARCHITECTURAL SYSTEMS]
+                [AURA GRILLS ROOT: BANGALORE BALCONY ARCHITECTURAL SYSTEMS]
               </div>
 
               {/* Branch 1: 6 Bangalore Places */}
@@ -388,7 +388,7 @@ export default function Footer({ onOpenBooking }) {
                   <span>Direct WhatsApp Survey Coordination</span>
                 </div>
                 <p className="text-zinc-400">
-                  When you request a quote or laser survey, communication is initiated directly between you and certified Aurab installation leads without unsolicited spam.
+                  When you request a quote or laser survey, communication is initiated directly between you and certified Aura Grills installation leads without unsolicited spam.
                 </p>
               </div>
             </div>

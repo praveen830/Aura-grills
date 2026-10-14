@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import BangalorePlacesDashboard from './components/BangalorePlacesDashboard';
-import SimpleSteps from './components/SimpleSteps';
 import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import FloatingConcierge from './components/FloatingConcierge';
 import BookingModal from './components/BookingModal';
-
-import InstallationSafetyProcess from './components/InstallationSafetyProcess';
 
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -39,15 +36,9 @@ export default function App() {
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
-        {/* 3. Simple 3-Step Process, Installation & Safety, Testimonials (Only shown on main dashboard view, avoiding clutter after place projects or service details) */}
+        {/* Verified Reviews Section (Only on main dashboard view) */}
         {!selectedPlaceId && !selectedServiceId && (
-          <>
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <InstallationSafetyProcess onOpenBooking={() => setIsBookingOpen(true)} />
-            </div>
-            <SimpleSteps onOpenBooking={() => setIsBookingOpen(true)} />
-            <Testimonials />
-          </>
+          <Testimonials />
         )}
       </main>
 

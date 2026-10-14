@@ -16,7 +16,7 @@ export default function Navbar({ onGoToDashboard }) {
 
   const navLinks = [
     { name: 'Bangalore Hubs', href: '#bangalore-dashboard' },
-    { name: 'How It Works', href: '#how-it-works' },
+    { name: 'Balcony Services', href: '#balcony-services' },
     { name: 'Reviews', href: '#reviews' },
     { name: 'Helpline', href: '#footer-contact' },
   ];
@@ -43,7 +43,7 @@ export default function Navbar({ onGoToDashboard }) {
               : 'bg-white/90 backdrop-blur-md border-zinc-200/80 shadow-xs'
           }`}
         >
-          {/* Brand Identity: Custom Aurab Logo + For Your Safety Tag */}
+          {/* Brand Identity: Custom Aura Logo + For Your Safety Tag */}
           <a
             href="#bangalore-dashboard"
             onClick={(e) => {
@@ -56,10 +56,10 @@ export default function Navbar({ onGoToDashboard }) {
             <AurabLogo className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
             <div className="flex flex-col">
               <span className="text-xs sm:text-sm font-black tracking-tight text-zinc-950 flex items-center gap-1 leading-none">
-                AURAB <span className="text-emerald-600">GRILLS</span>
+                AURA <span className="text-emerald-600">GRILLS</span>
               </span>
               <span className="text-[9px] sm:text-[10px] tracking-wider uppercase font-extrabold text-zinc-500 pt-1 leading-none">
-                Aurab Invisible Grills • For Your Safety
+                Aura Invisible Grills • For Your Safety
               </span>
             </div>
           </a>
@@ -96,7 +96,7 @@ export default function Navbar({ onGoToDashboard }) {
           <div className="pointer-events-auto md:hidden mt-2 ml-auto max-w-xs w-full p-4 rounded-3xl bg-white/95 backdrop-blur-xl border border-zinc-200/90 shadow-2xl shadow-zinc-950/15 space-y-1 animate-fadeIn">
             <div className="px-3 py-1.5 pb-2 border-b border-zinc-100 mb-1">
               <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-600">
-                Aurab Invisible Grills • For Your Safety
+                Aura Invisible Grills • For Your Safety
               </span>
             </div>
             {navLinks.map((link) => (

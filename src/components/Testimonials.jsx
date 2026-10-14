@@ -1,5 +1,4 @@
-import React from 'react';
-import { Star, CheckCircle2, Building2 } from 'lucide-react';
+import { CheckCircle2, Building2 } from 'lucide-react';
 
 export default function Testimonials() {
   const reviews = [
@@ -88,14 +87,8 @@ export default function Testimonials() {
               className="rounded-3xl p-6 sm:p-8 bg-white border border-zinc-200/90 hover:border-zinc-400/90 transition-all duration-300 flex flex-col justify-between hover:shadow-xl hover:shadow-zinc-950/5 shadow-2xs group"
             >
               <div className="space-y-4">
-                {/* Top Row: Stars + Verified Badge */}
+                {/* Top Row: Verified Badge */}
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1 text-amber-500">
-                    {[...Array(rev.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-
                   <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200">
                     <CheckCircle2 className="w-3 h-3" />
                     <span>Verified Installation</span>
