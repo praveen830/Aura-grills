@@ -28,8 +28,27 @@ export default function AurabServiceDetailView({
   const [formName, setFormName] = useState('');
   const [formPhone, setFormPhone] = useState('');
   const [formArea, setFormArea] = useState('');
-  const [formSlot, setFormSlot] = useState('Today (Within 90 Mins)');
+  const [formSlot, setFormSlot] = useState('Today (Express Slot)');
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
+  // Auto-slide effect for Problem & Solutions carousel
+  useEffect(() => {
+    if (!sliderRef.current || !service.problemSolutions || service.problemSolutions.length === 0) return;
+    const container = sliderRef.current;
+    
+    const interval = setInterval(() => {
+      if (!container) return;
+      const cardWidth = container.firstElementChild?.clientWidth || 280;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= maxScroll - 20) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: cardWidth + 14, behavior: 'smooth' });
+      }
+    }, 3200);
+
+    return () => clearInterval(interval);
+  }, [service.id, service.problemSolutions]);
 
   // Smooth horizontal scroll ONLY within the slider container - NEVER causes page vertical jumping!
   const scrollToSlide = (index) => {
@@ -134,34 +153,33 @@ export default function AurabServiceDetailView({
       </div>
 
       {/* =========================================================================
-          SECTION 1: THE 4 TO 6 VARIETIES / SPECIALIZATIONS WITH OVERLAY BUTTONS
-          User requirement: "అక్కడ సిక్స్ ఫోర్ ఇన్విజిబుల్ గ్రిల్స్ వెరైటీస్ ఉండాల...
-          ఆ బటన్స్ అనేది ఇమేజ్ బార్డర్ లో కింద బార్డర్ పైన కావాల"
+          SECTION 1: THE 4 TO 6 VARIETIES / REAL IMAGE GALLERY
+          User requirement: "ఆ ఇమేజ్ పైన బటన్స్ ఎందుకు... అవేమీ అవసరం లేదు మనకి... జస్ట్ ఇమేజ్ స్క్రోల్ అవుతూ ఉండాలి"
           ========================================================================= */}
       <div className="space-y-4">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-100 pb-3">
           <div>
             <h2 className="text-lg sm:text-xl font-black text-zinc-950 tracking-tight flex items-center gap-2">
               <ShieldCheck className="w-5 h-5 text-emerald-600" />
-              <span>{service.name} Varieties &amp; Specializations</span>
+              <span>{service.name} Architectural Gallery</span>
             </h2>
             <p className="text-xs text-zinc-500">
-              Select your required architectural variant for instant survey and direct contact.
+              Real high-rise balcony photography and installation varieties
             </p>
           </div>
           <span className="text-xs font-bold text-zinc-400 font-mono">
-            {service.varieties.length} Certified Variants
+            {service.varieties.length} Verified Photos
           </span>
         </div>
 
-        {/* Responsive Grid of Varieties (4:5 / 9:14 ratio with buttons ON bottom border) */}
+        {/* Responsive Grid of Clean Variety Images in 4:5 Aspect Ratio */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {service.varieties.map((item) => (
             <div
               key={item.id}
-              className="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-xl hover:shadow-2xl hover:border-zinc-300 transition-all duration-300 flex flex-col justify-between group"
+              className="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-xl hover:shadow-2xl hover:border-zinc-300 transition-all duration-300 group"
             >
-              {/* Variety Image Container in 4:5 Aspect Ratio */}
+              {/* Variety Image Container in 4:5 Aspect Ratio - Clean, No Badges, No Overlaid Buttons */}
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-950">
                 <img
                   src={item.image}
@@ -170,68 +188,15 @@ export default function AurabServiceDetailView({
                   loading="lazy"
                 />
 
-                {/* Top Badge: Category & Cert */}
-                <div className="absolute top-3.5 left-3.5 z-20 pointer-events-none flex flex-col gap-1">
-                  <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] sm:text-xs font-black uppercase tracking-wider text-emerald-400 border border-white/20 shadow-md">
-                    {item.badge}
-                  </span>
-                  <span className="px-2.5 py-0.5 rounded-full bg-white/90 backdrop-blur-md text-[9px] font-bold text-zinc-900 border border-zinc-200 w-max">
-                    {item.category}
+                {/* Bottom subtle vignette */}
+                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none"></div>
+
+                {/* Clean Floating Title Pill at Bottom - Clean and Uncluttered */}
+                <div className="absolute bottom-4 left-4 right-4 pointer-events-none">
+                  <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md inline-block">
+                    {item.title}
                   </span>
                 </div>
-
-                {/* Bottom Overlay Gradient with the 3 Action Buttons ON the bottom border */}
-                <div className="absolute inset-x-0 bottom-0 pt-16 pb-3.5 px-3 bg-gradient-to-t from-black/95 via-black/75 to-transparent z-20">
-                  <div className="grid grid-cols-3 gap-1.5 sm:gap-2">
-                    {/* Call Button */}
-                    <a
-                      href="tel:+918523068882"
-                      className="py-2.5 px-1.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1 border border-white/20 shadow-lg text-center backdrop-blur-md active:scale-95"
-                      title="Call"
-                    >
-                      <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      <span>Call</span>
-                    </a>
-
-                    {/* WhatsApp Button */}
-                    <a
-                      href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                        `Hello Aurab Grills! I am interested in ${item.title} for ${service.displayName}.`
-                      )}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="py-2.5 px-1.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold transition flex items-center justify-center gap-1 shadow-lg text-center backdrop-blur-md active:scale-95"
-                      title="WhatsApp"
-                    >
-                      <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
-                      <span>WhatsApp</span>
-                    </a>
-
-                    {/* Free Visit Button */}
-                    <button
-                      onClick={onOpenBooking}
-                      type="button"
-                      className="py-2.5 px-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black transition flex items-center justify-center gap-1 shadow-lg cursor-pointer text-center active:scale-95"
-                      title="Free Visit"
-                    >
-                      <Calendar className="w-3.5 h-3.5 text-white shrink-0" />
-                      <span className="truncate">Free Visit</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
-
-              {/* Variety Title & Technical Specs */}
-              <div className="p-5 space-y-2">
-                <h3 className="text-base font-black text-zinc-950 leading-snug">
-                  {item.title}
-                </h3>
-                <p className="text-xs text-emerald-700 font-bold font-mono">
-                  ✓ {item.specs}
-                </p>
-                <p className="text-xs text-zinc-600 leading-relaxed font-normal pt-1">
-                  {item.description}
-                </p>
               </div>
             </div>
           ))}
@@ -239,50 +204,27 @@ export default function AurabServiceDetailView({
       </div>
 
       {/* =========================================================================
-          SECTION 2: PROBLEMS & SOLUTIONS CAROUSEL
-          User requirement: "ఆ ఇమేజెస్ కింద మన మన సొల్యూషన్స్ ఉండాల అది ప్రాబ్లం సొల్యూషన్"
+          SECTION 2: PROBLEMS & SOLUTIONS CAROUSEL (Smooth Auto-Slide, Free Vertical Scroll)
           ========================================================================= */}
       {service.problemSolutions && service.problemSolutions.length > 0 && (
         <div className="space-y-4 pt-4 border-t border-zinc-200">
-          {/* Header with Slide Controls */}
+          {/* Clean Header without Counter & Buttons */}
           <div className="flex items-center justify-between">
             <div>
               <h2 className="text-lg sm:text-xl font-black text-zinc-950 tracking-tight">
                 Problems &amp; Solutions for {service.name}
               </h2>
               <p className="text-xs text-zinc-500">
-                Key safety challenges solved by Aurab engineering
+                Key safety challenges solved by Aurab engineering • Auto-showcase
               </p>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="text-xs font-bold text-zinc-500 font-mono">
-                {activeSlide + 1} / {service.problemSolutions.length}
-              </span>
-              <button
-                onClick={prevSlide}
-                type="button"
-                className="p-1.5 sm:p-2 rounded-full border border-zinc-300 hover:bg-zinc-100 text-zinc-700 transition cursor-pointer active:scale-95"
-                aria-label="Previous Slide"
-              >
-                <ChevronLeft className="w-4 h-4" />
-              </button>
-              <button
-                onClick={nextSlide}
-                type="button"
-                className="p-1.5 sm:p-2 rounded-full border border-zinc-300 hover:bg-zinc-100 text-zinc-700 transition cursor-pointer active:scale-95"
-                aria-label="Next Slide"
-              >
-                <ChevronRight className="w-4 h-4" />
-              </button>
             </div>
           </div>
 
-          {/* Sliding Cards Track - Smooth native snap scroll, NO vertical jump, NO auto timer bounce */}
+          {/* Sliding Cards Track - Smooth auto-slide, completely free vertical page scrolling */}
           <div
             ref={sliderRef}
             onScroll={handleSliderScroll}
-            className="flex items-stretch gap-3.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-3 pt-1 touch-pan-x overscroll-x-contain"
+            className="flex items-stretch gap-3.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-3 pt-1"
           >
             {service.problemSolutions.map((sol, idx) => {
               const isActive = activeSlide === idx;
@@ -340,48 +282,7 @@ export default function AurabServiceDetailView({
       )}
 
       {/* =========================================================================
-          SECTION 3: HOW WE INSTALL & SAFETY MEASUREMENTS
-          User requirement: "దాని కిందన మన సేఫ్టీ ఇన్స్టాలేషన్"
-          ========================================================================= */}
-      {service.installationProcess && service.installationProcess.length > 0 && (
-        <div className="space-y-4 pt-4 border-t border-zinc-200">
-          <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 text-[10px] font-black uppercase tracking-wider mb-1.5 border border-emerald-200">
-              <HardHat className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Standard Operating Protocol</span>
-            </div>
-            <h2 className="text-lg sm:text-xl font-black text-zinc-950 tracking-tight">
-              Safety Measurements &amp; Installation Process
-            </h2>
-            <p className="text-xs text-zinc-500">
-              Every Aurab installation is performed by certified technicians adhering to zero facade damage.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {service.installationProcess.map((step) => (
-              <div
-                key={step.step}
-                className="p-5 rounded-2xl bg-zinc-50 border border-zinc-200 hover:border-emerald-500 transition-all space-y-2 group"
-              >
-                <div className="w-8 h-8 rounded-xl bg-zinc-950 text-emerald-400 font-mono font-black text-xs flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition">
-                  {step.step}
-                </div>
-                <h3 className="text-sm font-black text-zinc-950">
-                  {step.title}
-                </h3>
-                <p className="text-xs text-zinc-600 leading-relaxed font-normal">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* =========================================================================
-          SECTION 4: OUR PROJECTS / COMPLETED INSTALLATIONS
-          User requirement: "దాని కిందన సొల్యూషన్స్ అవర్ ప్రాజెక్ట్స్"
+          SECTION 3: OUR PROJECTS / COMPLETED INSTALLATIONS
           ========================================================================= */}
       {service.projects && service.projects.length > 0 && (
         <div className="space-y-4 pt-4 border-t border-zinc-200">
@@ -565,7 +466,7 @@ export default function AurabServiceDetailView({
                       onChange={(e) => setFormSlot(e.target.value)}
                       className="w-full bg-zinc-900 border border-zinc-800 rounded-xl px-3.5 py-3 text-xs text-white focus:outline-none focus:border-emerald-500 transition cursor-pointer"
                     >
-                      <option value="Today (Within 90 Mins)">Today (Within 90 Mins)</option>
+                      <option value="Today (Express Slot)">Today (Express Slot)</option>
                       <option value="Tomorrow Morning (10 AM - 1 PM)">Tomorrow Morning (10 AM - 1 PM)</option>
                       <option value="Tomorrow Evening (4 PM - 7 PM)">Tomorrow Evening (4 PM - 7 PM)</option>
                       <option value="Weekend Saturday/Sunday">Weekend Saturday/Sunday</option>

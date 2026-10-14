@@ -60,7 +60,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
               {/* Status Badge */}
               <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-black uppercase text-emerald-400 tracking-wider border border-white/20 flex items-center gap-1.5">
                 <Truck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>Rapid Survey Van • Within 90 Mins</span>
+                <span>Doorstep Laser Measurement Van</span>
               </div>
 
               {/* Caption */}
@@ -150,7 +150,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
               {/* Status Badge */}
               <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-black uppercase text-emerald-400 tracking-wider border border-white/20 flex items-center gap-1.5">
                 <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-                <span>400kg Breaking Resistance • 10-Yr Warranty</span>
+                <span>High-Altitude Balcony Fall Protection</span>
               </div>
 
               {/* Caption */}
@@ -167,14 +167,14 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
                 Precision Aluminum Tracks, Hilti Anchors &amp; SS-316 Cables
               </h4>
               <p className="text-xs text-zinc-600 leading-relaxed">
-                T6 extruded aluminum tracks are anchored with dust-free vacuum drilling. Marine-grade SS-316 cables (2-inch gap) are threaded in a single continuous line and digitally calibrated to 400kg tensile load.
+                T6 extruded aluminum tracks are anchored with dust-free vacuum drilling. Marine-grade SS-316 cables (2-inch gap) are threaded in a single continuous line and digitally calibrated to optimal safety tension.
               </p>
 
               {/* Safety Specification Points */}
               <ul className="space-y-1.5 pt-1 text-xs text-zinc-700">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Certified 400kg tensile break load (high-altitude windproof)</span>
+                  <span>High-tensile windproof cable tensioning calibration</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -182,7 +182,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Physical pull-test and stamped 10-year warranty card handover</span>
+                  <span>Physical pull-test and official safety certificate handover</span>
                 </li>
               </ul>
             </div>
@@ -233,7 +233,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
           <div className="text-[11px] text-zinc-500 font-medium">2.5% Molybdenum Rustproof</div>
         </div>
         <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 text-center space-y-1">
-          <div className="text-xs sm:text-sm font-black text-zinc-950">400kg Breaking Load</div>
+          <div className="text-xs sm:text-sm font-black text-zinc-950">Wind-Calibrated</div>
           <div className="text-[11px] text-zinc-500 font-medium">High-Altitude Windproof</div>
         </div>
         <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 text-center space-y-1">
@@ -241,8 +241,8 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
           <div className="text-[11px] text-zinc-500 font-medium">100% Toddler &amp; Bird Safe</div>
         </div>
         <div className="p-3.5 rounded-2xl bg-zinc-50 border border-zinc-200 text-center space-y-1">
-          <div className="text-xs sm:text-sm font-black text-zinc-950">10-Yr Guarantee</div>
-          <div className="text-[11px] text-zinc-500 font-medium">Written Stamped Certificate</div>
+          <div className="text-xs sm:text-sm font-black text-zinc-950">Official Certificate</div>
+          <div className="text-[11px] text-zinc-500 font-medium">Stamped Protocol Handover</div>
         </div>
       </div>
     </section>

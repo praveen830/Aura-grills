@@ -137,6 +137,25 @@ export default function BangalorePlacesDashboard({
     }
   };
 
+  // Auto-slide effect for Problem & Solutions carousel in Place View
+  useEffect(() => {
+    if (!selectedPlaceId || !sliderRef.current || problemSolutionsList.length === 0) return;
+    const container = sliderRef.current;
+    
+    const interval = setInterval(() => {
+      if (!container) return;
+      const cardWidth = container.firstElementChild?.clientWidth || 280;
+      const maxScroll = container.scrollWidth - container.clientWidth;
+      if (container.scrollLeft >= maxScroll - 20) {
+        container.scrollTo({ left: 0, behavior: 'smooth' });
+      } else {
+        container.scrollBy({ left: cardWidth + 14, behavior: 'smooth' });
+      }
+    }, 3200);
+
+    return () => clearInterval(interval);
+  }, [selectedPlaceId, problemSolutionsList.length]);
+
   // Display all project installations directly for this place
   const displayedProjects = selectedPlace ? selectedPlace.projects : [];
 
@@ -171,26 +190,16 @@ export default function BangalorePlacesDashboard({
         {!selectedPlace ? (
           <div className="space-y-8 sm:space-y-12 pt-2">
             
-            {/* The 6 Main Places in Tall Reels Cards - Clean Full Image with Place Name */}
+            {/* The 6 Main Places in Tall Reels Cards - Clean Full 9:16 Image with Place Name */}
             <div>
-              <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-200">
-                <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-zinc-900 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                  Top Bangalore Hubs & Society Installations
-                </span>
-                <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest hidden sm:inline-block">
-                  6 Key Corridors
-                </span>
-              </div>
-
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
                 {BANGALORE_PLACES.map((place) => (
                   <div
                     key={place.id}
                     onClick={() => handleOpenPlace(place.id)}
-                    className="group relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-zinc-200 bg-zinc-950 cursor-pointer hover:shadow-2xl hover:border-zinc-300 transition-all duration-300"
+                    className="group relative aspect-[9/16] sm:aspect-[9/14] w-full rounded-3xl overflow-hidden shadow-xl border border-zinc-200 bg-zinc-950 cursor-pointer hover:shadow-2xl hover:border-zinc-300 transition-all duration-300"
                   >
-                    {/* Full image display in 4:5 Aspect Ratio */}
+                    {/* Full image display in 9:16 Tall Reel Ratio */}
                     <img
                       src={place.image}
                       alt={place.name}
@@ -198,25 +207,10 @@ export default function BangalorePlacesDashboard({
                       loading="eager"
                     />
 
-                    {/* Status Pill Badge at Top */}
-                    <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none">
-                      {place.id === 'kr-puram' || place.id === 'hennur' ? (
-                        <span className="px-2.5 py-1 rounded-full bg-emerald-700/95 backdrop-blur-md text-[10px] font-black uppercase tracking-wider text-white border border-white/20 shadow-md flex items-center gap-1">
-                          <HardHat className="w-3 h-3 text-emerald-200" />
-                          <span>Harness Installation</span>
-                        </span>
-                      ) : (
-                        <span className="px-2.5 py-1 rounded-full bg-black/75 backdrop-blur-md text-[10px] font-black uppercase tracking-wider text-emerald-400 border border-white/20 shadow-md flex items-center gap-1">
-                          <ShieldCheck className="w-3 h-3 text-emerald-400" />
-                          <span>100% Family Safe</span>
-                        </span>
-                      )}
-                    </div>
-
                     {/* Bottom edge vignette */}
                     <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none"></div>
 
-                    {/* Clean Floating Place Label - ONLY Place Name, NO arrow, NO extra buttons */}
+                    {/* Clean Floating Place Label - ONLY Place Name, NO extra badges/buttons */}
                     <div className="absolute bottom-4 left-4 z-10 pointer-events-none">
                       <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md">
                         {place.name}
@@ -401,38 +395,16 @@ export default function BangalorePlacesDashboard({
                     Why Invisible Grills in {selectedPlace.name}
                   </h3>
                   <p className="text-xs text-zinc-500">
-                    Slide cards to view key safety solutions
+                    Automatic live showcase • Swipe cards freely
                   </p>
-                </div>
-
-                <div className="flex items-center gap-2">
-                  <span className="text-xs font-bold text-zinc-500 font-mono">
-                    {activeSlide + 1} / {problemSolutionsList.length}
-                  </span>
-                  <button
-                    onClick={prevSlide}
-                    type="button"
-                    className="p-1.5 sm:p-2 rounded-full border border-zinc-300 hover:bg-zinc-100 text-zinc-700 transition cursor-pointer active:scale-95"
-                    aria-label="Previous Slide"
-                  >
-                    <ChevronLeft className="w-4 h-4" />
-                  </button>
-                  <button
-                    onClick={nextSlide}
-                    type="button"
-                    className="p-1.5 sm:p-2 rounded-full border border-zinc-300 hover:bg-zinc-100 text-zinc-700 transition cursor-pointer active:scale-95"
-                    aria-label="Next Slide"
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
                 </div>
               </div>
 
-              {/* Multi-Card Horizontal Sliding Track - Smooth native snap, NO vertical jump, NO auto timer bounce */}
+              {/* Multi-Card Horizontal Sliding Track - Smooth auto-slide, completely free vertical scrolling */}
               <div
                 ref={sliderRef}
                 onScroll={handleSliderScroll}
-                className="flex items-stretch gap-3.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-3 pt-1 touch-pan-x overscroll-x-contain"
+                className="flex items-stretch gap-3.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-3 pt-1"
               >
                 {problemSolutionsList.map((item, idx) => {
                   const isActive = activeSlide === idx;
@@ -577,12 +549,6 @@ export default function BangalorePlacesDashboard({
                 ))}
               </div>
             </div>
-
-            {/* 5. Our Installation Process, Safety Measurements & Materials (Before Footer) */}
-            <InstallationSafetyProcess 
-              onOpenBooking={onOpenBooking} 
-              placeName={selectedPlace.name} 
-            />
 
           </div>
         )}

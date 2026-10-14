@@ -4,7 +4,7 @@ export const AURAB_SERVICES = [
     name: 'INVISIBLE GRILLS',
     displayName: 'Aurab Invisible Safety Grills',
     badge: 'Aerospace Grade SS-316',
-    tagline: '400kg Breaking Load • 100% Daylight • Toddler & Elderly Fall Protection',
+    tagline: 'Aerospace Grade SS-316 • 100% Daylight • Toddler & Elderly Fall Protection',
     image: '/images/services/ig-lakeview-hero.jpg',
     description: 'High-tensile SS-316 marine cables with UV-transparent nylon coating. Safeguards toddlers, pets, and seniors without cage-like bars or blocking skyline views.',
     varieties: [
@@ -14,7 +14,7 @@ export const AURAB_SERVICES = [
         category: 'Child Fall Prevention',
         badge: '100% Baby Safe',
         image: '/images/services/ig-highrise-vertical.jpg',
-        specs: '2-Inch Safe Spacing • Zero Foothold • 400kg Load',
+        specs: '2-Inch Safe Spacing • Zero Foothold • High-Tensile Safe',
         description: 'Strict 50mm safe vertical spacing prevents toddlers and toys from slipping through balustrades. Crystal clear skyline view with zero foothold climbing risk.'
       },
       {
@@ -123,7 +123,7 @@ export const AURAB_SERVICES = [
         elevation: '26th Floor Penthouse Balcony',
         image: '/images/services/ig-sunset-skyline.jpg',
         description: 'Full panoramic balcony setup with 2-inch safe spacing. Uncompromised skyline view with complete toddler safety.',
-        specs: 'SS-316 Marine • 2-Inch Gap • 10-Yr Guarantee'
+        specs: 'SS-316 Marine • 2-Inch Gap • Official Certification'
       },
       {
         id: 'ig-p2',
@@ -132,7 +132,7 @@ export const AURAB_SERVICES = [
         elevation: '19th Floor Lake View Balcony',
         image: '/images/services/ig-lakeview-hero.jpg',
         description: 'Complete bird and child protection against strong lake breeze. Balcony stays spotless and open 365 days a year.',
-        specs: 'Pigeon Shield • Zero Green Nets • 400kg Safe'
+        specs: 'Pigeon Shield • Zero Green Nets • High-Tensile Safe'
       },
       {
         id: 'ig-p3',

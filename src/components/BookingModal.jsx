@@ -195,7 +195,7 @@ export default function BookingModal({ isOpen, onClose }) {
                     onChange={(e) => setFormData({ ...formData, preferredSlot: e.target.value })}
                     className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-3 py-3 text-xs text-zinc-900 focus:outline-none focus:border-emerald-500 focus:bg-white transition cursor-pointer"
                   >
-                    <option value="Today (Within 90 Mins)">Today (Within 90 Mins)</option>
+                    <option value="Today (Express Slot)">Today (Express Slot)</option>
                     <option value="Tomorrow Morning (10 AM - 1 PM)">Tomorrow Morning (10 AM - 1 PM)</option>
                     <option value="Tomorrow Evening (4 PM - 7 PM)">Tomorrow Evening (4 PM - 7 PM)</option>
                     <option value="Upcoming Weekend Slot">Upcoming Weekend Slot</option>
