@@ -51,7 +51,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
             <div className="relative aspect-[4/5] sm:aspect-[4/3] md:aspect-[4/5] w-full overflow-hidden bg-zinc-950">
               <img
                 src="/images/places/survey-van-vertical.jpg"
-                alt="Aura Grills Rapid Survey Van and Technician in Bangalore"
+                alt="Aurab Grills Rapid Survey Van and Technician in Bangalore"
                 className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700"
                 loading="lazy"
               />
@@ -111,7 +111,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
 
             <a
               href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                `Hello Aura Grills! I want to schedule a rapid van survey for invisible grills in ${currentArea}.`
+                `Hello Aurab Grills! I want to schedule a rapid van survey for invisible grills in ${currentArea}.`
               )}`}
               target="_blank"
               rel="noreferrer"
@@ -201,7 +201,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
 
             <a
               href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                `Hello Aura Grills! I want to inquire about balcony invisible grills installation and safety requirements in ${currentArea}.`
+                `Hello Aurab Grills! I want to inquire about balcony invisible grills installation and safety requirements in ${currentArea}.`
               )}`}
               target="_blank"
               rel="noreferrer"

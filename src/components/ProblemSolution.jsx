@@ -21,7 +21,7 @@ export default function ProblemSolution({ onOpenBooking }) {
         ]
       },
       solution: {
-        tag: "Aura Grills Solution #01",
+        tag: "Aurab Grills Solution #01",
         heading: "Certified 400kg Load • Zero Slip-Through 2-Inch Grid",
         description: "High-tensile SS-316 vertical wires spaced at strict 50mm (2-inch) gaps. Physically impossible for children or babies to squeeze through. Encased in transparent virgin nylon that is soft to infant hands with zero sharp edges.",
         image: "/images/toddler-safe.jpg",
@@ -48,7 +48,7 @@ export default function ProblemSolution({ onOpenBooking }) {
         ]
       },
       solution: {
-        tag: "Aura Grills Solution #02",
+        tag: "Aurab Grills Solution #02",
         heading: "100% Pigeon Exclusion with Zero Ugly Nets",
         description: "Strict 2-inch vertical stainless steel barrier prevents pigeons and birds from entering, landing, or perching on railings. Balconies stay immaculately clean, odorless, and sanitary 365 days a year without ugly sagging nets.",
         image: "/images/pigeon-free.jpg",
@@ -75,7 +75,7 @@ export default function ProblemSolution({ onOpenBooking }) {
         ]
       },
       solution: {
-        tag: "Aura Grills Solution #03",
+        tag: "Aurab Grills Solution #03",
         heading: "98.7% Invisible Optical Freedom & Full Cross Breeze",
         description: "Slender 2.5mm / 3.0mm aerospace-grade cables disappear into the horizon from just 5 feet away. Enjoy 100% unhindered panoramic views of sunrises, sunsets, and lush tree canopies while feeling completely safe.",
         image: "/images/penthouse-panoramic-balcony.jpg",
@@ -102,7 +102,7 @@ export default function ProblemSolution({ onOpenBooking }) {
         ]
       },
       solution: {
-        tag: "Aura Grills Solution #04",
+        tag: "Aurab Grills Solution #04",
         heading: "10-Year 100% Anti-Rust Certified SS-316 Marine Grade",
         description: "Forged with genuine Virgin Marine-Grade SS-316 infused with 2.5% Molybdenum core alloy and ASTM B117 salt-mist certified. Guaranteed zero rust, zero oxidation, and zero pitting. Backed by our official 10-year replacement warranty certificate.",
         image: "/images/installer-work-real.jpg",
@@ -129,9 +129,9 @@ export default function ProblemSolution({ onOpenBooking }) {
         ]
       },
       solution: {
-        tag: "Aura Grills Solution #05",
+        tag: "Aurab Grills Solution #05",
         heading: "10-Second Emergency Wire-Cutter Evacuation Protocol",
-        description: "While physically unyielding and unbreakable by human hands or weight, Aura Grills cables can be cleanly snipped using standard emergency wire-cutters by first responders in under 10 seconds, ensuring a safe evacuation window.",
+        description: "While physically unyielding and unbreakable by human hands or weight, Aurab Grills cables can be cleanly snipped using standard emergency wire-cutters by first responders in under 10 seconds, ensuring a safe evacuation window.",
         image: "/images/installer-work-real.jpg",
         keyBenefits: [
           "Emergency rescue crews can cleanly cut wires in under 10 seconds",
@@ -156,7 +156,7 @@ export default function ProblemSolution({ onOpenBooking }) {
         ]
       },
       solution: {
-        tag: "Aura Grills Solution #06",
+        tag: "Aurab Grills Solution #06",
         heading: "Smooth Nylon Coating • Complete High-Rise Pet Freedom",
         description: "Our seamless vertical cable system allows dogs and cats to sunbathe, observe birds, and enjoy the breeze with total security. Smooth nylon sheath guarantees zero paw cuts, and the 2-inch gap prevents any pet from slipping through.",
         image: "/images/hsr-family-balcony.jpg",

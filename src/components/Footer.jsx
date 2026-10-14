@@ -1,20 +1,21 @@
 import React from 'react';
-import { Phone, Mail, Shield, ShieldCheck, MapPin } from 'lucide-react';
+import { Phone, Mail, ShieldCheck, MapPin } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import AurabLogo from './AurabLogo';
 
 export default function Footer({ onOpenBooking }) {
   const bangaloreCorridors = [
     "Whitefield & ITPL",
+    "KR Puram Corridor",
+    "JP Nagar Phases 1-9",
+    "Electronic City Phase 1 & 2",
+    "RR Nagar High-Rise Belt",
+    "Hennur Main Road",
     "Sarjapur Road",
     "HSR Layout (Sectors 1-7)",
-    "Bellandur Outer Ring Road",
-    "Electronic City Phase 1 & 2",
     "Indiranagar & Domlur",
     "Hebbal & Manyata Tech Park",
-    "JP Nagar & Jayanagar",
     "Thanisandra Main Road",
-    "Yelahanka New Town",
-    "Marathahalli & Kadugodi",
     "Bannerghatta Road Corridor"
   ];
 
@@ -28,12 +29,15 @@ export default function Footer({ onOpenBooking }) {
           {/* Column 1: Brand & Operating Headquarters (Col 5) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-full bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400">
-                <Shield className="w-4 h-4" />
+              <AurabLogo className="w-8 h-8 shrink-0 drop-shadow-sm" />
+              <div className="flex flex-col">
+                <span className="text-lg font-black tracking-tight text-white leading-none">
+                  AURAB <span className="text-emerald-400">GRILLS</span>
+                </span>
+                <span className="text-[9px] uppercase tracking-wider font-bold text-zinc-400 pt-0.5">
+                  Aurab Invisible Grills • For Your Safety
+                </span>
               </div>
-              <span className="text-lg font-black tracking-tight text-white">
-                AURA <span className="text-emerald-400">GRILLS</span>
-              </span>
             </div>
 
             <p className="text-xs sm:text-sm text-zinc-400 leading-relaxed max-w-sm font-normal">
@@ -82,7 +86,7 @@ export default function Footer({ onOpenBooking }) {
               </a>
 
               <a
-                href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20am%20looking%20for%20invisible%20safety%20grills%20for%20my%20balcony%20in%20Bangalore."
+                href="https://wa.me/918523068882?text=Hello%20Aurab%20Grills!%20I%20am%20looking%20for%20invisible%20safety%20grills%20for%20my%20balcony%20in%20Bangalore."
                 target="_blank"
                 rel="noreferrer"
                 className="flex items-center gap-2.5 p-3 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 text-white transition group"
@@ -97,11 +101,11 @@ export default function Footer({ onOpenBooking }) {
               </a>
 
               <a
-                href="mailto:auragrillss@gmail.com"
+                href="mailto:aurabgrills@gmail.com"
                 className="flex items-center gap-2 text-zinc-400 hover:text-white transition pt-1"
               >
                 <Mail className="w-3.5 h-3.5 text-emerald-500" />
-                <span>auragrillss@gmail.com</span>
+                <span>aurabgrills@gmail.com</span>
               </a>
             </div>
           </div>
@@ -167,7 +171,7 @@ export default function Footer({ onOpenBooking }) {
         {/* Bottom Legal & Certifications Bar */}
         <div className="pt-8 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
           <p>
-            © 2026 <strong>Aura Grills™</strong> Architectural Safety. All Rights Reserved. Protecting Families Across Bengaluru.
+            © 2026 <strong>Aurab Grills™</strong> Architectural Safety. All Rights Reserved. Protecting Families Across Bengaluru.
           </p>
 
           <div className="flex flex-wrap items-center gap-3 text-[11px] uppercase tracking-wider">

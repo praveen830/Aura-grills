@@ -14,7 +14,7 @@ export default function BalconyCalculator({ onOpenBooking }) {
   const estimatedCost = totalSqFt * ratePerSqFt;
 
   const handleSendToWhatsApp = () => {
-    const text = `*Aura Grills - Invisible Grill Price Estimate*\n` +
+    const text = `*Aurab Grills - Invisible Grill Price Estimate*\n` +
       `📍 *Location:* ${selectedHub}\n` +
       `🛡️ *Type:* ${installationType}\n` +
       `📏 *Dimensions:* ${width} ft (W) × ${height} ft (H) = *${totalSqFt} Sq.Ft*\n` +

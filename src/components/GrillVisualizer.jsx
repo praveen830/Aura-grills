@@ -3,7 +3,7 @@ import { Zap, CheckCircle2 } from 'lucide-react';
 
 export default function GrillVisualizer({
   imageSrc,
-  altText = "Aura Grills Invisible Grill Balcony",
+  altText = "Aurab Grills Invisible Grill Balcony",
   locationName = "Bangalore Balcony",
   completedProjects = 300,
   className = ""

@@ -9,7 +9,7 @@ export default function QuickConnectFloating() {
         href="https://wa.me/918523068882?text=Hello%20Aura%20Guilds%2C%20I%20am%20interested%20in%20SS-316%20invisible%20safety%20grills%20for%20my%20balcony.%20Please%20share%20details%20and%20free%20site%20measurement%20availability."
         target="_blank"
         rel="noreferrer"
-        aria-label="Chat with Aura Grills on WhatsApp"
+        aria-label="Chat with Aurab Grills on WhatsApp"
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-[0_4px_25px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer border-2 border-white/20"
       >
         <span className="absolute inset-0 rounded-full bg-[#25D366] opacity-40 animate-ping -z-10 pointer-events-none"></span>

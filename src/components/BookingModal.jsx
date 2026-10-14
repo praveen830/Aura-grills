@@ -46,7 +46,7 @@ export default function BookingModal({ isOpen, onClose }) {
     const type = formData.installationType;
     const slot = formData.preferredSlot;
 
-    const text = `Hello Aura Grills! I would like to book a Free Laser Balcony Measurement.\n\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n📍 Area / Society: ${area}\n🏢 Installation Type: ${type}\n🕒 Preferred Slot: ${slot}\n\nPlease confirm technician van availability.`;
+    const text = `Hello Aurab Grills! I would like to book a Free Laser Balcony Measurement.\n\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n📍 Area / Society: ${area}\n🏢 Installation Type: ${type}\n🕒 Preferred Slot: ${slot}\n\nPlease confirm technician van availability.`;
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(text)}`;
 
     setIsSubmitted(true);

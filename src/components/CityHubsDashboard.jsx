@@ -92,45 +92,45 @@ const BANGALORE_HUBS = [
     ]
   },
   {
-    id: 'sarjapur-bellandur',
-    name: 'Sarjapur & Bellandur',
-    tagline: 'Tech-Corridor High-Rise Gated Communities',
-    leadSupervisor: 'Santhosh Kumar (Structural Specialist)',
-    vanStatus: 'Survey Van covering Haralur & Panathur today',
-    coverImage: '/images/luxury-family-balcony-sunset.jpg',
+    id: 'kr-puram',
+    name: 'KR Puram Corridor',
+    tagline: 'High-Rise Balcony Installation & Precision Tensioning',
+    leadSupervisor: 'Prasad Rao (KR Puram Division Lead)',
+    vanStatus: 'Survey Van covering TC Palya & Lake Road today',
+    coverImage: '/images/places/kr-puram.jpg',
     subPlaces: [
-      'All Sarjapur',
-      'Haralur Road',
-      'Panathur Road',
-      'Kaikondrahalli Lake',
-      'Doddakannelli'
+      'All KR Puram',
+      'TC Palya Main Road',
+      'Bhattarahalli',
+      'KR Puram Lake Road',
+      'Medahalli'
     ],
     projects: [
       {
-        id: 's1',
-        name: 'Sobha Dream Acres',
-        subPlace: 'Panathur Road',
-        floor: 'Wing 14, 18th Floor Balcony',
-        image: '/images/pigeon-free.jpg',
-        description: 'Permanent solution to pigeon nesting. Balcony stays fresh, spotless, and completely open.',
+        id: 'kr1',
+        name: 'Sobha Lake Garden',
+        subPlace: 'KR Puram Lake Road',
+        floor: 'Wing 4, 19th Floor Balcony',
+        image: '/images/places/kr-puram.jpg',
+        description: 'Permanent solution to pigeon nesting along lake breeze. Balcony stays fresh, spotless, and completely open.',
         specs: 'Pigeon Shield • High-Altitude Certified • SS-316'
       },
       {
-        id: 's2',
-        name: 'Assetz Marq',
-        subPlace: 'Doddakannelli',
-        floor: '24th Floor Panoramic Deck',
-        image: '/images/penthouse-panoramic-balcony.jpg',
-        description: 'Expansive open sky deck installation completed in 4 hours with zero tile damage.',
+        id: 'kr2',
+        name: 'Prestige Sunrise',
+        subPlace: 'TC Palya Main Road',
+        floor: '12th Floor Sky Balcony',
+        image: '/images/whitefield-real-balcony.jpg',
+        description: '2-inch precision spacing preventing toddler climbing while giving panoramic views of eastern horizon.',
         specs: 'Sub-Millimeter Tension • Dust-Free Drill • 400kg Safe'
       },
       {
-        id: 's3',
-        name: 'Prestige Ferns Residency',
-        subPlace: 'Haralur Road',
-        floor: '19th Floor Lake View',
-        image: '/images/whitefield-real-balcony.jpg',
-        description: 'Full width invisible protection allowing sunset view and cooling cross-ventilation.',
+        id: 'kr3',
+        name: 'Century Real Estate Horizon',
+        subPlace: 'Bhattarahalli High-Rise',
+        floor: '16th Floor Balcony',
+        image: '/images/penthouse-panoramic-balcony.jpg',
+        description: 'Single continuous cable lacing with dust-free vacuum drilling. Zero damage to imported balcony tiles.',
         specs: '2-Inch Grid • Smooth Finish • Fire-Egress Safe'
       }
     ]
@@ -330,7 +330,7 @@ export default function CityHubsDashboard({ onOpenBooking }) {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                `Hello Aura Grills! I live in ${currentHub.name} Bangalore and want to book a free laser balcony measurement.`
+                `Hello Aurab Grills! I live in ${currentHub.name} Bangalore and want to book a free laser balcony measurement.`
               )}`}
               target="_blank"
               rel="noreferrer"

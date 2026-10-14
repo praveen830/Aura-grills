@@ -36,10 +36,10 @@ export default function RealGallery({ onOpenBooking, onSelectLocation }) {
       id: 3,
       category: "Installers at Work",
       title: "Precision Tensioning Gauge on High-Rise Balcony",
-      location: "Sobha Dream Acres, Sarjapur Road",
-      locationId: "sarjapur-bellandur",
+      location: "Sobha Lake Garden, KR Puram",
+      locationId: "kr-puram",
       image: "/images/installer-work-real.jpg",
-      description: "Certified Aura Grills installer adjusting continuous tension along top extruded track using high-grade safety harness and torque meter.",
+      description: "Certified Aurab Grills installer adjusting continuous tension along top extruded track using high-grade safety harness and torque meter.",
       installedBy: "Lead Tech Santhosh",
       specs: "Laser Calibrated • Hilti Anchors"
     },

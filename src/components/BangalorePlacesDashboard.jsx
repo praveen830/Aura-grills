@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { 
-  ArrowRight, 
   Phone, 
   Calendar, 
   Building, 
@@ -10,28 +9,41 @@ import {
   Sparkles,
   Flame,
   Sun,
-  HardHat
+  HardHat,
+  Layers,
+  ArrowRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import InstallationSafetyProcess from './InstallationSafetyProcess';
 import { BANGALORE_PLACES } from '../data/bangaloreHubsData';
+import { AURAB_SERVICES } from '../data/aurabServicesData';
+import AurabServiceDetailView from './AurabServiceDetailView';
 
 export default function BangalorePlacesDashboard({ 
   selectedPlaceId, 
   onSelectPlace, 
+  selectedServiceId,
+  onSelectService,
   onBackToDashboard,
   onOpenBooking 
 }) {
   const [activeSlide, setActiveSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
   const sliderRef = useRef(null);
-  const touchStartXRef = useRef(null);
+  const isScrollingByCodeRef = useRef(false);
 
   const selectedPlace = BANGALORE_PLACES.find((p) => p.id === selectedPlaceId);
+  const selectedService = AURAB_SERVICES.find((s) => s.id === selectedServiceId);
 
   const handleOpenPlace = (placeId) => {
+    if (onSelectService) onSelectService(null);
     onSelectPlace(placeId);
     setActiveSlide(0);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleOpenService = (serviceId) => {
+    onSelectPlace(null);
+    if (onSelectService) onSelectService(serviceId);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -71,55 +83,79 @@ export default function BangalorePlacesDashboard({
     }
   ];
 
-  // Auto-slide effect every 4 seconds (pauses on hover or touch)
-  useEffect(() => {
-    if (isPaused) return;
-    const interval = setInterval(() => {
-      setActiveSlide((prev) => (prev + 1) % problemSolutionsList.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [isPaused, problemSolutionsList.length]);
-
-  // Sync horizontal scroll container when activeSlide changes
-  useEffect(() => {
-    if (sliderRef.current) {
-      const container = sliderRef.current;
-      const child = container.children[activeSlide];
-      if (child) {
-        child.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
-      }
+  // Smooth horizontal scroll ONLY within the slider container - NEVER causes page vertical jumping!
+  const scrollToSlide = (index) => {
+    if (!sliderRef.current || problemSolutionsList.length === 0) return;
+    const container = sliderRef.current;
+    const clampedIndex = Math.max(0, Math.min(index, problemSolutionsList.length - 1));
+    const child = container.children[clampedIndex];
+    if (child) {
+      isScrollingByCodeRef.current = true;
+      setActiveSlide(clampedIndex);
+      const targetLeft = child.offsetLeft - container.offsetLeft - (container.clientWidth - child.clientWidth) / 2;
+      container.scrollTo({
+        left: Math.max(0, targetLeft),
+        behavior: 'smooth'
+      });
+      setTimeout(() => {
+        isScrollingByCodeRef.current = false;
+      }, 450);
     }
-  }, [activeSlide]);
+  };
 
   const nextSlide = () => {
-    setActiveSlide((prev) => (prev + 1) % problemSolutionsList.length);
+    if (problemSolutionsList.length === 0) return;
+    const nextIdx = (activeSlide + 1) % problemSolutionsList.length;
+    scrollToSlide(nextIdx);
   };
 
   const prevSlide = () => {
-    setActiveSlide((prev) => (prev - 1 + problemSolutionsList.length) % problemSolutionsList.length);
+    if (problemSolutionsList.length === 0) return;
+    const prevIdx = (activeSlide - 1 + problemSolutionsList.length) % problemSolutionsList.length;
+    scrollToSlide(prevIdx);
   };
 
-  // Touch swipe handlers for mobile
-  const handleTouchStart = (e) => {
-    setIsPaused(true);
-    touchStartXRef.current = e.touches[0].clientX;
-  };
+  // Passive horizontal scroll listener to sync active dot indicator as user swipes
+  const handleSliderScroll = () => {
+    if (isScrollingByCodeRef.current || !sliderRef.current || problemSolutionsList.length === 0) return;
+    const container = sliderRef.current;
+    const containerCenter = container.scrollLeft + container.clientWidth / 2;
+    let closestIdx = 0;
+    let minDiff = Infinity;
 
-  const handleTouchEnd = (e) => {
-    setIsPaused(false);
-    if (touchStartXRef.current === null) return;
-    const touchEndX = e.changedTouches[0].clientX;
-    const diff = touchStartXRef.current - touchEndX;
-    if (diff > 40) {
-      nextSlide();
-    } else if (diff < -40) {
-      prevSlide();
+    Array.from(container.children).forEach((child, idx) => {
+      const childCenter = child.offsetLeft - container.offsetLeft + child.clientWidth / 2;
+      const diff = Math.abs(containerCenter - childCenter);
+      if (diff < minDiff) {
+        minDiff = diff;
+        closestIdx = idx;
+      }
+    });
+
+    if (closestIdx !== activeSlide) {
+      setActiveSlide(closestIdx);
     }
-    touchStartXRef.current = null;
   };
 
   // Display all project installations directly for this place
   const displayedProjects = selectedPlace ? selectedPlace.projects : [];
+
+  // =========================================================================
+  // STATE 0: DEDICATED SERVICE PAGE VIEW (Invisible Grills, Cloth Hangers, Safety Nets, Spikes)
+  // =========================================================================
+  if (selectedService) {
+    return (
+      <section id="bangalore-dashboard" className="w-full pb-16 sm:pb-24">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+          <AurabServiceDetailView 
+            service={selectedService}
+            onBackToDashboard={onBackToDashboard}
+            onOpenBooking={onOpenBooking}
+          />
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="bangalore-dashboard" className="w-full pb-16 sm:pb-24">
@@ -127,32 +163,43 @@ export default function BangalorePlacesDashboard({
 
         {/* =========================================================================
             STATE 1: MAIN DASHBOARD VIEW
-            9:16 tall vertical aspect ratio as requested for modern mobile reels style.
+            Sequence:
+            1. The 6 Main Bangalore Places (JP Nagar, Whitefield, KR Puram, Hennur, RR Nagar, E-City)
+            2. The 4 Core Architectural Services (Invisible Grills, Cloth Hangers, Safety Nets, Bird Spikes)
+            All cards are clean with full image, badge & title. NO action buttons on dashboard cards.
             ========================================================================= */}
         {!selectedPlace ? (
-          <div className="space-y-4 pt-2">
+          <div className="space-y-8 sm:space-y-12 pt-2">
             
-            {/* The 6 Main Places in Tall Reels Cards with Direct Action Buttons */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-              {BANGALORE_PLACES.map((place) => (
-                <div
-                  key={place.id}
-                  className="rounded-3xl overflow-hidden shadow-xl border border-zinc-200 bg-white flex flex-col justify-between hover:shadow-2xl hover:border-zinc-300 transition-all duration-300"
-                >
-                  {/* Realistic Balcony Photo in 9:16 vertical view */}
+            {/* The 6 Main Places in Tall Reels Cards - Clean Full Image with Place Name */}
+            <div>
+              <div className="flex items-center justify-between pb-3 mb-4 border-b border-zinc-200">
+                <span className="text-xs sm:text-sm font-black uppercase tracking-wider text-zinc-900 flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                  Top Bangalore Hubs & Society Installations
+                </span>
+                <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest hidden sm:inline-block">
+                  6 Key Corridors
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+                {BANGALORE_PLACES.map((place) => (
                   <div
+                    key={place.id}
                     onClick={() => handleOpenPlace(place.id)}
-                    className="group relative aspect-[9/16] sm:aspect-[9/14] w-full overflow-hidden bg-zinc-950 cursor-pointer"
+                    className="group relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-zinc-200 bg-zinc-950 cursor-pointer hover:shadow-2xl hover:border-zinc-300 transition-all duration-300"
                   >
+                    {/* Full image display in 4:5 Aspect Ratio */}
                     <img
                       src={place.image}
                       alt={place.name}
-                      className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                       loading="eager"
                     />
 
                     {/* Status Pill Badge at Top */}
-                    <div className="absolute top-3 left-3 z-10 pointer-events-none">
+                    <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none">
                       {place.id === 'kr-puram' || place.id === 'hennur' ? (
                         <span className="px-2.5 py-1 rounded-full bg-emerald-700/95 backdrop-blur-md text-[10px] font-black uppercase tracking-wider text-white border border-white/20 shadow-md flex items-center gap-1">
                           <HardHat className="w-3 h-3 text-emerald-200" />
@@ -166,60 +213,90 @@ export default function BangalorePlacesDashboard({
                       )}
                     </div>
 
-                    {/* Minimal bottom edge vignette */}
+                    {/* Bottom edge vignette */}
                     <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/85 via-black/30 to-transparent pointer-events-none"></div>
 
-                    {/* Clean Floating Place Label & Details link */}
-                    <div className="absolute bottom-3.5 left-3.5 right-3.5 flex items-center justify-between text-white pointer-events-none">
-                      <span className="px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase border border-white/20 shadow-md">
+                    {/* Clean Floating Place Label - ONLY Place Name, NO arrow, NO extra buttons */}
+                    <div className="absolute bottom-4 left-4 z-10 pointer-events-none">
+                      <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md">
                         {place.name}
                       </span>
-                      <div className="px-3 py-1 rounded-full bg-white/20 backdrop-blur-md flex items-center gap-1 text-[11px] font-bold text-white group-hover:bg-emerald-600 transition-colors shadow-md">
-                        <span>Details</span>
-                        <ArrowRight className="w-3.5 h-3.5" />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* =========================================================================
+                SECTION: 4 CORE ARCHITECTURAL BALCONY SERVICES
+                1. Invisible Grills
+                2. Cloth Drying Hangers
+                3. Pigeon & Safety Nets
+                4. Bird Spikes
+                Clicking opens dedicated page featuring 6 varieties, problem/solutions, process & booking
+                ========================================================================= */}
+            <div className="pt-2 sm:pt-4 space-y-4 sm:space-y-6">
+              <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-zinc-200 pb-4">
+                <div>
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-black uppercase tracking-wider border border-emerald-200">
+                    <Layers className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Aurab Balcony Architectural Systems</span>
+                  </span>
+                  <h2 className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tight mt-2">
+                    4 Core Balcony Safety & Utility Services
+                  </h2>
+                  <p className="text-xs sm:text-sm text-zinc-500">
+                    Click any service to view 6 specialized varieties, problem & solution carousel, installation protocol & direct booking.
+                  </p>
+                </div>
+                <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest hidden sm:inline-block">
+                  Bangalore Certified
+                </span>
+              </div>
+
+              {/* 4 Services Grid in Uniform 4:5 Ratio */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+                {AURAB_SERVICES.map((srv) => (
+                  <div
+                    key={srv.id}
+                    onClick={() => handleOpenService(srv.id)}
+                    className="group relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-xl border border-zinc-200 bg-zinc-950 cursor-pointer hover:shadow-2xl hover:border-emerald-500/50 transition-all duration-300"
+                  >
+                    {/* Full Bleed Realistic Service Image */}
+                    <img
+                      src={srv.image}
+                      alt={srv.displayName}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+
+                    {/* Top Badge */}
+                    <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none">
+                      <span className="px-2.5 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-black uppercase tracking-wider text-emerald-400 border border-white/20 shadow-md flex items-center gap-1">
+                        <ShieldCheck className="w-3 h-3 text-emerald-400" />
+                        <span>{srv.badge}</span>
+                      </span>
+                    </div>
+
+                    {/* Bottom Vignette */}
+                    <div className="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black/95 via-black/50 to-transparent pointer-events-none" />
+
+                    {/* Service Name & Callout at Bottom (NO action buttons on dashboard cards, keeping them ultra clean) */}
+                    <div className="absolute bottom-4 inset-x-4 z-10 pointer-events-none flex flex-col gap-1.5">
+                      <span className="px-3 py-1.5 rounded-full bg-black/85 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md inline-block w-fit">
+                        {srv.name}
+                      </span>
+                      <p className="text-[11px] text-zinc-300 line-clamp-1 font-medium pl-1">
+                        {srv.tagline}
+                      </p>
+                      <div className="flex items-center gap-1 text-[11px] font-bold text-emerald-400 pl-1 pt-0.5">
+                        <span>Tap to view 6 varieties</span>
+                        <ArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </div>
                   </div>
-
-                  {/* Direct Call, WhatsApp & Free Visit Buttons (NO numbers shown) */}
-                  <div className="p-3 bg-white grid grid-cols-3 gap-2 border-t border-zinc-100">
-                    {/* Call Button */}
-                    <a
-                      href="tel:+918523068882"
-                      className="py-2.5 px-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs text-center active:scale-95"
-                      title="Call"
-                    >
-                      <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                      <span>Call</span>
-                    </a>
-
-                    {/* WhatsApp Button */}
-                    <a
-                      href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                        `Hello Aura Grills! I am interested in invisible grills in ${place.name}.`
-                      )}`}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="py-2.5 px-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs text-center active:scale-95"
-                      title="WhatsApp"
-                    >
-                      <WhatsAppIcon className="w-3.5 h-3.5 shrink-0" />
-                      <span>WhatsApp</span>
-                    </a>
-
-                    {/* Free Visit Button */}
-                    <button
-                      onClick={onOpenBooking}
-                      type="button"
-                      className="py-2.5 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-black transition flex items-center justify-center gap-1 shadow-xs cursor-pointer text-center active:scale-95"
-                      title="Free Visit"
-                    >
-                      <Calendar className="w-3.5 h-3.5 text-white shrink-0" />
-                      <span className="truncate">Free Visit</span>
-                    </button>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
           </div>
@@ -251,9 +328,9 @@ export default function BangalorePlacesDashboard({
               </span>
             </div>
 
-            {/* 1. Main Place Banner: 4:5 Aspect Ratio FULLY OCCUPIED - NO insert space, NO letterbox */}
+            {/* 1. Main Place Banner: 4:5 Aspect Ratio with Action Buttons directly ON the bottom border inside the image */}
             <div className="relative aspect-[4/5] max-w-md mx-auto w-full rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-zinc-200 bg-zinc-950">
-              {/* Full Bleed 4:5 Photo - 100% occupies frame with family & parents centered and fully visible */}
+              {/* Full Bleed 4:5 Photo */}
               <img
                 src={selectedPlace.image}
                 alt={`${selectedPlace.name} Balcony Invisible Grills`}
@@ -261,52 +338,54 @@ export default function BangalorePlacesDashboard({
                 loading="eager"
               />
 
-              {/* Minimal bottom vignette overlay */}
-              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none"></div>
-
-              {/* Place Name Badge on Banner */}
-              <div className="absolute bottom-3.5 left-3.5 right-3.5 z-20 pointer-events-none flex items-center justify-between">
-                <span className="px-3.5 py-1.5 rounded-full bg-black/75 backdrop-blur-md text-xs sm:text-sm font-black uppercase tracking-wider text-white border border-white/20 shadow-lg">
+              {/* Place Name Badge at Top */}
+              <div className="absolute top-3.5 left-3.5 z-20 pointer-events-none">
+                <span className="px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black uppercase tracking-wider text-white border border-white/20 shadow-lg">
                   {selectedPlace.id === 'kr-puram' || selectedPlace.id === 'hennur'
                     ? `${selectedPlace.name} • CERTIFIED HARNESS INSTALLATION`
                     : `${selectedPlace.name} • 100% FAMILY SAFE BALCONY`}
                 </span>
               </div>
-            </div>
 
-            {/* 2. The 3 Direct Action Buttons BELOW the 4:5 image (Call, WhatsApp, Free Visit) */}
-            <div className="grid grid-cols-3 gap-2.5 sm:gap-3.5 max-w-md mx-auto w-full">
-              {/* Button 1: Call */}
-              <a
-                href="tel:+918523068882"
-                className="py-3.5 px-2 sm:px-4 rounded-2xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs sm:text-sm font-bold transition flex items-center justify-center gap-1.5 sm:gap-2 border border-zinc-700 shadow-md text-center active:scale-98"
-              >
-                <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
-                <span>Call</span>
-              </a>
+              {/* Action Buttons directly ON top of the bottom border inside the 4:5 image */}
+              <div className="absolute inset-x-0 bottom-0 pt-16 pb-3.5 px-3 sm:px-4 bg-gradient-to-t from-black/95 via-black/75 to-transparent z-20">
+                <div className="grid grid-cols-3 gap-2 sm:gap-2.5">
+                  {/* Button 1: Call */}
+                  <a
+                    href="tel:+918523068882"
+                    className="py-3 px-2 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-white text-xs sm:text-sm font-bold transition flex items-center justify-center gap-1.5 border border-white/20 shadow-lg text-center backdrop-blur-md active:scale-95"
+                    title="Call"
+                  >
+                    <Phone className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span>Call</span>
+                  </a>
 
-              {/* Button 2: WhatsApp */}
-              <a
-                href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                  `Hello Aura Grills! I am from ${selectedPlace.name} and want to inquire about balcony invisible grills.`
-                )}`}
-                target="_blank"
-                rel="noreferrer"
-                className="py-3.5 px-2 sm:px-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-bold transition flex items-center justify-center gap-1.5 sm:gap-2 shadow-md text-center active:scale-98"
-              >
-                <WhatsAppIcon className="w-4 h-4 shrink-0" />
-                <span>WhatsApp</span>
-              </a>
+                  {/* Button 2: WhatsApp */}
+                  <a
+                    href={`https://wa.me/918523068882?text=${encodeURIComponent(
+                      `Hello Aurab Grills! I am from ${selectedPlace.name} and want to inquire about balcony invisible grills.`
+                    )}`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="py-3 px-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs sm:text-sm font-bold transition flex items-center justify-center gap-1.5 shadow-lg text-center backdrop-blur-md active:scale-95"
+                    title="WhatsApp"
+                  >
+                    <WhatsAppIcon className="w-4 h-4 shrink-0" />
+                    <span>WhatsApp</span>
+                  </a>
 
-              {/* Button 3: Free Visit Survey */}
-              <button
-                onClick={onOpenBooking}
-                type="button"
-                className="py-3.5 px-2 sm:px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-black transition flex items-center justify-center gap-1.5 sm:gap-2 shadow-md cursor-pointer text-center active:scale-98"
-              >
-                <Calendar className="w-4 h-4 text-white shrink-0" />
-                <span className="truncate">Free Visit</span>
-              </button>
+                  {/* Button 3: Free Visit Survey */}
+                  <button
+                    onClick={onOpenBooking}
+                    type="button"
+                    className="py-3 px-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-black transition flex items-center justify-center gap-1 shadow-lg cursor-pointer text-center active:scale-95"
+                    title="Free Visit"
+                  >
+                    <Calendar className="w-4 h-4 text-white shrink-0" />
+                    <span className="truncate">Free Visit</span>
+                  </button>
+                </div>
+              </div>
             </div>
 
             {/* 2. FIRST: Problems & Solutions in SLIDING CAROUSEL (1-2 lines text, NO inside buttons) */}
@@ -349,33 +428,33 @@ export default function BangalorePlacesDashboard({
                 </div>
               </div>
 
-              {/* Multi-Card Horizontal Sliding Track (Touch Swipe on Mobile) */}
+              {/* Multi-Card Horizontal Sliding Track - Smooth native snap, NO vertical jump, NO auto timer bounce */}
               <div
                 ref={sliderRef}
-                onTouchStart={handleTouchStart}
-                onTouchEnd={handleTouchEnd}
-                className="flex items-stretch gap-3 sm:gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-2 pt-1"
+                onScroll={handleSliderScroll}
+                className="flex items-stretch gap-3.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-3 pt-1 touch-pan-x overscroll-x-contain"
               >
                 {problemSolutionsList.map((item, idx) => {
                   const isActive = activeSlide === idx;
                   return (
                     <div
                       key={item.id}
-                      onClick={() => setActiveSlide(idx)}
-                      className={`snap-center shrink-0 w-[84vw] sm:w-[320px] lg:w-[360px] rounded-2xl border transition-all duration-300 bg-white p-3 shadow-xs flex flex-col justify-between cursor-pointer ${
+                      onClick={() => scrollToSlide(idx)}
+                      className={`snap-center shrink-0 w-[78vw] sm:w-[300px] lg:w-[320px] rounded-3xl border transition-all duration-300 bg-white p-3 shadow-md flex flex-col justify-between cursor-pointer select-none ${
                         isActive
-                          ? 'border-emerald-600 ring-2 ring-emerald-500/20 shadow-md'
-                          : 'border-zinc-200 hover:border-zinc-300 opacity-90'
+                          ? 'border-emerald-600 ring-2 ring-emerald-500/20 shadow-lg'
+                          : 'border-zinc-200 hover:border-zinc-300 opacity-95'
                       }`}
                     >
-                      {/* Photo in 16:9 Widescreen Framing (Uncropped) */}
-                      <div className="relative aspect-16/9 w-full rounded-xl overflow-hidden bg-zinc-950">
+                      {/* Photo in EXACT Uniform 4:5 Aspect Ratio */}
+                      <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-zinc-950">
                         <img
                           src={item.image}
                           alt={item.title}
                           className="w-full h-full object-cover object-center"
+                          loading="lazy"
                         />
-                        <span className="absolute top-2.5 left-2.5 px-2.5 py-0.5 rounded-full bg-zinc-950/80 backdrop-blur-md text-[10px] font-black uppercase text-white tracking-wider">
+                        <span className="absolute top-2.5 left-2.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-black uppercase text-emerald-400 border border-white/20 tracking-wider shadow-md">
                           {item.badge}
                         </span>
                       </div>
@@ -399,7 +478,7 @@ export default function BangalorePlacesDashboard({
                 {problemSolutionsList.map((_, idx) => (
                   <button
                     key={idx}
-                    onClick={() => setActiveSlide(idx)}
+                    onClick={() => scrollToSlide(idx)}
                     type="button"
                     className={`h-1.5 rounded-full transition-all cursor-pointer ${
                       activeSlide === idx ? 'w-6 bg-emerald-600' : 'w-2 bg-zinc-300'
@@ -430,15 +509,15 @@ export default function BangalorePlacesDashboard({
                     className="rounded-3xl border border-zinc-200 bg-white overflow-hidden flex flex-col justify-between hover:shadow-xl hover:border-zinc-300 transition shadow-xs"
                   >
                     <div>
-                      {/* Project Real Balcony Photo (16:10 aspect ratio) */}
-                      <div className="relative aspect-16/10 w-full overflow-hidden bg-zinc-950">
+                      {/* Project Real Balcony Photo in 4:5 Aspect Ratio */}
+                      <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-950">
                         <img
                           src={project.image}
                           alt={project.name}
                           className="w-full h-full object-cover object-center"
                           loading="lazy"
                         />
-                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider">
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-600 text-white text-[10px] font-black uppercase tracking-wider shadow-md">
                           {project.elevation}
                         </div>
                       </div>
@@ -472,7 +551,7 @@ export default function BangalorePlacesDashboard({
                       {/* WhatsApp Button */}
                       <a
                         href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                          `Hello Aura Grills! I am interested in balcony invisible grills like ${project.name} in ${selectedPlace.name}.`
+                          `Hello Aurab Grills! I am interested in balcony invisible grills like ${project.name} in ${selectedPlace.name}.`
                         )}`}
                         target="_blank"
                         rel="noreferrer"

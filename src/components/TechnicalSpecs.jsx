@@ -25,7 +25,7 @@ export default function TechnicalSpecs({ onOpenBooking }) {
             SS-316 Marine Grade Architectural Integrity
           </h2>
           <p className="text-slate-600 text-sm sm:text-base">
-            Every millimeter of cable, anchor bolt, and extruded track installed by Aura Grills in Bangalore is certified to international aerospace and structural safety standards.
+            Every millimeter of cable, anchor bolt, and extruded track installed by Aurab Grills in Bangalore is certified to international aerospace and structural safety standards.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function TechnicalSpecs({ onOpenBooking }) {
 
                 <div className="pt-4 mt-2 border-t border-slate-200/60 flex items-center gap-1.5 text-[11px] font-bold text-slate-700">
                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                  <span>Tested & Stamped by Aura Grills BLR</span>
+                  <span>Tested & Stamped by Aurab Grills BLR</span>
                 </div>
               </div>
             );

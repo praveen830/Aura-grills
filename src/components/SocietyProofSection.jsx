@@ -23,8 +23,8 @@ export default function SocietyProofSection({ onOpenBooking, onSelectLocation })
     {
       id: 2,
       name: "Sobha Dream Acres",
-      hub: "sarjapur-bellandur",
-      hubLabel: "Sarjapur & Bellandur",
+      hub: "kr-puram",
+      hubLabel: "KR Puram Corridor",
       location: "Panathur Road, Balagere, Sarjapur Belt",
       elevation: "18th-Floor Lake-Facing Flat",
       metallurgy: "2.5mm Molybdenum SS-316",
@@ -139,7 +139,7 @@ export default function SocietyProofSection({ onOpenBooking, onSelectLocation })
     { label: "Whitefield", value: "whitefield" },
     { label: "Koramangala & HSR", value: "koramangala-hsr" },
     { label: "Indiranagar & Domlur", value: "indiranagar-domlur" },
-    { label: "Sarjapur & Bellandur", value: "sarjapur-bellandur" },
+    { label: "KR Puram", value: "kr-puram" },
     { label: "Electronic City", value: "electronic-city" },
     { label: "JP Nagar", value: "jp-nagar-jayanagar" },
     { label: "Hebbal", value: "hebbal-yelahanka" }

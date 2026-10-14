@@ -42,11 +42,11 @@ export default function BeforeAfterComparison({ onOpenBooking }) {
             onMouseMove={handleMouseMove}
             onTouchMove={handleTouchMove}
           >
-            {/* Background Layer: RIGHT SIDE (Aura Grills SS-316 Invisible Grill - Bright, Clear View) */}
+            {/* Background Layer: RIGHT SIDE (Aurab Grills SS-316 Invisible Grill - Bright, Clear View) */}
             <div className="absolute inset-0 w-full h-full">
               <img
                 src="/images/whitefield-real-balcony.jpg"
-                alt="Aura Grills Invisible Grill Installation"
+                alt="Aurab Grills Invisible Grill Installation"
                 className="w-full h-full object-cover"
               />
               {/* Invisible Wires Simulation */}

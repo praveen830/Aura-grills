@@ -164,7 +164,7 @@ export default function LocationDetailModal({ location, onClose, onOpenBooking }
             </div>
           </div>
 
-          {/* 3. Landmark Societies Fitted with Aura Grills Grills */}
+          {/* 3. Landmark Societies Fitted with Aurab Grills Grills */}
           <div className="p-4 rounded-2xl bg-emerald-50/70 border border-emerald-200 space-y-2.5">
             <h3 className="text-xs font-black uppercase tracking-wider text-emerald-950 flex items-center gap-2">
               <Building className="w-4 h-4 text-emerald-700" />

@@ -37,7 +37,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Arun & Pooja Nair",
       society: "Prestige Shantiniketan, Tower 18 (26th Floor)",
-      comment: "Living on the 26th floor with a 3-year-old was terrifying until Aura Grills installed invisible grills. The view of ITPL skyline is 100% open, but the safety is unbreakable. Highly recommended!"
+      comment: "Living on the 26th floor with a 3-year-old was terrifying until Aurab Grills installed invisible grills. The view of ITPL skyline is 100% open, but the safety is unbreakable. Highly recommended!"
     }
   },
   {
@@ -77,7 +77,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Vikram Shenoy",
       society: "Salarpuria Greenage, Block Ebony",
-      comment: "Our balcony faces Agara Lake, and we didn't want ugly iron cages ruining our morning coffee. The Aura Grills team finished in 4 hours. You can barely see the wires from 10 feet away!"
+      comment: "Our balcony faces Agara Lake, and we didn't want ugly iron cages ruining our morning coffee. The Aurab Grills team finished in 4 hours. You can barely see the wires from 10 feet away!"
     }
   },
   {
@@ -117,47 +117,47 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Dr. Ananya Murthy",
       society: "Defence Colony Penthouse, Indiranagar",
-      comment: "Aura Grills preserved our colonial elevation aesthetics while giving us total safety for our Golden Retriever. Clean, professional and respectful technicians."
+      comment: "Aurab Grills preserved our colonial elevation aesthetics while giving us total safety for our Golden Retriever. Clean, professional and respectful technicians."
     }
   },
   {
-    id: "sarjapur-bellandur",
-    mainPlace: "Sarjapur Road & Bellandur",
-    tagline: "Bangalore Tech Belt High-Rise Mega Communities",
-    zone: "East-South Corridor",
+    id: "kr-puram",
+    mainPlace: "KR Puram & Lake Road Corridor",
+    tagline: "East-Central Connecting High-Rise & Precision Balcony Safety",
+    zone: "East-Central Bangalore",
     rating: "4.97",
-    completedProjects: 410,
-    coverImage: "/images/sarjapur-balcony.jpg",
+    completedProjects: 310,
+    coverImage: "/images/places/kr-puram.jpg",
     installerImage: "/images/installer-work-real.jpg",
-    leadTechnician: "Santhosh Kumar (High-Rise Tensioning Specialist)",
+    leadTechnician: "Prasad Rao (KR Puram Division Lead)",
     subPlaces: [
-      "Haralur Road & Silver County",
-      "Carmelaram & Decathlon Belt",
-      "Doddakannelli & Wipro SEZ Junction",
-      "Kasavanahalli Lake Road",
-      "Green Glen Layout (Bellandur)",
-      "Rainbow Drive & Sarjapur Village"
+      "TC Palya Main Road",
+      "Bhattarahalli High-Rise Belt",
+      "KR Puram Lake Road Corridor",
+      "Medahalli Gated Enclave",
+      "Devasandra Family Balconies",
+      "Kithaganur Lakeview Strip"
     ],
     prominentSocieties: [
-      "Sobha Dream Acres (Over 85 flats installed)",
-      "Assetz Marq & East Point",
-      "SJR Watermark & Primecorp Meadows",
-      "DNR Reflection (Bellandur Lakefront)",
-      "Godrej Eternity & Park Retreat"
+      "Sobha Lake Garden (19th Floor Lake View)",
+      "Prestige Sunrise (12th Floor Sky Balcony)",
+      "Century Real Estate Horizon",
+      "Salarpuria Sattva East Crest",
+      "Monarch Serenity & Lakeview"
     ],
     installationRequirements: {
-      balconyType: "Balconies with Pigeon Infestation & Open Utility Areas",
-      recommendedWire: "SS-316 Aerospace 3.0mm with Anti-Cut Core",
-      spacing: "2-Inch Pigeon Deterrent Tight Spacing",
-      anchorSystem: "Seismic-Grade Structural Fasteners",
-      trackFinish: "Heavy Duty Extruded Aluminum Track with Drainage Cutouts",
-      surveyTime: "Same-Day Within 45 Minutes (Dedicated Bellandur Van)",
-      turnaround: "Fast Installation (3 Hours per Balcony)"
+      balconyType: "Lakefront High-Wind Balconies & Toddler Safety Spacing",
+      recommendedWire: "SS-316 Marine Grade 3.0mm with UV Transparent Sheath",
+      spacing: "2-Inch (Child Safe + Pigeon Barrier)",
+      anchorSystem: "Hilti Heavy-Duty Stainless Steel Concrete Anchors",
+      trackFinish: "Matt Charcoal Architectural Powder-Coated Aluminum Track",
+      surveyTime: "Same-Day Within 60 Minutes (Dedicated KR Puram Van)",
+      turnaround: "Single Day Complete Installation (3.5 Hours)"
     },
     localReview: {
-      author: "Karthik Raghavan",
-      society: "Sobha Dream Acres, Wing 14",
-      comment: "Pigeons in Sarjapur were making our balcony unusable. Green nets looked like a slum. Aura Grills invisible grills solved the pigeon problem permanently and looks like 5-star hotel luxury!"
+      author: "Prasad & Shruthi",
+      society: "Sobha Lake Garden, 19th Floor",
+      comment: "Lake breeze was bringing pigeons and strong winds. Aurab Grills team did laser-calibrated invisible grill tensioning. 100% child-safe and our view is completely unhindered!"
     }
   },
   {
@@ -197,7 +197,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Praveen & Sneha",
       society: "Godrej E-City, Phase 1",
-      comment: "Affordable, authentic SS-316 certificate provided on the spot, and zero disturbance during installation. Top marks to Aura Grills!"
+      comment: "Affordable, authentic SS-316 certificate provided on the spot, and zero disturbance during installation. Top marks to Aurab Grills!"
     }
   },
   {
@@ -237,7 +237,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Deepak Somasekhar",
       society: "Brigade Millennium, Magnolia Block",
-      comment: "Aura Grills installed grills for 3 balconies in our duplex. Our kids can now play freely in the balcony without us worrying for a second."
+      comment: "Aurab Grills installed grills for 3 balconies in our duplex. Our kids can now play freely in the balcony without us worrying for a second."
     }
   },
   {
@@ -278,7 +278,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Col. Rajesh Verma (Retd.)",
       society: "SNN Clermont, 34th Floor, Hebbal",
-      comment: "At the 34th floor, wind speeds are intense. Aura Grills did a laser-calibrated tensioning job that is sturdy as a rock. Outstanding engineering."
+      comment: "At the 34th floor, wind speeds are intense. Aurab Grills did a laser-calibrated tensioning job that is sturdy as a rock. Outstanding engineering."
     }
   }
 ];

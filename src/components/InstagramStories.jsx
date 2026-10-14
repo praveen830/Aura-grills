@@ -150,7 +150,7 @@ export default function InstagramStories({ onOpenBooking }) {
                     <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 fill-emerald-400/20" />
                   </div>
                   <div className="text-[10px] text-slate-300 font-medium">
-                    Aura Grills Certified BLR Team • {activeStory.tag}
+                    Aurab Grills Certified BLR Team • {activeStory.tag}
                   </div>
                 </div>
               </div>

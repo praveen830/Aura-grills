@@ -12,9 +12,11 @@ import InstallationSafetyProcess from './components/InstallationSafetyProcess';
 export default function App() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
   const [selectedPlaceId, setSelectedPlaceId] = useState(null);
+  const [selectedServiceId, setSelectedServiceId] = useState(null);
 
   const handleGoToDashboard = () => {
     setSelectedPlaceId(null);
+    setSelectedServiceId(null);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -27,16 +29,18 @@ export default function App() {
 
       {/* Main Experience: Starts IMMEDIATELY with the Dashboard */}
       <main className="w-full pt-16 sm:pt-20">
-        {/* Bangalore 6-Places Dashboard & Sub-Pages Flow (JP Nagar, KR Puram, RR Nagar, Hennur, E-City, Whitefield) */}
+        {/* Bangalore 6-Places Dashboard & Sub-Pages Flow + 4 Services Flow */}
         <BangalorePlacesDashboard 
           selectedPlaceId={selectedPlaceId}
           onSelectPlace={setSelectedPlaceId}
+          selectedServiceId={selectedServiceId}
+          onSelectService={setSelectedServiceId}
           onBackToDashboard={handleGoToDashboard}
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
-        {/* 3. Simple 3-Step Process, Installation & Safety, Testimonials (Only shown on main dashboard view, avoiding clutter after place projects) */}
-        {!selectedPlaceId && (
+        {/* 3. Simple 3-Step Process, Installation & Safety, Testimonials (Only shown on main dashboard view, avoiding clutter after place projects or service details) */}
+        {!selectedPlaceId && !selectedServiceId && (
           <>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <InstallationSafetyProcess onOpenBooking={() => setIsBookingOpen(true)} />

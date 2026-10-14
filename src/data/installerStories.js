@@ -28,7 +28,7 @@ export const INSTALLER_STORIES = [
     title: "Complete Peace of Mind for Active Toddlers & Pets",
     technician: "Quality Inspector Ramesh",
     image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1080&q=80",
-    caption: "Kids love running onto balconies. With Aura Grills 2-inch precision gap and 400kg break strength, parents can relax with 100% peace of mind. Soft nylon coat protects delicate skin.",
+    caption: "Kids love running onto balconies. With Aurab Grills 2-inch precision gap and 400kg break strength, parents can relax with 100% peace of mind. Soft nylon coat protects delicate skin.",
     stats: "Tensile: 400kg • Spacing: 50mm",
     cta: "Get Toddler-Proof Grill"
   },
@@ -59,7 +59,7 @@ export const INSTALLER_STORIES = [
     label: "Pigeon Proof",
     tag: "Clean Balcony",
     title: "Zero Pigeon Nuisance Without Ugly Green Nets",
-    technician: "Santhosh (Bellandur)",
+    technician: "Prasad Rao (KR Puram)",
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1080&q=80",
     caption: "Stop pigeons from dirtying your balcony floor and AC units. 2-inch vertical cables prevent pigeons from roosting while keeping the facade clean, luxurious and odor-free.",
     stats: "Pigeon Block: 100% • Net-Free",

@@ -55,7 +55,7 @@ export default function InstallationProcess({ onOpenBooking }) {
             <span>👷 Real Technicians • Precision Craftsmanship</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-slate-900 tracking-tight">
-            How Aura Grills Secures Your High-Rise Balcony
+            How Aurab Grills Secures Your High-Rise Balcony
           </h2>
           <p className="text-slate-600 text-sm sm:text-base">
             No messy welding, no fire hazard sparks, no facade damage. A spotless 4-hour installation by background-verified, harness-certified engineers.

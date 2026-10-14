@@ -18,7 +18,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
       cta: `Solve in ${location.mainPlace.split(' ')[0]} →`
     },
     {
-      num: "02 • AURA GRILLS SOLUTION",
+      num: "02 • Aurab Grills SOLUTION",
       isProblem: false,
       category: "CHILDREN SAFETY",
       tag: "🛡️ 100% TODDLER FALL PROTECTION",
@@ -38,7 +38,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
       cta: `Solve in ${location.mainPlace.split(' ')[0]} →`
     },
     {
-      num: "04 • AURA GRILLS SOLUTION",
+      num: "04 • Aurab Grills SOLUTION",
       isProblem: false,
       category: "PIGEON MENACE",
       tag: "🛡️ 100% BIRD-FREE CLEAN HYGIENE",
@@ -58,7 +58,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
       cta: `Solve in ${location.mainPlace.split(' ')[0]} →`
     },
     {
-      num: "06 • AURA GRILLS SOLUTION",
+      num: "06 • Aurab Grills SOLUTION",
       isProblem: false,
       category: "VIEW & AIRFLOW",
       tag: "🛡️ 99% AIRFLOW & 1-MIN FIRE ESCAPE",
@@ -78,7 +78,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
       cta: `Solve in ${location.mainPlace.split(' ')[0]} →`
     },
     {
-      num: "08 • AURA GRILLS SOLUTION",
+      num: "08 • Aurab Grills SOLUTION",
       isProblem: false,
       category: "SENIOR CITIZENS",
       tag: "🛡️ 100% PEACEFUL RETIREMENT & VERTIGO RELIEF",
@@ -98,7 +98,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
       cta: `Solve in ${location.mainPlace.split(' ')[0]} →`
     },
     {
-      num: "10 • AURA GRILLS SOLUTION",
+      num: "10 • Aurab Grills SOLUTION",
       isProblem: false,
       category: "FIRE SAFETY & ESCAPE",
       tag: "🧯 60-SEC EMERGENCY LIFE-SAVING EGRESS",
@@ -118,7 +118,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
       cta: `Solve in ${location.mainPlace.split(' ')[0]} →`
     },
     {
-      num: "12 • AURA GRILLS SOLUTION",
+      num: "12 • Aurab Grills SOLUTION",
       isProblem: false,
       category: "PET SAFETY & FREEDOM",
       tag: "🐾 100% SECURE PET FREEDOM & RELAXATION",
@@ -163,7 +163,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
             <div className="relative w-full rounded-3xl overflow-hidden border-2 border-emerald-500 bg-white shadow-2xl group">
               <GrillVisualizer
                 imageSrc={location.coverImage}
-                altText={`Aura Grills Invisible Safety in ${location.mainPlace}`}
+                altText={`Aurab Grills Invisible Safety in ${location.mainPlace}`}
                 locationName={location.mainPlace}
                 completedProjects={location.completedProjects}
               />
@@ -374,7 +374,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
         <div className="p-6 sm:p-8 rounded-3xl bg-emerald-50/60 border border-emerald-200 space-y-4">
           <div className="flex items-center gap-2 text-xs font-black uppercase tracking-wider text-emerald-900">
             <Building className="w-4 h-4 text-emerald-700" />
-            <span>Landmark High-Rise Societies Installed by Aura Grills</span>
+            <span>Landmark High-Rise Societies Installed by Aurab Grills</span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">

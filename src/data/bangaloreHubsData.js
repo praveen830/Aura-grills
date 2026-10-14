@@ -1,52 +1,5 @@
 export const BANGALORE_PLACES = [
   {
-    id: 'jp-nagar',
-    name: 'JP NAGAR',
-    displayName: 'JP Nagar Invisible Grills',
-    zone: 'South Bangalore Corridor',
-    tagline: 'Luxury High-Rise Balconies & Penthouse Child Safety',
-    image: '/images/places/jp-nagar.jpg',
-    stats: '48+ Societies Secured • 100% Baby Safe',
-    leadSupervisor: 'Nagaraj V. (JP Nagar Division)',
-    vanStatus: 'Rapid Survey Van active in JP Nagar Phases 1-9 today',
-    subPlaces: [
-      { name: '1st to 9th Phase', desc: 'High-rise towers & duplex verandas', verified: '18 Societies' },
-      { name: 'Sarakki Lake Corridor', desc: 'Lakefront apartments & balcony safety', verified: '12 Societies' },
-      { name: 'Dollars Colony', desc: 'Luxury villas & terrace balconies', verified: '8 Societies' },
-      { name: 'Brigade Millennium Road', desc: 'Multi-tower gated residential campus', verified: '14 Societies' },
-      { name: 'Puttenahalli', desc: 'Apartment balconies & child safety', verified: '9 Societies' }
-    ],
-    projects: [
-      {
-        id: 'jp-1',
-        name: 'Brigade Millennium',
-        location: 'Brigade Millennium Road, JP Nagar 7th Phase',
-        elevation: 'Tower 4, 16th Floor Balcony',
-        image: '/images/places/jp-nagar.jpg',
-        description: 'Floor-to-ceiling invisible grill installed with 2-inch safe spacing. Toddler plays safely with 100% open skyline daylight.',
-        specs: 'SS-316 Marine • 2-Inch Safe Spacing • 10-Yr Guarantee'
-      },
-      {
-        id: 'jp-2',
-        name: 'HM World City',
-        location: '1st Phase Corridor, JP Nagar',
-        elevation: '14th Floor Duplex Deck',
-        image: '/images/luxury-family-balcony-sunset.jpg',
-        description: 'Complete balcony bird and child security. Pigeons cannot perch, while fresh morning breeze is 100% preserved.',
-        specs: '400kg Tension • Toddler Safe • Pigeon Shield'
-      },
-      {
-        id: 'jp-3',
-        name: 'Salarpuria Sattva Misty Charm',
-        location: 'Near Sarakki Lake, JP Nagar',
-        elevation: '18th Floor Lake View',
-        image: '/images/hsr-family-balcony.jpg',
-        description: 'High-altitude invisible grill with zero vibration. Uncut lake view without cage-like iron bars.',
-        specs: 'Floor-to-Ceiling • Zero View Loss • Rust Proof'
-      }
-    ]
-  },
-  {
     id: 'kr-puram',
     name: 'KR PURAM',
     displayName: 'KR Puram Invisible Grills',
@@ -69,7 +22,7 @@ export const BANGALORE_PLACES = [
         name: 'Sobha Lake Garden',
         location: 'KR Puram Lake Road',
         elevation: '19th Floor Lake View Balcony',
-        image: '/images/places/kr-puram.jpg',
+        image: '/images/services/ig-lakeview-hero.jpg',
         description: 'Permanent solution to pigeon nesting along lake breeze. Balcony stays completely clean and odor-free 365 days a year.',
         specs: '100% Pigeon Shield • Marine SS-316 • Clean Breeze'
       },
@@ -78,7 +31,7 @@ export const BANGALORE_PLACES = [
         name: 'Prestige Sunrise',
         location: 'TC Palya Main Road Corridor',
         elevation: '12th Floor Sky Balcony',
-        image: '/images/whitefield-real-balcony.jpg',
+        image: '/images/services/ig-highrise-vertical.jpg',
         description: '2-inch precision spacing preventing toddler climbing while giving panoramic views of eastern horizon.',
         specs: 'Child Fall Protection • 50mm Safe Gap • 400kg Safe'
       },
@@ -87,9 +40,103 @@ export const BANGALORE_PLACES = [
         name: 'Century Real Estate Horizon',
         location: 'Bhattarahalli High-Rise',
         elevation: '16th Floor Balcony & Utility',
-        image: '/images/penthouse-panoramic-balcony.jpg',
+        image: '/images/services/ig-cityview-balcony.jpg',
         description: 'Single continuous cable lacing with dust-free vacuum drilling. Zero damage to imported balcony tiles.',
         specs: 'Continuous Lacing • Dust-Free Drill • 10-Yr Warranty'
+      }
+    ]
+  },
+  {
+    id: 'whitefield',
+    name: 'WHITEFIELD',
+    displayName: 'Whitefield Invisible Grills',
+    zone: 'East Bengaluru High-Rise Mega Corridor',
+    tagline: 'Penthouse Horizons, High-Rise Balconies & Child Safety',
+    image: '/images/places/whitefield.jpg',
+    stats: '78+ Societies Secured • Bangalore #1 Corridor',
+    leadSupervisor: 'Suresh Gowda (Whitefield Alpha Crew)',
+    vanStatus: 'Rapid Survey Van active across ITPL & Kadugodi today',
+    subPlaces: [
+      { name: 'Kadugodi & Seegehalli', desc: 'High-rise towers & penthouse balconies', verified: '24 Societies' },
+      { name: 'ITPL Main Road', desc: 'Mega high-rise apartment communities', verified: '26 Societies' },
+      { name: 'Varthur Road', desc: 'Lakefront apartments & balcony safety', verified: '16 Societies' },
+      { name: 'Hope Farm Junction', desc: 'Family balconies & french window grills', verified: '15 Societies' },
+      { name: 'ECC Road', desc: 'Duplex verandas & pet safety', verified: '12 Societies' }
+    ],
+    projects: [
+      {
+        id: 'wf-1',
+        name: 'Prestige Shantiniketan',
+        location: 'ITPL Main Road, Whitefield',
+        elevation: 'Tower 18, 26th Floor Penthouse',
+        image: '/images/services/ig-sunset-skyline.jpg',
+        description: 'Floor-to-ceiling invisible grill setup preserving the ITPL horizon. 100% child-safe, zero bird droppings, invisible from 5 meters.',
+        specs: 'Toddler Safe • Zero Bird Droppings • Marine SS-316'
+      },
+      {
+        id: 'wf-2',
+        name: 'Godrej United',
+        location: 'Whitefield Main Road',
+        elevation: 'Tower 2, 22nd Floor Curved Balcony',
+        image: '/images/whitefield-real-balcony.jpg',
+        description: 'Continuous aluminum track custom-bent to match curved high-rise balcony. Certified 400kg tensile load.',
+        specs: 'Curved Balcony Continuous Track • 400kg Tensile'
+      },
+      {
+        id: 'wf-3',
+        name: 'Brigade Cosmopolis',
+        location: 'ECC Road, Whitefield',
+        elevation: '18th Floor Duplex Balcony',
+        image: '/images/luxury-family-balcony-sunset.jpg',
+        description: 'Preserves the golden-hour sunset view for family gatherings. High-grade marine steel with 10-year rust guarantee.',
+        specs: 'Unobstructed Horizon • Hilti Expansion Anchors'
+      }
+    ]
+  },
+  {
+    id: 'jp-nagar',
+    name: 'JP NAGAR',
+    displayName: 'JP Nagar Invisible Grills',
+    zone: 'South Bangalore Corridor',
+    tagline: 'Luxury High-Rise Balconies & Penthouse Child Safety',
+    image: '/images/places/jp-nagar.jpg',
+    stats: '48+ Societies Secured • 100% Baby Safe',
+    leadSupervisor: 'Nagaraj V. (JP Nagar Division)',
+    vanStatus: 'Rapid Survey Van active in JP Nagar Phases 1-9 today',
+    subPlaces: [
+      { name: '1st to 9th Phase', desc: 'High-rise towers & duplex verandas', verified: '18 Societies' },
+      { name: 'Sarakki Lake Corridor', desc: 'Lakefront apartments & balcony safety', verified: '12 Societies' },
+      { name: 'Dollars Colony', desc: 'Luxury villas & terrace balconies', verified: '8 Societies' },
+      { name: 'Brigade Millennium Road', desc: 'Multi-tower gated residential campus', verified: '14 Societies' },
+      { name: 'Puttenahalli', desc: 'Apartment balconies & child safety', verified: '9 Societies' }
+    ],
+    projects: [
+      {
+        id: 'jp-1',
+        name: 'Brigade Millennium',
+        location: 'Brigade Millennium Road, JP Nagar 7th Phase',
+        elevation: 'Tower 4, 16th Floor Balcony',
+        image: '/images/services/ig-balcony-plants.jpg',
+        description: 'Floor-to-ceiling invisible grill installed with 2-inch safe spacing. Toddler plays safely with 100% open skyline daylight.',
+        specs: 'SS-316 Marine • 2-Inch Safe Spacing • 10-Yr Guarantee'
+      },
+      {
+        id: 'jp-2',
+        name: 'HM World City',
+        location: '1st Phase Corridor, JP Nagar',
+        elevation: '14th Floor Duplex Deck',
+        image: '/images/luxury-family-balcony-sunset.jpg',
+        description: 'Complete balcony bird and child security. Pigeons cannot perch, while fresh morning breeze is 100% preserved.',
+        specs: '400kg Tension • Toddler Safe • Pigeon Shield'
+      },
+      {
+        id: 'jp-3',
+        name: 'Salarpuria Sattva Misty Charm',
+        location: 'Near Sarakki Lake, JP Nagar',
+        elevation: '18th Floor Lake View',
+        image: '/images/hsr-family-balcony.jpg',
+        description: 'High-altitude invisible grill with zero vibration. Uncut lake view without cage-like iron bars.',
+        specs: 'Floor-to-Ceiling • Zero View Loss • Rust Proof'
       }
     ]
   },
@@ -231,53 +278,6 @@ export const BANGALORE_PLACES = [
         image: '/images/installer-work-real.jpg',
         description: 'Precision calibrated tension cables with dust-free drilling. Verified by society resident welfare association.',
         specs: 'Single-Day Installation • Clean Drilling • 10-Yr Card'
-      }
-    ]
-  },
-  {
-    id: 'whitefield',
-    name: 'WHITEFIELD',
-    displayName: 'Whitefield Invisible Grills',
-    zone: 'East Bengaluru High-Rise Mega Corridor',
-    tagline: 'Penthouse Horizons, High-Rise Balconies & Child Safety',
-    image: '/images/places/whitefield.jpg',
-    stats: '78+ Societies Secured • Bangalore #1 Corridor',
-    leadSupervisor: 'Suresh Gowda (Whitefield Alpha Crew)',
-    vanStatus: 'Rapid Survey Van active across ITPL & Kadugodi today',
-    subPlaces: [
-      { name: 'Kadugodi & Seegehalli', desc: 'High-rise towers & penthouse balconies', verified: '24 Societies' },
-      { name: 'ITPL Main Road', desc: 'Mega high-rise apartment communities', verified: '26 Societies' },
-      { name: 'Varthur Road', desc: 'Lakefront apartments & balcony safety', verified: '16 Societies' },
-      { name: 'Hope Farm Junction', desc: 'Family balconies & french window grills', verified: '15 Societies' },
-      { name: 'ECC Road', desc: 'Duplex verandas & pet safety', verified: '12 Societies' }
-    ],
-    projects: [
-      {
-        id: 'wf-1',
-        name: 'Prestige Shantiniketan',
-        location: 'ITPL Main Road, Whitefield',
-        elevation: 'Tower 18, 26th Floor Penthouse',
-        image: '/images/places/whitefield.jpg',
-        description: 'Floor-to-ceiling invisible grill setup preserving the ITPL horizon. 100% child-safe, zero bird droppings, invisible from 5 meters.',
-        specs: 'Toddler Safe • Zero Bird Droppings • Marine SS-316'
-      },
-      {
-        id: 'wf-2',
-        name: 'Godrej United',
-        location: 'Whitefield Main Road',
-        elevation: 'Tower 2, 22nd Floor Curved Balcony',
-        image: '/images/whitefield-real-balcony.jpg',
-        description: 'Continuous aluminum track custom-bent to match curved high-rise balcony. Certified 400kg tensile load.',
-        specs: 'Curved Balcony Continuous Track • 400kg Tensile'
-      },
-      {
-        id: 'wf-3',
-        name: 'Brigade Cosmopolis',
-        location: 'ECC Road, Whitefield',
-        elevation: '18th Floor Duplex Balcony',
-        image: '/images/luxury-family-balcony-sunset.jpg',
-        description: 'Preserves the golden-hour sunset view for family gatherings. High-grade marine steel with 10-year rust guarantee.',
-        specs: 'Unobstructed Horizon • Hilti Expansion Anchors'
       }
     ]
   }
