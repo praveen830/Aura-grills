@@ -84,7 +84,7 @@ export default function BangalorePlacesDashboard({
     {
       id: 'safety-van',
       title: "Doorstep Digital Laser Survey & Rapid Van",
-      badge: "Official Aurab Van",
+      badge: "Official Aura Grills Van",
       image: "/images/places/survey-van-vertical.jpg",
       icon: Truck,
       points: [
@@ -195,7 +195,7 @@ export default function BangalorePlacesDashboard({
     const phone = formPhone.trim() || 'Not Provided';
     const area = formArea.trim() || (selectedPlace ? selectedPlace.name : 'Bangalore');
 
-    const message = `Hello Aurab Grills! I want to schedule a Free Laser Site Survey.\n\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n📍 Area / Society: ${area}\n🕒 Preferred Slot: ${formSlot}\n\nPlease dispatch the rapid response survey van.`;
+    const message = `Hello Aura Grills! I want to schedule a Free Laser Site Survey.\n\n👤 Name: ${name}\n📞 WhatsApp: ${phone}\n📍 Area / Society: ${area}\n🕒 Preferred Slot: ${formSlot}\n\nPlease dispatch the rapid response survey van.`;
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(message)}`;
 
     setIsFormSubmitted(true);

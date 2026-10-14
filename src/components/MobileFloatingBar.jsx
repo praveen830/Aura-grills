@@ -8,7 +8,7 @@ export default function MobileFloatingBar({ onOpenBooking, onOpenCalculator }) {
       <a
         href="tel:+918523068882"
         className="flex-1 flex items-center justify-center gap-1 py-2.5 rounded-xl bg-slate-900 text-white font-black text-[11px] uppercase tracking-wider active:scale-95 transition shadow-sm"
-        title="Call Aurab Grills Bangalore Now"
+        title="Call Aura Grills Bangalore Now"
       >
         <Phone className="w-3.5 h-3.5 text-emerald-400" />
         <span>Call</span>

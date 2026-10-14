@@ -2,7 +2,7 @@ export const AURAB_SERVICES = [
   {
     id: 'invisible-grills',
     name: 'INVISIBLE GRILLS',
-    displayName: 'Aurab Invisible Safety Grills',
+    displayName: 'Aura Invisible Safety Grills',
     badge: 'Aerospace Grade SS-316',
     tagline: 'Aerospace Grade SS-316 • 100% Daylight • Toddler & Elderly Fall Protection',
     image: '/images/services/ig-lakeview-hero.jpg',
@@ -148,7 +148,7 @@ export const AURAB_SERVICES = [
   {
     id: 'cloth-hangers',
     name: 'CLOTH DRYING HANGERS',
-    displayName: 'Aurab Ceiling Cloth Drying Hangers',
+    displayName: 'Aura Ceiling Cloth Drying Hangers',
     badge: 'Heavy-Duty SS-304 Pipes',
     tagline: 'Individual Pulley Lowering • 0% Balcony Floor Loss • 25kg Load Per Pipe',
     image: '/images/services/ch-hero-towel.jpg',
@@ -294,7 +294,7 @@ export const AURAB_SERVICES = [
   {
     id: 'safety-nets',
     name: 'PIGEON & SAFETY NETS',
-    displayName: 'Aurab Pigeon & Balcony Safety Nets',
+    displayName: 'Aura Pigeon & Balcony Safety Nets',
     badge: 'Garware High-Density UV Nylon',
     tagline: '100% Pigeon Shield • 150kg Fall Protection • Zero Green Aesthetic Degradation',
     image: '/images/services/sn-transparent.jpg',
@@ -440,7 +440,7 @@ export const AURAB_SERVICES = [
   {
     id: 'bird-spikes',
     name: 'BIRD & PIGEON SPIKES',
-    displayName: 'Aurab Stainless Steel Bird Spikes',
+    displayName: 'Aura Stainless Steel Bird Spikes',
     badge: 'SS-304 + Polycarbonate Base',
     tagline: '100% Humane • Zero Perching • AC Compressors, Parapets & Ledges',
     image: '/images/services/bs-pigeon-flying.jpg',

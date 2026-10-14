@@ -39,7 +39,7 @@ export default function RealGallery({ onOpenBooking, onSelectLocation }) {
       location: "Sobha Lake Garden, KR Puram",
       locationId: "kr-puram",
       image: "/images/installer-work-real.jpg",
-      description: "Certified Aurab Grills installer adjusting continuous tension along top extruded track using high-grade safety harness and torque meter.",
+      description: "Certified Aura Grills installer adjusting continuous tension along top extruded track using high-grade safety harness and torque meter.",
       installedBy: "Lead Tech Santhosh",
       specs: "Laser Calibrated • Hilti Anchors"
     },

@@ -15,7 +15,7 @@ import {
   Network
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
-import AurabLogo from './AurabLogo';
+import AuraLogo from './AuraLogo';
 
 export default function Footer({ onOpenBooking }) {
   const [isSitemapOpen, setIsSitemapOpen] = useState(false);
@@ -57,7 +57,7 @@ export default function Footer({ onOpenBooking }) {
           {/* Column 1: Brand & Operating Headquarters (Col 5) */}
           <div className="lg:col-span-5 space-y-4">
             <div className="flex items-center gap-2.5">
-              <AurabLogo className="w-8 h-8 shrink-0 drop-shadow-sm" />
+              <AuraLogo className="w-8 h-8 shrink-0 drop-shadow-sm" />
               <div className="flex flex-col">
                 <span className="text-lg font-black tracking-tight text-white leading-none">
                   AURA <span className="text-emerald-400">GRILLS</span>

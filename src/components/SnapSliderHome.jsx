@@ -35,7 +35,7 @@ export default function SnapSliderHome({ onSelectCity, onOpenBooking, onOpenLoca
               {/* Background cover image */}
               <img
                 src={loc.coverImage}
-                alt={`Aurab Grills Invisible Grills in ${loc.mainPlace}`}
+                alt={`Aura Grills Invisible Grills in ${loc.mainPlace}`}
                 className="w-full h-full object-cover object-center"
                 loading={index === 0 ? 'eager' : 'lazy'}
               />
@@ -168,7 +168,7 @@ export default function SnapSliderHome({ onSelectCity, onOpenBooking, onOpenLoca
                   >
                     <GrillVisualizer
                       imageSrc={loc.coverImage}
-                      altText={`Aurab Grills Invisible Grills in ${loc.mainPlace}`}
+                      altText={`Aura Grills Invisible Grills in ${loc.mainPlace}`}
                       locationName={loc.mainPlace}
                       completedProjects={loc.completedProjects}
                     />

@@ -20,7 +20,7 @@ export default function BangaloreZones({ onOpenBooking }) {
         { name: 'Phoenix One Bangalore West', location: 'Rajajinagar', elevation: '29th Floor Duplex', verified: '24 Balconies' },
         { name: 'Prestige Leela Residences', location: 'Old Airport Rd', elevation: 'Heritage Penthouse', verified: '19 Balconies' }
       ],
-      whatsappIntent: 'Hello Aurab Grills! I am in Bangalore and want to book a free laser site survey.'
+      whatsappIntent: 'Hello Aura Grills! I am in Bangalore and want to book a free laser site survey.'
     },
     'East Belt (Whitefield / ITPL)': {
       title: 'East Corridor: High-Rise Balcony & Penthouse Safety Belt',
@@ -36,7 +36,7 @@ export default function BangaloreZones({ onOpenBooking }) {
         { name: 'Total Environment Rhapsody', location: 'ITPL Corridor', elevation: 'Terrace Garden Balconies', verified: '18 Balconies' },
         { name: 'Sobha Rose', location: 'Whitefield', elevation: 'Panoramic Verandas', verified: '15 Balconies' }
       ],
-      whatsappIntent: 'Hello Aurab Grills! I am in Whitefield / ITPL and want to book a free laser site survey.'
+      whatsappIntent: 'Hello Aura Grills! I am in Whitefield / ITPL and want to book a free laser site survey.'
     },
     'South Corridor (HSR / Sarjapur)': {
       title: 'South-East Corridor: Tech-Belt High-Rise Mega Communities',
@@ -52,7 +52,7 @@ export default function BangaloreZones({ onOpenBooking }) {
         { name: 'Mantri Sarovar', location: 'HSR Agara Lakefront', elevation: 'Lake-Facing Balconies', verified: '27 Balconies' },
         { name: 'Purva Fairmont', location: 'HSR Sector 2', elevation: 'High-Rise Apartments', verified: '21 Balconies' }
       ],
-      whatsappIntent: 'Hello Aurab Grills! I am in HSR / Sarjapur and want to book a free laser site survey.'
+      whatsappIntent: 'Hello Aura Grills! I am in HSR / Sarjapur and want to book a free laser site survey.'
     },
     'Central & West (Indiranagar / Rajajinagar)': {
       title: 'Central & West: Boutique Penthouses & Luxury High-Rises',
@@ -68,7 +68,7 @@ export default function BangaloreZones({ onOpenBooking }) {
         { name: 'Sobha Indraprastha', location: 'Central Belt', elevation: 'Luxury Apartments', verified: '20 Balconies' },
         { name: 'Gopalan Grandeur', location: 'Domlur Corridor', elevation: 'High-Rise Glass Railings', verified: '14 Balconies' }
       ],
-      whatsappIntent: 'Hello Aurab Grills! I am in Indiranagar / Central Bangalore and want to book a free survey.'
+      whatsappIntent: 'Hello Aura Grills! I am in Indiranagar / Central Bangalore and want to book a free survey.'
     },
     'North (Hebbal / Manyata)': {
       title: 'North Corridor: Expressway Condos & High-Altitude Towers',
@@ -84,7 +84,7 @@ export default function BangaloreZones({ onOpenBooking }) {
         { name: 'Godrej Platinum', location: 'Hebbal Lakefront', elevation: 'High-Altitude Condos', verified: '23 Balconies' },
         { name: 'Sobha City', location: 'Thanisandra Road', elevation: 'High-Rise Living', verified: '31 Balconies' }
       ],
-      whatsappIntent: 'Hello Aurab Grills! I am in Hebbal / North Bangalore and want to book a free laser survey.'
+      whatsappIntent: 'Hello Aura Grills! I am in Hebbal / North Bangalore and want to book a free laser survey.'
     }
   };
 

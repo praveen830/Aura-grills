@@ -330,7 +330,7 @@ export default function CityHubsDashboard({ onOpenBooking }) {
           <div className="flex flex-wrap items-center gap-3">
             <a
               href={`https://wa.me/918523068882?text=${encodeURIComponent(
-                `Hello Aurab Grills! I live in ${currentHub.name} Bangalore and want to book a free laser balcony measurement.`
+                `Hello Aura Grills! I live in ${currentHub.name} Bangalore and want to book a free laser balcony measurement.`
               )}`}
               target="_blank"
               rel="noreferrer"

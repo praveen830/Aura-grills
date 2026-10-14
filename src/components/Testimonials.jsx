@@ -10,7 +10,7 @@ export default function Testimonials() {
       tower: "Tower 18, 26th Floor",
       location: "Whitefield, East Bangalore",
       rating: 5,
-      comment: "Living on the 26th floor with a 3-year-old was terrifying until Aurab Grills installed invisible grills. The view of ITPL skyline is 100% open, but the safety is unbreakable. Our toddler plays freely on the wooden deck without any fear.",
+      comment: "Living on the 26th floor with a 3-year-old was terrifying until Aura Grills installed invisible grills. The view of ITPL skyline is 100% open, but the safety is unbreakable. Our toddler plays freely on the wooden deck without any fear.",
       specs: "2.5mm Marine SS-316 • 26th Floor Penthouse"
     },
     {
@@ -21,7 +21,7 @@ export default function Testimonials() {
       tower: "Wing 14, 18th Floor",
       location: "Panathur Road, Sarjapur Belt",
       rating: 5,
-      comment: "Pigeons in Sarjapur were making our balcony unusable. Traditional green nets looked like an eyesore and tore in wind. Aurab Grills invisible grills solved the bird problem permanently while looking like 5-star hotel luxury.",
+      comment: "Pigeons in Sarjapur were making our balcony unusable. Traditional green nets looked like an eyesore and tore in wind. Aura Grills invisible grills solved the bird problem permanently while looking like 5-star hotel luxury.",
       specs: "100% Pigeon Shield • Zero Droppings"
     },
     {
@@ -43,7 +43,7 @@ export default function Testimonials() {
       tower: "Tower 2, 34th Floor",
       location: "Nagavara Lakefront, Hebbal",
       rating: 5,
-      comment: "At the 34th floor, wind speeds are intense. Aurab Grills did a laser-calibrated tensioning job that is sturdy as a rock. Clean, punctual, and respectful technicians. Handed over written warranty card on spot.",
+      comment: "At the 34th floor, wind speeds are intense. Aura Grills did a laser-calibrated tensioning job that is sturdy as a rock. Clean, punctual, and respectful technicians. Handed over written warranty card on spot.",
       specs: "High-Altitude 70km/h Wind Certified"
     }
   ];

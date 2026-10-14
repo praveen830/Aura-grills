@@ -75,7 +75,7 @@ export default function WarrantySection({ onOpenBooking }) {
                     <CheckCircle2 className="w-3.5 h-3.5 text-[#16A34A]" /> 100% Certified
                   </span>
                   <span className="text-slate-500 text-[10px] uppercase tracking-wider">
-                    Aurab Guarantee
+                    Aura Guarantee
                   </span>
                 </div>
               </div>

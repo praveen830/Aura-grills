@@ -28,7 +28,7 @@ export const INSTALLER_STORIES = [
     title: "Complete Peace of Mind for Active Toddlers & Pets",
     technician: "Quality Inspector Ramesh",
     image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=1080&q=80",
-    caption: "Kids love running onto balconies. With Aurab Grills 2-inch precision gap and 400kg break strength, parents can relax with 100% peace of mind. Soft nylon coat protects delicate skin.",
+    caption: "Kids love running onto balconies. With Aura Grills 2-inch precision gap and 400kg break strength, parents can relax with 100% peace of mind. Soft nylon coat protects delicate skin.",
     stats: "Tensile: 400kg • Spacing: 50mm",
     cta: "Get Toddler-Proof Grill"
   },

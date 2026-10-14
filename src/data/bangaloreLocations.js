@@ -37,7 +37,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Arun & Pooja Nair",
       society: "Prestige Shantiniketan, Tower 18 (26th Floor)",
-      comment: "Living on the 26th floor with a 3-year-old was terrifying until Aurab Grills installed invisible grills. The view of ITPL skyline is 100% open, but the safety is unbreakable. Highly recommended!"
+      comment: "Living on the 26th floor with a 3-year-old was terrifying until Aura Grills installed invisible grills. The view of ITPL skyline is 100% open, but the safety is unbreakable. Highly recommended!"
     }
   },
   {
@@ -77,7 +77,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Vikram Shenoy",
       society: "Salarpuria Greenage, Block Ebony",
-      comment: "Our balcony faces Agara Lake, and we didn't want ugly iron cages ruining our morning coffee. The Aurab Grills team finished in 4 hours. You can barely see the wires from 10 feet away!"
+      comment: "Our balcony faces Agara Lake, and we didn't want ugly iron cages ruining our morning coffee. The Aura Grills team finished in 4 hours. You can barely see the wires from 10 feet away!"
     }
   },
   {
@@ -117,7 +117,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Dr. Ananya Murthy",
       society: "Defence Colony Penthouse, Indiranagar",
-      comment: "Aurab Grills preserved our colonial elevation aesthetics while giving us total safety for our Golden Retriever. Clean, professional and respectful technicians."
+      comment: "Aura Grills preserved our colonial elevation aesthetics while giving us total safety for our Golden Retriever. Clean, professional and respectful technicians."
     }
   },
   {
@@ -157,7 +157,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Prasad & Shruthi",
       society: "Sobha Lake Garden, 19th Floor",
-      comment: "Lake breeze was bringing pigeons and strong winds. Aurab Grills team did laser-calibrated invisible grill tensioning. 100% child-safe and our view is completely unhindered!"
+      comment: "Lake breeze was bringing pigeons and strong winds. Aura Grills team did laser-calibrated invisible grill tensioning. 100% child-safe and our view is completely unhindered!"
     }
   },
   {
@@ -197,7 +197,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Praveen & Sneha",
       society: "Godrej E-City, Phase 1",
-      comment: "Affordable, authentic SS-316 certificate provided on the spot, and zero disturbance during installation. Top marks to Aurab Grills!"
+      comment: "Affordable, authentic SS-316 certificate provided on the spot, and zero disturbance during installation. Top marks to Aura Grills!"
     }
   },
   {
@@ -237,7 +237,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Deepak Somasekhar",
       society: "Brigade Millennium, Magnolia Block",
-      comment: "Aurab Grills installed grills for 3 balconies in our duplex. Our kids can now play freely in the balcony without us worrying for a second."
+      comment: "Aura Grills installed grills for 3 balconies in our duplex. Our kids can now play freely in the balcony without us worrying for a second."
     }
   },
   {
@@ -278,7 +278,7 @@ export const BANGALORE_LOCATIONS = [
     localReview: {
       author: "Col. Rajesh Verma (Retd.)",
       society: "SNN Clermont, 34th Floor, Hebbal",
-      comment: "At the 34th floor, wind speeds are intense. Aurab Grills did a laser-calibrated tensioning job that is sturdy as a rock. Outstanding engineering."
+      comment: "At the 34th floor, wind speeds are intense. Aura Grills did a laser-calibrated tensioning job that is sturdy as a rock. Outstanding engineering."
     }
   }
 ];

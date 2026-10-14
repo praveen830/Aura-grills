@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
-import AurabLogo from './AurabLogo';
+import AuraLogo from './AuraLogo';
 
 export default function Navbar({ onGoToDashboard }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -53,7 +53,7 @@ export default function Navbar({ onGoToDashboard }) {
             }}
             className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer"
           >
-            <AurabLogo className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
+            <AuraLogo className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
             <div className="flex flex-col">
               <span className="text-xs sm:text-sm font-black tracking-tight text-zinc-950 flex items-center gap-1 leading-none">
                 AURA <span className="text-emerald-600">GRILLS</span>
