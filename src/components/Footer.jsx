@@ -9,7 +9,6 @@ import {
   Building2, 
   HardHat, 
   CheckCircle2, 
-  Sparkles, 
   Lock, 
   Cookie,
   Network
@@ -63,7 +62,7 @@ export default function Footer({ onOpenBooking }) {
                   AURA <span className="text-emerald-400">GRILLS</span>
                 </span>
                 <span className="text-[9px] uppercase tracking-wider font-bold text-zinc-400 pt-0.5">
-                  Aura Invisible Grills • For Your Safety
+                  Invisible Grills With Stainless Steel
                 </span>
               </div>
             </div>

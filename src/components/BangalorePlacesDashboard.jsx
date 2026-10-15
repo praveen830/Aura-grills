@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { 
   Phone, 
   Calendar, 
-  ChevronLeft, 
   ShieldCheck, 
   HardHat, 
   Sparkles, 
@@ -11,8 +10,7 @@ import {
   CheckCircle2, 
   User, 
   MapPin, 
-  Truck,
-  ArrowRight
+  Truck
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { BANGALORE_PLACES } from '../data/bangaloreHubsData';
@@ -236,14 +234,14 @@ export default function BangalorePlacesDashboard({
         <div className="space-y-8 sm:space-y-16">
           
           {/* =========================================================================
-              THE 6 MAIN BANGALORE PLACES (Full Screen Mobile View with All Previous Features)
+              THE 6 MAIN BANGALORE PLACES (Full Screen Mobile View)
               - Full mobile viewport height: h-[calc(100dvh-4rem)]
               - Smooth, natural scroll through all 6 places on mobile
-              - Name badge placed at the bottom border of the image (above display name)
+              - Name badge placed at the bottom border of the image (Requested: name kindha unta baguthundhi)
               - All previous features preserved: stats badge, display name, zone & tagline, tap link
               ========================================================================= */}
           <div className="w-full space-y-3 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            {BANGALORE_PLACES.map((place) => (
+            {BANGALORE_PLACES.map((place, idx) => (
               <div
                 key={place.id}
                 onClick={() => handleOpenPlace(place.id)}
@@ -254,35 +252,22 @@ export default function BangalorePlacesDashboard({
                   src={place.image}
                   alt={place.name}
                   className="w-full h-full object-cover object-center group-hover:scale-103 transition-transform duration-700"
-                  loading="eager"
+                  loading={idx === 0 ? "eager" : "lazy"}
+                  decoding="async"
                 />
 
                 {/* Subtle top & bottom gradients for elegant contrast */}
                 <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/60 via-black/15 to-transparent pointer-events-none" />
                 <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-black/90 via-black/45 to-transparent pointer-events-none" />
 
-                {/* Bottom Border: Place Name & Info (Requested: name kindha unta baguthundhi) */}
-                <div className="absolute inset-x-4 bottom-22 sm:bottom-6 z-20 space-y-2 pointer-events-none">
-                  {/* Name badge at bottom border alongside stats */}
-                  <div className="flex items-center gap-2">
-                    <span className="px-3.5 py-1.5 rounded-full bg-black/85 backdrop-blur-md text-xs sm:text-sm font-black tracking-wider uppercase text-white border border-white/25 shadow-lg inline-block">
-                      {place.name}
-                    </span>
-                    <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] sm:text-xs font-black uppercase tracking-wider backdrop-blur-md">
-                      {place.stats}
-                    </span>
-                  </div>
-
+                {/* Bottom Border: Simple & Clean Place Name */}
+                <div className="absolute inset-x-4 bottom-20 sm:bottom-6 z-20 space-y-1.5 pointer-events-none">
+                  <span className="px-3.5 py-1.5 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wider uppercase text-white border border-white/20 shadow-md inline-block">
+                    {place.name}
+                  </span>
                   <h2 className="text-xl sm:text-2xl font-black text-white leading-tight drop-shadow-md">
                     {place.displayName}
                   </h2>
-                  <p className="text-xs text-zinc-300 line-clamp-1 font-medium drop-shadow-xs">
-                    {place.zone} • {place.tagline}
-                  </p>
-                  <div className="pt-0.5 flex items-center gap-1.5 text-emerald-400 text-xs font-extrabold">
-                    <span>Tap to Inspect Balcony Solutions &amp; Free Visit</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
-                  </div>
                 </div>
               </div>
             ))}
@@ -324,21 +309,14 @@ export default function BangalorePlacesDashboard({
                   {/* Bottom Vignette */}
                   <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
 
-                  {/* Service Info at Bottom (Name at bottom, not covering top of image) */}
-                  <div className="absolute inset-x-4 bottom-5 z-20 space-y-1.5 pointer-events-none">
+                  {/* Service Info at Bottom */}
+                  <div className="absolute inset-x-4 bottom-5 z-20 space-y-1 pointer-events-none">
                     <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] sm:text-xs font-black tracking-wide uppercase text-white border border-white/20 shadow-md inline-block">
                       {srv.name}
                     </span>
                     <h3 className="text-base sm:text-lg font-black text-white leading-snug drop-shadow-sm">
                       {srv.displayName}
                     </h3>
-                    <p className="text-xs text-zinc-300 line-clamp-1 font-medium">
-                      {srv.tagline || 'Engineered Balcony Safety'}
-                    </p>
-                    <div className="pt-0.5 flex items-center gap-1.5 text-emerald-400 text-xs font-bold">
-                      <span>View Service Details &amp; Models</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </div>
                   </div>
                 </div>
               ))}
@@ -350,17 +328,16 @@ export default function BangalorePlacesDashboard({
         /* =========================================================================
            STATE 2: DEDICATED PLACE PAGE VIEW (EXACT LOOK OF REFERENCE IMAGE 3)
            Sequence:
-           1. Clean Minimal Back Navigation
-           2. Banner Image in EXACT 4:5 Aspect Ratio (Requested: "update 4:5 images")
-           3. The 3 White Pill Buttons [ Contact Us / Call ] [ Free Visit ] [ WhatsApp ] 
+           1. Banner Image in EXACT 4:5 Aspect Ratio (Requested: "update 4:5 images")
+           2. The 3 White Pill Buttons [ Contact Us / Call ] [ Free Visit ] [ WhatsApp ] 
               OVERLAID ON THE BOTTOM OF THE 4:5 IMAGE (Exact look of Reference Image 3)
-           4. Problems & Solutions in Sliding View
-           5. Real Visual Safety Cards with Van & Technicians (NOT plain text!)
-           6. Personal Info & Free Laser Site Measurement Form (UNDER BOTH)
+           3. Problems & Solutions in Sliding View
+           4. Real Visual Safety Cards with Van & Technicians (NOT plain text!)
+           5. Personal Info & Free Laser Site Measurement Form (UNDER BOTH)
            ========================================================================= */
         <div className="space-y-6 animate-fadeIn pt-2 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           
-          {/* 1. Main Place Banner: EXACT 4:5 RATIO WITH BUTTONS ON IMAGE (Exact Look of Reference Image 3) */}
+          {/* Main Place Banner: EXACT 4:5 RATIO WITH BUTTONS ON IMAGE (Exact Look of Reference Image 3) */}
           <div className="w-full max-w-md sm:max-w-xl mx-auto">
             <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl border-2 border-emerald-500/50 bg-zinc-950">
               <img

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import AuraLogo from './AuraLogo';
 
 export default function Navbar({ onGoToDashboard }) {
@@ -43,7 +43,7 @@ export default function Navbar({ onGoToDashboard }) {
               : 'bg-white/90 backdrop-blur-md border-zinc-200/80 shadow-xs'
           }`}
         >
-          {/* Brand Identity: Custom Aura Logo + For Your Safety Tag */}
+          {/* Brand Identity: Custom Aura Logo + Stainless Steel Tag */}
           <a
             href="#bangalore-dashboard"
             onClick={(e) => {
@@ -51,15 +51,15 @@ export default function Navbar({ onGoToDashboard }) {
               if (onGoToDashboard) onGoToDashboard();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="flex items-center gap-2.5 sm:gap-3 group cursor-pointer"
+            className="flex items-center gap-2 sm:gap-2.5 group cursor-pointer"
           >
             <AuraLogo className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-sm transition-transform duration-300 group-hover:scale-105" />
             <div className="flex flex-col">
               <span className="text-xs sm:text-sm font-black tracking-tight text-zinc-950 flex items-center gap-1 leading-none">
                 AURA <span className="text-emerald-600">GRILLS</span>
               </span>
-              <span className="text-[9px] sm:text-[10px] tracking-wider uppercase font-extrabold text-zinc-500 pt-1 leading-none">
-                Aura Invisible Grills • For Your Safety
+              <span className="text-[8.5px] sm:text-[9.5px] tracking-wider uppercase font-extrabold text-zinc-500 pt-1 leading-none truncate max-w-[190px] sm:max-w-none">
+                Invisible Grills With Stainless Steel
               </span>
             </div>
           </a>
@@ -76,10 +76,24 @@ export default function Navbar({ onGoToDashboard }) {
                 {link.name}
               </a>
             ))}
+            <a
+              href="tel:+918523068882"
+              className="ml-2 px-3.5 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs flex items-center gap-1.5 active:scale-95"
+            >
+              <Phone className="w-3.5 h-3.5" />
+              <span>Call</span>
+            </a>
           </nav>
 
-          {/* Mobile Menu Toggle (Call & WhatsApp buttons removed from above dashboard as requested) */}
-          <div className="md:hidden flex items-center">
+          {/* Mobile Menu Toggle */}
+          <div className="md:hidden flex items-center gap-1.5">
+            <a
+              href="tel:+918523068882"
+              className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold"
+              aria-label="Direct Phone Call"
+            >
+              Call
+            </a>
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               type="button"
@@ -96,7 +110,7 @@ export default function Navbar({ onGoToDashboard }) {
           <div className="pointer-events-auto md:hidden mt-2 ml-auto max-w-xs w-full p-4 rounded-3xl bg-white/95 backdrop-blur-xl border border-zinc-200/90 shadow-2xl shadow-zinc-950/15 space-y-1 animate-fadeIn">
             <div className="px-3 py-1.5 pb-2 border-b border-zinc-100 mb-1">
               <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-600">
-                Aura Invisible Grills • For Your Safety
+                Aura Grills • SS-316 Stainless Steel
               </span>
             </div>
             {navLinks.map((link) => (
@@ -110,6 +124,23 @@ export default function Navbar({ onGoToDashboard }) {
                 <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
               </a>
             ))}
+            <div className="pt-2 border-t border-zinc-100 space-y-1.5">
+              <a
+                href="tel:+918523068882"
+                className="w-full py-2.5 rounded-xl bg-zinc-950 text-white text-xs font-bold flex items-center justify-center gap-1.5 text-center active:scale-95 transition"
+              >
+                <Phone className="w-3.5 h-3.5 text-emerald-400" />
+                <span>Call</span>
+              </a>
+              <a
+                href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20am%20interested%20in%20SS-316%20invisible%20safety%20grills."
+                target="_blank"
+                rel="noreferrer"
+                className="w-full py-2.5 rounded-xl bg-[#25D366] text-white text-xs font-bold flex items-center justify-center gap-1.5 text-center"
+              >
+                💬 WhatsApp Instant Quote
+              </a>
+            </div>
           </div>
         )}
       </header>

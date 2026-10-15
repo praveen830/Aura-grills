@@ -2,18 +2,16 @@ import React, { useState, useRef, useEffect } from 'react';
 import { 
   Phone, 
   Calendar, 
-  ChevronLeft, 
   ShieldCheck, 
   CheckCircle2, 
   User, 
-  MapPin, 
-  Check 
+  MapPin 
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 
 export default function AurabServiceDetailView({ 
   service, 
-  onBackToDashboard, 
+  onBackToDashboard: _onBackToDashboard, 
   onOpenBooking 
 }) {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -141,7 +139,7 @@ export default function AurabServiceDetailView({
 
   return (
     <div className="space-y-8 sm:space-y-10 animate-fadeIn pt-2">
-      {/* 3. Clean Varieties Gallery in 4:5 Aspect Ratio */}
+      {/* 2. Clean Varieties Gallery in 4:5 Aspect Ratio */}
       <div className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {service.varieties.map((item) => (
@@ -379,6 +377,31 @@ export default function AurabServiceDetailView({
               </div>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* 5.5 Certified Technical Specifications Grid */}
+      <div className="space-y-3 pt-4 border-t border-zinc-200">
+        <div>
+          <h3 className="text-lg sm:text-xl font-black text-zinc-950 tracking-tight flex items-center gap-2">
+            <ShieldCheck className="w-5 h-5 text-emerald-600" />
+            <span>Certified Technical Specifications</span>
+          </h3>
+          <p className="text-xs text-zinc-500">
+            Aura Grills structural engineering and safety standards.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+          {safetyRequirements.map((req, idx) => (
+            <div key={idx} className="p-4 rounded-2xl bg-zinc-50 border border-zinc-200 space-y-1.5">
+              <span className="text-[10px] font-black uppercase text-emerald-700 bg-emerald-100/80 px-2.5 py-0.5 rounded-full inline-block">
+                {req.spec}
+              </span>
+              <h4 className="text-xs font-black text-zinc-900">{req.title}</h4>
+              <p className="text-[11px] text-zinc-600 leading-relaxed">{req.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
 

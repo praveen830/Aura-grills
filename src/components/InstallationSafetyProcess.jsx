@@ -1,12 +1,10 @@
 import React from 'react';
 import { 
-  Ruler, 
   ShieldCheck, 
   Phone, 
   Calendar, 
   CheckCircle2, 
   Truck, 
-  Award, 
   HardHat 
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
