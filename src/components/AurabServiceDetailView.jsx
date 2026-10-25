@@ -220,76 +220,8 @@ export default function AurabServiceDetailView({
         </div>
       </div>
 
-      {/* 4. Problems & Solutions in SLIDING VIEW CAROUSEL */}
-      {problemSolutions.length > 0 && (
-        <div className="space-y-3 pt-4 border-t border-zinc-200">
-          <div>
-            <h3 className="text-lg sm:text-xl font-black text-zinc-950 tracking-tight">
-              Problems &amp; Solutions for {service.name}
-            </h3>
-            <p className="text-xs text-zinc-500">
-              Key safety challenges solved by Aura Grills engineering • Auto-sliding showcase
-            </p>
-          </div>
-
-          <div
-            ref={sliderRef}
-            onScroll={handleSliderScroll}
-            className="flex items-stretch gap-3.5 sm:gap-4 overflow-x-auto snap-x snap-mandatory no-scrollbar pb-3 pt-1"
-          >
-            {problemSolutions.map((sol, idx) => {
-              const isActive = activeSlide === idx;
-              return (
-                <div
-                  key={sol.id}
-                  onClick={() => scrollToSlide(idx)}
-                  className={`snap-center shrink-0 w-[80vw] sm:w-[320px] rounded-3xl border transition-all duration-300 bg-white p-3.5 shadow-md flex flex-col justify-between cursor-pointer select-none ${
-                    isActive
-                      ? 'border-emerald-600 ring-2 ring-emerald-500/20 shadow-lg'
-                      : 'border-zinc-200 hover:border-zinc-300 opacity-95'
-                  }`}
-                >
-                  <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-zinc-950">
-                    <img
-                      src={sol.image}
-                      alt={sol.title}
-                      className="w-full h-full object-cover object-center"
-                      loading="lazy"
-                    />
-                    <span className="absolute top-2.5 left-2.5 px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] font-black uppercase text-emerald-400 border border-white/20 tracking-wider shadow-md">
-                      {sol.badge}
-                    </span>
-                  </div>
-
-                  <div className="pt-3 pb-1 space-y-1.5">
-                    <h4 className="text-sm sm:text-base font-black text-zinc-950 leading-snug">
-                      {sol.title}
-                    </h4>
-                    <p className="text-xs text-zinc-600 leading-relaxed font-normal">
-                      {sol.text}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* Dots Indicator */}
-          <div className="flex items-center justify-center gap-1.5 pt-1">
-            {problemSolutions.map((_, idx) => (
-              <button
-                key={idx}
-                onClick={() => scrollToSlide(idx)}
-                type="button"
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                  activeSlide === idx ? 'w-6 bg-emerald-600' : 'w-2 bg-zinc-300'
-                }`}
-                aria-label={`Slide to solution ${idx + 1}`}
-              />
-            ))}
-          </div>
-        </div>
-      )}
+      {/* 4. Problems & Solutions in SLIDING VIEW CAROUSEL (HIDDEN) */}
+      {/* Section hidden as requested */}
 
       {/* 5. Real Visual Safety Cards with Van & Technicians (NOT plain text!) */}
       <div className="space-y-4 pt-4 border-t border-zinc-200">
