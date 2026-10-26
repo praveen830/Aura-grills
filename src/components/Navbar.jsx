@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 import AuraLogo from './AuraLogo';
+import { useRouter, Link } from '../router';
 
 export default function Navbar({ onGoToDashboard }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { navigate, goToDashboard } = useRouter();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,21 +17,33 @@ export default function Navbar({ onGoToDashboard }) {
   }, []);
 
   const navLinks = [
-    { name: 'Bangalore Hubs', href: '#bangalore-dashboard' },
-    { name: 'Balcony Services', href: '#balcony-services' },
-    { name: 'Reviews', href: '#reviews' },
-    { name: 'Helpline', href: '#footer-contact' },
+    { name: 'Bangalore Hubs', href: '/#bangalore-dashboard' },
+    { name: 'Balcony Services', href: '/#balcony-services' },
+    { name: 'Reviews', href: '/#reviews' },
+    { name: 'Helpline', href: '/#footer-contact' },
   ];
 
   const handleScrollTo = (e, href) => {
     e.preventDefault();
     setMobileMenuOpen(false);
-    if (href === '#bangalore-dashboard' && onGoToDashboard) {
-      onGoToDashboard();
-    }
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+
+    if (href.startsWith('/#')) {
+      const hash = href.replace('/#', '');
+      if (window.location.pathname !== '/') {
+        navigate(`/#${hash}`);
+      } else {
+        const target = document.getElementById(hash);
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else if (href.startsWith('#')) {
+      const target = document.querySelector(href);
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      navigate(href);
     }
   };
 
@@ -44,11 +58,12 @@ export default function Navbar({ onGoToDashboard }) {
           }`}
         >
           {/* Brand Identity: Custom Aura Logo + Stainless Steel Tag */}
-          <a
-            href="#bangalore-dashboard"
+          <Link
+            to="/"
             onClick={(e) => {
               e.preventDefault();
               if (onGoToDashboard) onGoToDashboard();
+              else goToDashboard();
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="flex items-center gap-2 sm:gap-2.5 group cursor-pointer"
@@ -62,7 +77,7 @@ export default function Navbar({ onGoToDashboard }) {
                 Invisible Grills With Stainless Steel
               </span>
             </div>
-          </a>
+          </Link>
 
           {/* Desktop Nav Links */}
           <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">

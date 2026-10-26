@@ -10,17 +10,20 @@ import {
   CheckCircle2, 
   User, 
   MapPin, 
-  Truck
+  Truck,
+  ArrowLeft
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { BANGALORE_PLACES } from '../data/bangaloreHubsData';
 import { AURAB_SERVICES } from '../data/aurabServicesData';
 import AurabServiceDetailView from './AurabServiceDetailView';
+import { Link } from '../router';
 
 export default function BangalorePlacesDashboard({ 
   selectedPlaceId, 
   onSelectPlace, 
   selectedServiceId,
+  selectedVarietyId,
   onSelectService,
   onBackToDashboard,
   onOpenBooking 
@@ -127,7 +130,7 @@ export default function BangalorePlacesDashboard({
   };
 
   // Smooth horizontal scroll for Problems & Solutions
-  const scrollToSlide = (index) => {
+  const _scrollToSlide = (index) => {
     if (!sliderRef.current || problemSolutionsList.length === 0) return;
     const container = sliderRef.current;
     const clampedIndex = Math.max(0, Math.min(index, problemSolutionsList.length - 1));
@@ -146,7 +149,7 @@ export default function BangalorePlacesDashboard({
     }
   };
 
-  const handleSliderScroll = () => {
+  const _handleSliderScroll = () => {
     if (isScrollingByCodeRef.current || !sliderRef.current || problemSolutionsList.length === 0) return;
     const container = sliderRef.current;
     const containerCenter = container.scrollLeft + container.clientWidth / 2;
@@ -211,6 +214,7 @@ export default function BangalorePlacesDashboard({
         <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
           <AurabServiceDetailView 
             service={selectedService}
+            selectedVarietyId={selectedVarietyId}
             onBackToDashboard={onBackToDashboard}
             onOpenBooking={onOpenBooking}
           />
@@ -242,10 +246,14 @@ export default function BangalorePlacesDashboard({
               ========================================================================= */}
           <div className="w-full space-y-3 sm:space-y-0 sm:grid sm:grid-cols-2 lg:grid-cols-3 sm:gap-6 sm:px-6 lg:px-8 max-w-7xl mx-auto">
             {BANGALORE_PLACES.map((place, idx) => (
-              <div
+              <Link
                 key={place.id}
-                onClick={() => handleOpenPlace(place.id)}
-                className="group relative w-full h-[calc(100dvh-4rem)] sm:h-auto sm:aspect-[9/14] sm:rounded-3xl overflow-hidden shadow-2xl bg-zinc-950 cursor-pointer"
+                to={`/${place.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleOpenPlace(place.id);
+                }}
+                className="group relative block w-full h-[calc(100dvh-4rem)] sm:h-auto sm:aspect-[9/14] sm:rounded-3xl overflow-hidden shadow-2xl bg-zinc-950 cursor-pointer text-left"
               >
                 {/* Full-bleed vertical photo */}
                 <img
@@ -269,7 +277,7 @@ export default function BangalorePlacesDashboard({
                     {place.displayName}
                   </h2>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -294,10 +302,14 @@ export default function BangalorePlacesDashboard({
             {/* 4 Services Grid in Clean Mobile View */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
               {AURAB_SERVICES.map((srv) => (
-                <div
+                <Link
                   key={srv.id}
-                  onClick={() => handleOpenService(srv.id)}
-                  className="group relative w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-zinc-950 cursor-pointer border border-zinc-200 hover:border-emerald-500/50 transition-all duration-300"
+                  to={`/balcony-services/${srv.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleOpenService(srv.id);
+                  }}
+                  className="group relative block w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-zinc-950 cursor-pointer border border-zinc-200 hover:border-emerald-500/50 transition-all duration-300 text-left"
                 >
                   <img
                     src={srv.image}
@@ -318,7 +330,7 @@ export default function BangalorePlacesDashboard({
                       {srv.displayName}
                     </h3>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -337,6 +349,24 @@ export default function BangalorePlacesDashboard({
            ========================================================================= */
         <div className="space-y-6 animate-fadeIn pt-2 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
           
+          {/* Top Breadcrumb Navigation */}
+          <div className="max-w-md sm:max-w-xl mx-auto flex items-center justify-between text-xs text-zinc-500 pb-1">
+            <Link
+              to="/"
+              onClick={(e) => {
+                e.preventDefault();
+                onBackToDashboard();
+              }}
+              className="inline-flex items-center gap-1.5 font-bold text-zinc-700 hover:text-emerald-600 transition group cursor-pointer"
+            >
+              <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+              <span>All Bangalore Locations</span>
+            </Link>
+            <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+              {selectedPlace.name} Corridor
+            </span>
+          </div>
+
           {/* Main Place Banner: EXACT 4:5 RATIO WITH BUTTONS ON IMAGE (Exact Look of Reference Image 3) */}
           <div className="w-full max-w-md sm:max-w-xl mx-auto">
             <div className="relative aspect-[4/5] w-full rounded-3xl overflow-hidden shadow-2xl border-2 border-emerald-500/50 bg-zinc-950">

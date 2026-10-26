@@ -5,34 +5,43 @@ import Testimonials from './components/Testimonials';
 import Footer from './components/Footer';
 import FloatingConcierge from './components/FloatingConcierge';
 import BookingModal from './components/BookingModal';
+import { RouterProvider, useRouter } from './router';
 
-export default function App() {
+function MainLayout() {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [selectedPlaceId, setSelectedPlaceId] = useState(null);
-  const [selectedServiceId, setSelectedServiceId] = useState(null);
+  const { 
+    selectedPlaceId, 
+    selectedServiceId, 
+    varietyId,
+    navigate, 
+    goToDashboard,
+    getLocationUrl,
+    getServiceUrl 
+  } = useRouter();
 
-  const handleGoToDashboard = () => {
-    setSelectedPlaceId(null);
-    setSelectedServiceId(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const handleOpenPlace = (placeId) => {
+    navigate(getLocationUrl(placeId));
+  };
+
+  const handleOpenService = (serviceId) => {
+    navigate(getServiceUrl(serviceId));
   };
 
   return (
     <div className="min-h-screen bg-white text-zinc-950 font-sans antialiased selection:bg-emerald-600 selection:text-white">
       {/* Floating Header */}
-      <Navbar 
-        onGoToDashboard={handleGoToDashboard}
-      />
+      <Navbar onGoToDashboard={() => goToDashboard()} />
 
       {/* Main Experience: Starts IMMEDIATELY with the Dashboard */}
       <main className="w-full pt-16 sm:pt-20">
         {/* Bangalore 6-Places Dashboard & Sub-Pages Flow + 4 Services Flow */}
         <BangalorePlacesDashboard 
           selectedPlaceId={selectedPlaceId}
-          onSelectPlace={setSelectedPlaceId}
+          onSelectPlace={handleOpenPlace}
           selectedServiceId={selectedServiceId}
-          onSelectService={setSelectedServiceId}
-          onBackToDashboard={handleGoToDashboard}
+          selectedVarietyId={varietyId}
+          onSelectService={handleOpenService}
+          onBackToDashboard={() => goToDashboard()}
           onOpenBooking={() => setIsBookingOpen(true)}
         />
 
@@ -54,5 +63,13 @@ export default function App() {
         onClose={() => setIsBookingOpen(false)}
       />
     </div>
+  );
+}
+
+export default function App() {
+  return (
+    <RouterProvider>
+      <MainLayout />
+    </RouterProvider>
   );
 }

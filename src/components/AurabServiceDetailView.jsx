@@ -5,13 +5,16 @@ import {
   ShieldCheck, 
   CheckCircle2, 
   User, 
-  MapPin 
+  MapPin,
+  ArrowLeft
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { Link } from '../router';
 
 export default function AurabServiceDetailView({ 
   service, 
-  onBackToDashboard: _onBackToDashboard, 
+  selectedVarietyId,
+  onBackToDashboard, 
   onOpenBooking 
 }) {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -72,7 +75,7 @@ export default function AurabServiceDetailView({
   }, [service.id, problemSolutions.length]);
 
   // Smooth horizontal scroll ONLY within the slider container
-  const scrollToSlide = (index) => {
+  const _scrollToSlide = (index) => {
     if (!sliderRef.current || problemSolutions.length === 0) return;
     const container = sliderRef.current;
     const clampedIndex = Math.max(0, Math.min(index, problemSolutions.length - 1));
@@ -91,7 +94,7 @@ export default function AurabServiceDetailView({
     }
   };
 
-  const handleSliderScroll = () => {
+  const _handleSliderScroll = () => {
     if (isScrollingByCodeRef.current || !sliderRef.current || problemSolutions.length === 0) return;
     const container = sliderRef.current;
     const containerCenter = container.scrollLeft + container.clientWidth / 2;
@@ -139,34 +142,59 @@ export default function AurabServiceDetailView({
 
   return (
     <div className="space-y-8 sm:space-y-10 animate-fadeIn pt-2">
+      {/* Top Breadcrumb Navigation */}
+      <div className="flex items-center justify-between text-xs text-zinc-500 pb-2 border-b border-zinc-100">
+        <Link
+          to="/#balcony-services"
+          onClick={(e) => {
+            if (onBackToDashboard) {
+              e.preventDefault();
+              onBackToDashboard();
+            }
+          }}
+          className="inline-flex items-center gap-1.5 font-bold text-zinc-700 hover:text-emerald-600 transition group cursor-pointer"
+        >
+          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
+          <span>All Balcony Services</span>
+        </Link>
+        <span className="text-[11px] font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-200">
+          {service.badge || 'Bangalore Certified'}
+        </span>
+      </div>
+
       {/* 2. Clean Varieties Gallery in 4:5 Aspect Ratio */}
       <div className="space-y-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
-          {service.varieties.map((item) => (
-            <div
-              key={item.id}
-              className="rounded-3xl border border-zinc-200 bg-white overflow-hidden shadow-xl hover:shadow-2xl hover:border-zinc-300 transition-all duration-300 group"
-            >
-              <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-950">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                  loading="lazy"
-                />
+          {service.varieties.map((item) => {
+            const isHighlighted = selectedVarietyId && item.id === selectedVarietyId;
+            return (
+              <div
+                key={item.id}
+                className={`rounded-3xl border bg-white overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group ${
+                  isHighlighted ? 'border-emerald-600 ring-2 ring-emerald-500/40' : 'border-zinc-200 hover:border-zinc-300'
+                }`}
+              >
+                <div className="relative aspect-[4/5] w-full overflow-hidden bg-zinc-950">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                  />
 
-                {/* Bottom subtle vignette */}
-                <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
+                  {/* Bottom subtle vignette */}
+                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/85 via-black/35 to-transparent pointer-events-none" />
 
-                {/* Clean Floating Title Pill at Bottom */}
-                <div className="absolute bottom-4 left-4 right-4 pointer-events-none">
-                  <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md inline-block">
-                    {item.title}
-                  </span>
+                  {/* Clean Floating Title Pill at Bottom */}
+                  <div className="absolute bottom-4 left-4 right-4 pointer-events-none">
+                    <span className="px-4 py-2 rounded-full bg-black/80 backdrop-blur-md text-xs sm:text-sm font-black tracking-wide uppercase text-white border border-white/20 shadow-md inline-block">
+                      {item.title}
+                    </span>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* The 3 Action Buttons (Call, Free Visit, WhatsApp) in white pill style matching Reference Image 3 */}
