@@ -27,8 +27,15 @@ export function RouterProvider({ children }) {
     return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
-  // Synchronize dynamic document.title with route
+  // Synchronize dynamic document.title and canonical tag with route
   useEffect(() => {
+    // Dynamic canonical tag synchronization
+    const canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (canonicalLink) {
+      const canonicalPath = currentRoute.canonicalPath === '/' ? '/' : currentRoute.canonicalPath;
+      canonicalLink.setAttribute('href', `https://www.auragrills.in${canonicalPath}`);
+    }
+
     if (currentRoute.type === 'place' && currentRoute.placeId) {
       const place = BANGALORE_PLACES.find((p) => p.id === currentRoute.placeId);
       if (place) {

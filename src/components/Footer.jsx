@@ -203,7 +203,7 @@ export default function Footer({ onOpenBooking }) {
               className="py-3 px-6 rounded-2xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs uppercase tracking-wider transition border border-zinc-700 flex items-center justify-center gap-2 text-center"
             >
               <Phone className="w-4 h-4 text-emerald-400" />
-              <span>Call +91 85230 68882</span>
+              <span>Call +91 85230 68882 (8523068882)</span>
             </a>
           </div>
         </div>
@@ -401,6 +401,7 @@ export default function Footer({ onOpenBooking }) {
                 <div>
                   <div className="text-[10px] text-zinc-400 uppercase font-bold tracking-wider">Immediate Helpline</div>
                   <div className="text-sm font-black text-white group-hover:text-emerald-400 transition">+91 85230 68882</div>
+                  <div className="text-[11px] text-emerald-400 font-mono">Call: 8523068882</div>
                 </div>
               </a>
 
