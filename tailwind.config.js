@@ -73,10 +73,10 @@ export default {
         mono: ['"SF Mono"', '"JetBrains Mono"', 'Menlo', 'monospace']
       },
       fontSize: {
-        'apple-hero': ['clamp(2.35rem, 5.5vw, 4.75rem)', { lineHeight: '1.05', letterSpacing: '-0.04em', fontWeight: '600' }],
-        'apple-section': ['clamp(1.85rem, 4vw, 3.5rem)', { lineHeight: '1.08', letterSpacing: '-0.035em', fontWeight: '600' }],
+        'apple-hero': ['clamp(1.85rem, 3.8vw, 3.4rem)', { lineHeight: '1.08', letterSpacing: '-0.035em', fontWeight: '600' }],
+        'apple-section': ['clamp(1.75rem, 3.5vw, 3.25rem)', { lineHeight: '1.08', letterSpacing: '-0.035em', fontWeight: '600' }],
         'apple-headline': ['clamp(1.35rem, 2.5vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.025em', fontWeight: '600' }],
-        'apple-subhead': ['clamp(1rem, 1.5vw, 1.25rem)', { lineHeight: '1.5', letterSpacing: '-0.012em', fontWeight: '400' }],
+        'apple-subhead': ['clamp(0.95rem, 1.35vw, 1.15rem)', { lineHeight: '1.5', letterSpacing: '-0.012em', fontWeight: '400' }],
         'apple-metric': ['clamp(2.75rem, 6vw, 5rem)', { lineHeight: '1', letterSpacing: '-0.05em', fontWeight: '600' }],
         'apple-caption': ['0.8125rem', { lineHeight: '1.38', letterSpacing: '-0.008em', fontWeight: '400' }]
       },

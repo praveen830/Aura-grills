@@ -61,26 +61,26 @@ export default function Hero({ onOpenBooking }) {
   ];
 
   return (
-    <section id="intro" className="relative pt-24 sm:pt-32 md:pt-36 pb-16 sm:pb-24 bg-white overflow-hidden">
+    <section id="intro" className="relative pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 bg-white overflow-hidden">
       {/* Apple Keynote Ambient Diffuse Lighting */}
-      <div className="absolute top-0 inset-x-0 h-[600px] bg-gradient-to-b from-zinc-100/70 via-zinc-50/40 to-transparent pointer-events-none -z-10" />
-      <div className="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[360px] bg-emerald-500/5 blur-[160px] rounded-full pointer-events-none -z-10" />
+      <div className="absolute top-0 inset-x-0 h-[500px] bg-gradient-to-b from-zinc-100/70 via-zinc-50/40 to-transparent pointer-events-none -z-10" />
+      <div className="absolute top-16 left-1/2 -translate-x-1/2 w-[800px] h-[320px] bg-emerald-500/5 blur-[160px] rounded-full pointer-events-none -z-10" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
         
         {/* =========================================================================
             1. GRAND KEYNOTE BILLBOARD HEADER
             ========================================================================= */}
-        <div className="text-center max-w-4xl mx-auto space-y-5">
+        <div className="text-center max-w-4xl mx-auto space-y-4 sm:space-y-5">
           
           {/* Subtle Metallic Eyebrow Pill */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-zinc-100/90 text-[11px] sm:text-xs font-semibold tracking-apple-tight text-zinc-800 shadow-xs">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100/90 text-[11px] sm:text-xs font-semibold tracking-apple-tight text-zinc-800 shadow-xs">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span>Bengaluru RWA-Approved Architectural Safety</span>
           </div>
 
-          {/* Heroic Keynote Heading (Fluid Clamp Scale) */}
-          <h1 className="text-apple-hero text-zinc-950 font-semibold tracking-apple-hero leading-[1.05]">
+          {/* Heroic Keynote Heading (Optimized Apple Fluid Clamp) */}
+          <h1 className="text-apple-hero text-zinc-950 font-semibold tracking-apple-tight leading-[1.08] max-w-3xl mx-auto">
             Safety so clear,{' '}
             <span className="text-gradient-apple-dark block sm:inline">
               it disappears into the horizon.
@@ -88,16 +88,16 @@ export default function Hero({ onOpenBooking }) {
           </h1>
 
           {/* Calm, Editorial Subtitle */}
-          <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto tracking-apple-normal">
+          <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto">
             Aerospace-grade 2.0mm marine SS-316 cables anchored in champagne-anodized 6063-T6 tracks. Safeguarding children, pets, and panoramic skyline vistas across high-rises in Bengaluru with zero view loss.
           </p>
 
           {/* Apple Action Buttons Row */}
-          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
+          <div className="pt-1 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 max-w-md mx-auto">
             <button
               type="button"
               onClick={handleSurveyClick}
-              className="w-full sm:w-auto px-7 py-3.5 rounded-full bg-zinc-950 hover:bg-black text-white font-semibold text-xs sm:text-sm tracking-apple-tight transition-all duration-300 shadow-apple-card hover:shadow-apple-hover flex items-center justify-center gap-2 active:scale-95 cursor-pointer group"
+              className="w-full sm:w-auto px-7 py-3 rounded-full bg-zinc-950 hover:bg-black text-white font-semibold text-xs sm:text-sm tracking-apple-tight transition-all duration-300 shadow-apple-card hover:shadow-apple-hover flex items-center justify-center gap-2 active:scale-95 cursor-pointer group"
             >
               <Calendar className="w-4 h-4 text-zinc-300" />
               <span>Book Free Laser Survey</span>
@@ -106,7 +106,7 @@ export default function Hero({ onOpenBooking }) {
 
             <a
               href="tel:+918523068882"
-              className="w-full sm:w-auto px-6 py-3.5 rounded-full bg-zinc-100 hover:bg-zinc-200/80 text-zinc-900 font-semibold text-xs sm:text-sm tracking-apple-tight transition-all duration-200 flex items-center justify-center gap-2 active:scale-95 text-center"
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-zinc-100 hover:bg-zinc-200/80 text-zinc-900 font-semibold text-xs sm:text-sm tracking-apple-tight transition-all duration-200 flex items-center justify-center gap-2 active:scale-95 text-center"
             >
               <Phone className="w-3.5 h-3.5 text-emerald-600" />
               <span>Call 85230 68882</span>
@@ -114,7 +114,7 @@ export default function Hero({ onOpenBooking }) {
           </div>
 
           {/* Reassurance Micro-line */}
-          <div className="flex items-center justify-center gap-2 text-xs text-zinc-500 pt-1">
+          <div className="flex items-center justify-center gap-2 text-xs text-zinc-500 pt-0.5">
             <Sparkles className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
             <span>Same-day laser survey van in Whitefield, JP Nagar, HSR &amp; Electronic City</span>
           </div>
@@ -124,7 +124,7 @@ export default function Hero({ onOpenBooking }) {
         {/* =========================================================================
             2. CINEMATIC ARCHITECTURAL BALCONY STAGE (BORDERLESS LUXURY)
             ========================================================================= */}
-        <div className="relative w-full aspect-[4/5] sm:aspect-[16/10] lg:aspect-[21/10] rounded-[32px] sm:rounded-apple-hero overflow-hidden shadow-apple-diffuse hover:shadow-apple-hover transition-all duration-700 bg-zinc-950 group">
+        <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[28px] sm:rounded-apple-hero overflow-hidden shadow-apple-diffuse hover:shadow-apple-hover transition-all duration-700 bg-zinc-950 group">
           
           {/* HTML5 <picture> tag with dual desktop/mobile WebP sources */}
           <picture className="block w-full h-full">
