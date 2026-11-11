@@ -42,7 +42,7 @@ function MainLayout() {
   return (
     <div className="min-h-screen bg-white text-zinc-950 font-sans antialiased selection:bg-emerald-600 selection:text-white">
       {/* Floating Header */}
-      <Navbar onGoToDashboard={() => goToDashboard()} />
+      <Navbar onGoToDashboard={() => goToDashboard()} onOpenBooking={handleOpenBooking} />
 
       {/* Main Experience: Starts with Hero Section 01 (#intro) */}
       <main className="w-full pt-16 sm:pt-20">
@@ -95,7 +95,7 @@ function MainLayout() {
       <Footer onOpenBooking={() => handleOpenBooking()} />
 
       {/* Desktop Floating Concierge Action Buttons (hidden md:block) */}
-      <FloatingConcierge />
+      <FloatingConcierge onOpenBooking={handleOpenBooking} />
 
       {/* Sticky Mobile Bottom Conversion Bar (md:hidden) */}
       <StickyMobileConversionBar onOpenBooking={handleOpenBooking} />
