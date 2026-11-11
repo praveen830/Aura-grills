@@ -5,6 +5,7 @@ import HardwareBentoGrid from './components/HardwareBentoGrid';
 import ServicesSection from './components/ServicesSection';
 import SafetyMeasurementsSection from './components/SafetyMeasurementsSection';
 import WarrantySection from './components/WarrantySection';
+import SearchAIEngineSection from './components/SearchAIEngineSection';
 import ContactSection from './components/ContactSection';
 import StickyMobileConversionBar from './components/StickyMobileConversionBar';
 import BangalorePlacesDashboard from './components/BangalorePlacesDashboard';
@@ -73,6 +74,11 @@ function MainLayout() {
         {/* SECTION 04: 10-Year Stamped Bond & Material Quality Checklist */}
         {!selectedPlaceId && !selectedServiceId && (
           <WarrantySection onOpenBooking={handleOpenBooking} />
+        )}
+
+        {/* SECTION 04B: Google Search AI & SGE Semantic Authority Engine */}
+        {!selectedPlaceId && !selectedServiceId && (
+          <SearchAIEngineSection onOpenBooking={handleOpenBooking} />
         )}
 
         {/* Bangalore 6-Places Dashboard & Sub-Pages Flow + 4 Services Flow */}
