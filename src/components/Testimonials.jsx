@@ -64,18 +64,19 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* Apple Keynote Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/5 text-[11px] font-semibold text-zinc-800 shadow-xs tracking-apple-tight">
+        <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-apple-sm text-[11px] font-semibold text-zinc-700 tracking-apple-tight">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <Building2 className="w-3.5 h-3.5 text-emerald-600" />
-            <span>Verified Homeowner Endorsements</span>
+            <span className="uppercase tracking-wider">Verified Homeowner Endorsements</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-apple-tighter text-zinc-950 leading-[1.12]">
+          <h2 className="text-apple-section font-semibold tracking-apple-tight text-zinc-950 leading-[1.08]">
             Trusted by families across{' '}
-            <span className="text-gradient-apple-dark">Bengaluru's finest towers.</span>
+            <span className="text-gradient-apple-dark block sm:inline">Bengaluru's finest towers.</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed tracking-apple-normal max-w-2xl mx-auto">
+          <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto">
             Read genuine reflections from residents living across iconic high-rises in Whitefield, Sarjapur, HSR Layout, Indiranagar, and Hebbal.
           </p>
         </div>

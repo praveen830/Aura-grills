@@ -82,18 +82,19 @@ export default function ContactSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 relative z-10">
         
         {/* Apple Keynote Section Header */}
-        <div className="text-left max-w-3xl space-y-3 pb-2 border-b border-zinc-900">
+        <div className="text-left max-w-3xl space-y-4 pb-4 border-b border-zinc-900">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-semibold text-emerald-400 tracking-apple-tight uppercase">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
             <Truck className="w-3.5 h-3.5 text-emerald-400" />
             <span>Express Van Dispatch • Bengaluru Helpline</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-apple-tighter leading-[1.12]">
+          <h2 className="text-apple-section font-semibold text-white tracking-apple-tight leading-[1.08]">
             Schedule your free doorstep{' '}
-            <span className="text-emerald-400">laser survey today.</span>
+            <span className="text-gradient-silver block sm:inline">laser survey today.</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed tracking-apple-normal max-w-2xl">
+          <p className="text-apple-subhead text-zinc-400 font-normal leading-relaxed max-w-2xl">
             Our certified engineering vans carry Bosch laser telemetry, physical SS-316 samples, and mounting track profiles across Bengaluru.
           </p>
         </div>

@@ -57,18 +57,19 @@ export default function WarrantySection({ onOpenBooking }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* Apple Keynote Section Header */}
-        <div className="text-left max-w-3xl space-y-3 pb-2 border-b border-black/5">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100 border border-black/5 text-[11px] font-semibold text-zinc-800 shadow-xs tracking-apple-tight">
+        <div className="text-left max-w-3xl space-y-4 pb-4 border-b border-zinc-200/80">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100/80 backdrop-blur-md shadow-apple-sm text-[11px] font-semibold text-zinc-700 tracking-apple-tight">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
             <Award className="w-3.5 h-3.5 text-emerald-600" />
-            <span>10-Year Stamped Guarantee</span>
+            <span className="uppercase tracking-wider">10-Year Stamped Guarantee</span>
           </div>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-apple-tighter text-zinc-950 leading-[1.12]">
+          <h2 className="text-apple-section font-semibold tracking-apple-tight text-zinc-950 leading-[1.08]">
             Ten years of complete protection.{' '}
-            <span className="text-emerald-700">Stamped in steel.</span>
+            <span className="text-gradient-apple-dark block sm:inline">Stamped in steel.</span>
           </h2>
 
-          <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed tracking-apple-normal max-w-2xl">
+          <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed max-w-2xl">
             Every Aura installation is backed by an official serialized 10-year metallurgical warranty bond. Tap the certificate below to examine our independent NABL laboratory chemical composition test.
           </p>
         </div>
