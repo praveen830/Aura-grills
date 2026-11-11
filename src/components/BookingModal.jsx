@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Phone, CheckCircle2, ShieldCheck, ArrowRight, MapPin } from 'lucide-react';
+import { X, Phone, CheckCircle2, ShieldCheck, ArrowRight, MapPin, Calendar } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 
 export default function BookingModal({ isOpen, onClose, initialService }) {
@@ -63,11 +63,11 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
 
   return (
     <div
-      className="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fadeIn"
+      className="fixed inset-0 z-50 bg-black/60 backdrop-blur-md flex items-center justify-center p-3 sm:p-6 overflow-y-auto animate-fadeIn"
       onClick={handleClose}
     >
       <div
-        className="relative w-full max-w-lg bg-white rounded-3xl sm:rounded-[32px] overflow-hidden shadow-2xl border border-zinc-200 p-6 sm:p-8 space-y-6"
+        className="relative w-full max-w-lg bg-white rounded-[28px] overflow-hidden shadow-apple-hover border border-black/8 p-6 sm:p-8 space-y-6 text-left"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close Button */}
@@ -83,64 +83,61 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
         {isSubmitted ? (
           /* Confirmation Screen */
           <div className="py-8 text-center space-y-4">
-            <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto shadow-sm">
+            <div className="w-16 h-16 rounded-full bg-emerald-50 text-emerald-600 border border-emerald-200 flex items-center justify-center mx-auto shadow-xs">
               <CheckCircle2 className="w-8 h-8" />
             </div>
 
-            <h3 className="text-xl sm:text-2xl font-black text-zinc-950">
+            <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 tracking-apple-tight">
               Survey Request Dispatched!
             </h3>
 
-            <p className="text-xs sm:text-sm text-zinc-600 max-w-sm mx-auto leading-relaxed">
-              We have forwarded your appointment details to our Bangalore rapid response van. WhatsApp chat has been initiated with our senior area technician.
+            <p className="text-xs sm:text-sm text-zinc-600 max-w-sm mx-auto leading-relaxed tracking-apple-normal">
+              We have forwarded your appointment details to our Bengaluru rapid response van. WhatsApp chat has been initiated with our senior area technician.
             </p>
 
             <div className="pt-4 flex flex-col gap-2">
               <button
                 onClick={handleClose}
-                className="w-full py-3.5 rounded-full bg-zinc-950 text-white text-xs font-bold uppercase tracking-wider cursor-pointer hover:bg-zinc-800 transition"
+                className="w-full py-3.5 rounded-full bg-zinc-900 hover:bg-black text-white font-semibold text-xs tracking-apple-tight transition active:scale-98 cursor-pointer"
               >
                 Done
               </button>
             </div>
           </div>
         ) : (
-          /* Frictionless Single-Screen Booking Form */
-          <>
-            <div className="space-y-1.5 pr-6">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold uppercase tracking-wider border border-emerald-200">
-                <ShieldCheck className="w-3.5 h-3.5" />
-                <span>Free Doorstep Laser Survey • 0% Obligation</span>
-              </span>
-
-              <h3 className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tight">
-                Schedule Free Site Measurement
-              </h3>
-
-              <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
-                Our certified technician visits your balcony with digital laser rangefinders and physical SS-316 samples. Zero sales pressure.
+          /* Apple-Style Form */
+          <div className="space-y-5">
+            <div>
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 border border-emerald-200/80 text-[10px] font-semibold text-emerald-800 tracking-apple-tight uppercase mb-2">
+                <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                <span>Zero Obligation Doorstep Survey</span>
+              </div>
+              <h2 className="text-2xl font-bold text-zinc-950 tracking-apple-tight">
+                Book Free Laser Measurement
+              </h2>
+              <p className="text-xs text-zinc-500 font-normal pt-1 tracking-apple-normal">
+                Our technician visits with physical SS-316 samples, track profiles, and calibrated Bosch laser telemetry.
               </p>
             </div>
 
-            <form onSubmit={handleSubmit} className="space-y-4 text-left">
-              {/* Field 1: Resident Name & WhatsApp */}
+            <form onSubmit={handleSubmit} className="space-y-3.5">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] uppercase font-bold text-zinc-700 mb-1">
-                    Resident Name
+                  <label className="block text-[11px] font-semibold text-zinc-700 mb-1 tracking-apple-tight uppercase">
+                    Your Name
                   </label>
                   <input
                     type="text"
                     required
-                    placeholder="e.g. Arun Nair"
+                    placeholder="e.g. Arun Sharma"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-3.5 py-3 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
+                    onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                    className="w-full bg-zinc-50 border border-black/10 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase font-bold text-zinc-700 mb-1">
+                  <label className="block text-[11px] font-semibold text-zinc-700 mb-1 tracking-apple-tight uppercase">
                     WhatsApp Number
                   </label>
                   <input
@@ -148,92 +145,84 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
                     required
                     placeholder="+91 85230 68882"
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-3.5 py-3 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
+                    onChange={(e) => setFormData(prev => ({ ...prev, phone: e.target.value }))}
+                    className="w-full bg-zinc-50 border border-black/10 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition"
                   />
                 </div>
               </div>
 
-              {/* Field 2: Bangalore Area / Society Name */}
               <div>
-                <label className="block text-[11px] uppercase font-bold text-zinc-700 mb-1 flex items-center justify-between">
-                  <span>Bangalore Area / Society Name</span>
-                  <span className="text-[10px] text-zinc-400 font-normal">e.g. Whitefield, HSR, Sobha, Prestige</span>
+                <label className="block text-[11px] font-semibold text-zinc-700 mb-1 tracking-apple-tight uppercase">
+                  Apartment / Society &amp; Area
                 </label>
-                <div className="relative">
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Prestige Shantiniketan, Whitefield"
-                    value={formData.areaOrSociety}
-                    onChange={(e) => setFormData({ ...formData, areaOrSociety: e.target.value })}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl pl-9 pr-4 py-3 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-emerald-500 focus:bg-white transition"
-                  />
-                  <MapPin className="w-4 h-4 text-emerald-600 absolute left-3 top-3.5 pointer-events-none" />
-                </div>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. Prestige Shantiniketan, Whitefield"
+                  value={formData.areaOrSociety}
+                  onChange={(e) => setFormData(prev => ({ ...prev, areaOrSociety: e.target.value }))}
+                  className="w-full bg-zinc-50 border border-black/10 rounded-xl px-3.5 py-2.5 text-xs sm:text-sm text-zinc-900 placeholder:text-zinc-400 focus:outline-none focus:border-emerald-600 focus:bg-white transition"
+                />
               </div>
 
-              {/* Field 3: Installation Type & Preferred Visit Slot */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-[11px] uppercase font-bold text-zinc-700 mb-1">
-                    Installation Type
+                  <label className="block text-[11px] font-semibold text-zinc-700 mb-1 tracking-apple-tight uppercase">
+                    Service Type
                   </label>
                   <select
                     value={formData.installationType}
-                    onChange={(e) => setFormData({ ...formData, installationType: e.target.value })}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-3 py-3 text-xs text-zinc-900 focus:outline-none focus:border-emerald-500 focus:bg-white transition cursor-pointer"
+                    onChange={(e) => setFormData(prev => ({ ...prev, installationType: e.target.value }))}
+                    className="w-full bg-zinc-50 border border-black/10 rounded-xl px-3.5 py-2.5 text-xs text-zinc-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition cursor-pointer"
                   >
-                    <option value="High-Rise Balcony (10th+ Floor)">High-Rise Balcony (10th+ Floor)</option>
-                    <option value="Curved Balcony Profile">Curved Balcony Profile</option>
-                    <option value="Floor-to-Ceiling French Windows">Floor-to-Ceiling Windows</option>
-                    <option value="Duplex Terrace & Staircase">Duplex Terrace &amp; Staircase</option>
-                    <option value="Multiple Balconies (Whole Flat)">Multiple Balconies (Whole Flat)</option>
+                    <option value="Balcony Invisible Grills (SS-316)">Balcony Invisible Grills (SS-316)</option>
+                    <option value="French Window Invisible Grills">French Window Invisible Grills</option>
+                    <option value="Ceiling Cloth Drying Hangers">Ceiling Cloth Drying Hangers</option>
+                    <option value="Pigeon & Balcony Safety Nets">Pigeon & Balcony Safety Nets</option>
+                    <option value="Bird Spikes Anti-Roosting">Bird Spikes Anti-Roosting</option>
+                    <option value="Complete Safety & Utility Package">Complete Safety & Utility Package</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block text-[11px] uppercase font-bold text-zinc-700 mb-1">
-                    Preferred Visit Slot
+                  <label className="block text-[11px] font-semibold text-zinc-700 mb-1 tracking-apple-tight uppercase">
+                    Preferred Slot
                   </label>
                   <select
                     value={formData.preferredSlot}
-                    onChange={(e) => setFormData({ ...formData, preferredSlot: e.target.value })}
-                    className="w-full bg-zinc-50 border border-zinc-200 rounded-2xl px-3 py-3 text-xs text-zinc-900 focus:outline-none focus:border-emerald-500 focus:bg-white transition cursor-pointer"
+                    onChange={(e) => setFormData(prev => ({ ...prev, preferredSlot: e.target.value }))}
+                    className="w-full bg-zinc-50 border border-black/10 rounded-xl px-3.5 py-2.5 text-xs text-zinc-900 focus:outline-none focus:border-emerald-600 focus:bg-white transition cursor-pointer"
                   >
                     <option value="Today (Express Slot)">Today (Express Slot)</option>
-                    <option value="Tomorrow Morning (10 AM - 1 PM)">Tomorrow Morning (10 AM - 1 PM)</option>
-                    <option value="Tomorrow Evening (4 PM - 7 PM)">Tomorrow Evening (4 PM - 7 PM)</option>
-                    <option value="Upcoming Weekend Slot">Upcoming Weekend Slot</option>
+                    <option value="Tomorrow Morning (10:00 AM - 1:00 PM)">Tomorrow Morning (10AM - 1PM)</option>
+                    <option value="Tomorrow Evening (4:00 PM - 7:00 PM)">Tomorrow Evening (4PM - 7PM)</option>
+                    <option value="Weekend Saturday/Sunday">Weekend Saturday/Sunday</option>
                   </select>
                 </div>
               </div>
 
-              {/* Instant WhatsApp Dispatch Button */}
               <div className="pt-2">
                 <button
                   type="submit"
-                  className="w-full py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition-all duration-200 hover:scale-101 active:scale-98 cursor-pointer"
+                  className="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs tracking-apple-tight shadow-md transition flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                 >
-                  <WhatsAppIcon className="w-4 h-4" />
-                  <span>Confirm Appointment on WhatsApp</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <Calendar className="w-4 h-4" />
+                  <span>Confirm Free Doorstep Laser Survey</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
 
-              {/* Direct Call Fallback */}
-              <div className="pt-2 border-t border-zinc-100 flex items-center justify-between text-xs text-zinc-500">
-                <span>Prefer to speak with an engineer?</span>
+              <div className="text-center pt-1">
                 <a
                   href="tel:+918523068882"
-                  className="px-3.5 py-1.5 rounded-full bg-zinc-950 hover:bg-zinc-800 text-white font-bold transition flex items-center gap-1.5 active:scale-95 text-center"
+                  className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-950 transition font-medium"
                 >
-                  <Phone className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Call</span>
+                  <Phone className="w-3.5 h-3.5 text-emerald-600" />
+                  <span>Prefer to speak immediately? Call +91 85230 68882</span>
                 </a>
               </div>
             </form>
-          </>
+          </div>
         )}
       </div>
     </div>

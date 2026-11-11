@@ -43,7 +43,7 @@ const BANGALORE_HUBS = [
 ];
 
 /**
- * Section 06 (#contact) - Express Survey Van Dispatch & Direct Helpline
+ * Section 05 (#contact) - Apple Keynote Dark Grade Survey Dispatch
  */
 export default function ContactSection() {
   const [selectedSlot, setSelectedSlot] = useState('Today Express');
@@ -74,52 +74,54 @@ export default function ContactSection() {
     // Open WhatsApp ticket dispatch
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
-    }, 600);
+    }, 500);
   };
 
   return (
-    <section id="contact" className="relative py-16 sm:py-24 bg-zinc-950 text-white border-t border-zinc-900 overflow-hidden">
+    <section id="contact" className="relative py-20 sm:py-28 bg-zinc-950 text-white border-t border-zinc-900 overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-emerald-600/10 rounded-full blur-[140px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10 sm:space-y-12 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16 relative z-10">
         
-        {/* Section Header */}
-        <div className="text-left max-w-3xl space-y-2 pb-2 border-b border-zinc-800/90">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-[10px] sm:text-[11px] font-black text-emerald-400 uppercase tracking-wider">
+        {/* Apple Keynote Section Header */}
+        <div className="text-left max-w-3xl space-y-3 pb-2 border-b border-zinc-900">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-semibold text-emerald-400 tracking-apple-tight uppercase">
             <Truck className="w-3.5 h-3.5 text-emerald-400" />
-            <span>05 • EXPRESS SURVEY VAN DISPATCH &amp; DIRECT HELPLINE</span>
+            <span>Express Van Dispatch • Bengaluru Helpline</span>
           </div>
 
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-tight">
-            Schedule Your Free Doorstep Laser Measurement Today
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-apple-tighter leading-[1.12]">
+            Schedule your free doorstep{' '}
+            <span className="text-emerald-400">laser survey today.</span>
           </h2>
-          <p className="text-xs sm:text-sm text-zinc-400 font-medium leading-relaxed">
-            Our certified engineering vans are equipped with Bosch laser telemetry, physical SS-316 cable cross-sections, and sample track profiles across Bengaluru.
+
+          <p className="text-sm sm:text-base text-zinc-400 font-normal leading-relaxed tracking-apple-normal max-w-2xl">
+            Our certified engineering vans carry Bosch laser telemetry, physical SS-316 samples, and mounting track profiles across Bengaluru.
           </p>
         </div>
 
         {/* 2-Column Responsive Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start text-left">
           
           {/* =========================================================================
-              LEFT COLUMN: DIRECT CALL CARD, WHATSAPP DESK & SERVICE COVERAGE HUBS
+              LEFT COLUMN: DIRECT HELPLINE, WHATSAPP DESK & SERVICE HUBS
               ========================================================================= */}
           <div className="lg:col-span-5 space-y-5">
             
             {/* Direct Helpline Card */}
-            <div className="p-6 rounded-3xl bg-zinc-900/80 border border-zinc-800 shadow-xl space-y-4">
+            <div className="p-6 sm:p-7 rounded-[28px] bg-zinc-900/80 border border-white/10 shadow-apple-card space-y-4">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-2xl bg-emerald-950 text-emerald-400 flex items-center justify-center border border-emerald-500/30">
+                  <div className="w-10 h-10 rounded-2xl bg-white/10 text-emerald-400 flex items-center justify-center border border-white/10">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
                     <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-400">
-                      IMMEDIATE HELPLINE
+                      Direct Helpline
                     </div>
-                    <div className="text-lg sm:text-xl font-black text-white">
+                    <div className="text-lg sm:text-xl font-bold text-white tracking-apple-tight">
                       +91 85230 68882
                     </div>
                   </div>
@@ -127,45 +129,45 @@ export default function ContactSection() {
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
               </div>
 
-              <div className="flex items-center gap-2 text-xs text-zinc-400 pt-1 border-t border-zinc-800">
+              <div className="flex items-center gap-2 text-xs text-zinc-400 pt-2 border-t border-zinc-800">
                 <Clock className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Open 7 Days a Week • 8:00 AM – 9:00 PM (Direct Calling)</span>
+                <span>Open 7 Days a Week • 8:00 AM – 9:00 PM</span>
               </div>
 
               <a
                 href="tel:+918523068882"
-                className="w-full py-3 px-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-lg shadow-emerald-600/20 active:scale-95"
+                className="w-full py-3.5 px-4 rounded-full bg-white hover:bg-zinc-200 text-zinc-950 font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-2 transition active:scale-95 text-center shadow-xs"
               >
-                <Phone className="w-4 h-4" />
-                <span>Direct Call Now</span>
+                <Phone className="w-4 h-4 text-emerald-600" />
+                <span>Call Helpline Directly</span>
               </a>
             </div>
 
             {/* Instant WhatsApp Desk Card */}
-            <div className="p-6 rounded-3xl bg-zinc-900/80 border border-zinc-800 shadow-xl space-y-4">
+            <div className="p-6 sm:p-7 rounded-[28px] bg-zinc-900/80 border border-white/10 shadow-apple-card space-y-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-2xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center border border-[#25D366]/30">
                   <WhatsAppIcon className="w-5 h-5 text-white" />
                 </div>
                 <div>
                   <div className="text-[10px] uppercase font-bold tracking-wider text-zinc-400">
-                    INSTANT WHATSAPP DESK
+                    Instant WhatsApp Desk
                   </div>
-                  <div className="text-sm font-black text-white">
+                  <div className="text-sm font-bold text-white tracking-apple-tight">
                     Photo Reviews &amp; Quick Quotations
                   </div>
                 </div>
               </div>
 
-              <p className="text-xs text-zinc-400 leading-relaxed">
-                Send balcony photos or floor plans to our engineers for immediate price estimations and society RWA clearance checks.
+              <p className="text-xs text-zinc-400 leading-relaxed tracking-apple-normal">
+                Share balcony photos or floor plans with our engineers for immediate price estimations and society RWA clearance checks.
               </p>
 
               <a
                 href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20would%20like%20to%20get%20a%20quick%20quote%20for%20balcony%20invisible%20safety%20grills%20in%20Bengaluru."
                 target="_blank"
                 rel="noreferrer"
-                className="w-full py-3 px-4 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-lg shadow-[#25D366]/20 active:scale-95"
+                className="w-full py-3.5 px-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-2 transition shadow-md active:scale-95"
               >
                 <WhatsAppIcon className="w-4 h-4 text-white" />
                 <span>Chat on WhatsApp (Avg Reply &lt; 3 Min)</span>
@@ -173,8 +175,8 @@ export default function ContactSection() {
             </div>
 
             {/* Service Coverage Hub Badges */}
-            <div className="p-5 rounded-3xl bg-zinc-900/50 border border-zinc-800/80 space-y-3">
-              <div className="flex items-center justify-between text-xs font-black text-zinc-300">
+            <div className="p-6 rounded-[28px] bg-zinc-900/50 border border-white/10 space-y-3">
+              <div className="flex items-center justify-between text-xs font-semibold text-zinc-300 tracking-apple-tight">
                 <div className="flex items-center gap-2">
                   <MapPin className="w-4 h-4 text-emerald-400" />
                   <span>Bengaluru Service Coverage Hubs</span>
@@ -186,7 +188,7 @@ export default function ContactSection() {
                 {BANGALORE_HUBS.map((hub, idx) => (
                   <span
                     key={idx}
-                    className="px-2.5 py-1 rounded-xl bg-zinc-800/90 border border-zinc-700/60 text-[10px] font-bold text-zinc-300"
+                    className="px-2.5 py-1 rounded-full bg-zinc-800/90 border border-white/5 text-[10px] font-medium text-zinc-300"
                   >
                     {hub}
                   </span>
@@ -195,192 +197,144 @@ export default function ContactSection() {
 
               <div className="pt-2 border-t border-zinc-800 text-[11px] text-zinc-400 flex items-center gap-1.5">
                 <Truck className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Same-Day Laser Van Survey Available across all zones</span>
+                <span>Same-Day Laser Van Survey Available across all corridors</span>
               </div>
             </div>
 
           </div>
 
           {/* =========================================================================
-              RIGHT COLUMN: EXPRESS DOORSTEP SURVEY BOOKING FORM
+              RIGHT COLUMN: APPLE-STYLE EXPRESS SURVEY BOOKING FORM
               ========================================================================= */}
           <div className="lg:col-span-7">
-            <div className="p-6 sm:p-8 rounded-3xl bg-zinc-900/90 border border-zinc-800 shadow-2xl relative">
+            <div className="p-6 sm:p-8 rounded-[28px] bg-zinc-900/90 border border-white/10 shadow-apple-card relative overflow-hidden">
               
-              {isSubmitted ? (
-                /* Success Confirmation State */
-                <div className="py-10 text-center space-y-4 animate-fadeIn">
-                  <div className="w-16 h-16 rounded-full bg-emerald-950 border-2 border-emerald-500 text-emerald-400 flex items-center justify-center mx-auto shadow-xl">
-                    <CheckCircle2 className="w-8 h-8" />
-                  </div>
-                  <div className="space-y-1">
-                    <div className="text-xs font-mono text-emerald-400 uppercase tracking-widest">
-                      BOOKING CONFIRMED • {ticketId}
+              <div className="space-y-6">
+                <div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-apple-tight">
+                    Confirm Doorstep Survey Appointment
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-400 pt-1 tracking-apple-normal leading-relaxed">
+                    Zero obligation. Our van visits with physical SS-316 samples, track profiles, and calibrated Bosch laser meters.
+                  </p>
+                </div>
+
+                {isSubmitted ? (
+                  <div className="p-8 rounded-2xl bg-emerald-950/80 border border-emerald-500/40 text-center space-y-3">
+                    <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
+                      <CheckCircle2 className="w-6 h-6" />
                     </div>
-                    <h3 className="text-2xl font-black text-white">
-                      Express Survey Ticket Dispatched!
-                    </h3>
-                    <p className="text-xs sm:text-sm text-zinc-400 max-w-md mx-auto leading-relaxed pt-1">
-                      Our dispatch desk is routing your ticket to the nearest field van in Bengaluru. Opening WhatsApp for direct instant confirmation...
+                    <h4 className="text-lg font-bold text-white tracking-apple-tight">
+                      Ticket Generated: {ticketId}
+                    </h4>
+                    <p className="text-xs sm:text-sm text-zinc-300 max-w-md mx-auto">
+                      WhatsApp dispatch ticket initiated. Our technician van route supervisor will confirm your survey slot within 5 minutes.
                     </p>
                   </div>
-
-                  <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-3">
-                    <a
-                      href="tel:+918523068882"
-                      className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-zinc-800 hover:bg-zinc-700 text-white font-black text-xs flex items-center justify-center gap-2 transition"
-                    >
-                      <Phone className="w-4 h-4 text-emerald-400" />
-                      <span>Call Dispatch Desk</span>
-                    </a>
-                    <button
-                      type="button"
-                      onClick={() => setIsSubmitted(false)}
-                      className="w-full sm:w-auto px-6 py-3 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs transition cursor-pointer"
-                    >
-                      Book Another Survey
-                    </button>
-                  </div>
-                </div>
-              ) : (
-                /* Main Express Form */
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <div className="space-y-1 pb-1 border-b border-zinc-800">
-                    <div className="flex items-center gap-2 text-xs font-black text-emerald-400 uppercase tracking-wider">
-                      <Sparkles className="w-3.5 h-3.5" />
-                      <span>Instant Laser Van Request</span>
-                    </div>
-                    <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight">
-                      Express Doorstep Survey Booking
-                    </h3>
-                  </div>
-
-                  {/* 1-Tap Time Slot Selector */}
-                  <div className="space-y-2">
-                    <label className="text-xs font-bold text-zinc-300 flex items-center gap-1.5">
-                      <Clock className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>1. Select Preferred Time Slot:</span>
-                    </label>
-                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
-                      {SLOTS.map((slot) => {
-                        const isSelected = selectedSlot === slot.label;
-                        return (
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-4">
+                    
+                    {/* Slot Selector */}
+                    <div>
+                      <label className="block text-[11px] font-semibold text-zinc-300 mb-2 tracking-apple-tight uppercase">
+                        Select Preferred Time Slot
+                      </label>
+                      <div className="grid grid-cols-2 gap-2 sm:gap-2.5">
+                        {SLOTS.map((s) => (
                           <button
-                            key={slot.id}
+                            key={s.id}
                             type="button"
-                            onClick={() => setSelectedSlot(slot.label)}
-                            className={`p-2.5 rounded-2xl text-left border transition-all duration-200 cursor-pointer ${
-                              isSelected
-                                ? 'bg-emerald-600 border-emerald-400 text-white shadow-md'
-                                : 'bg-zinc-800/80 border-zinc-700 text-zinc-300 hover:bg-zinc-800 hover:border-zinc-600'
+                            onClick={() => setSelectedSlot(s.label)}
+                            className={`p-3 rounded-2xl text-left border transition-all text-xs cursor-pointer ${
+                              selectedSlot === s.label
+                                ? 'bg-emerald-950/90 border-emerald-500 text-white shadow-xs'
+                                : 'bg-zinc-900 border-white/10 text-zinc-400 hover:text-white hover:bg-zinc-800'
                             }`}
                           >
-                            <div className="flex items-center gap-1.5">
-                              {slot.highlight && (
-                                <span className={`w-2 h-2 rounded-full ${isSelected ? 'bg-white' : 'bg-emerald-400'} animate-pulse shrink-0`} />
-                              )}
-                              <span className="text-[11px] font-black leading-tight truncate">
-                                {slot.label}
-                              </span>
-                            </div>
-                            <div className={`text-[9.5px] pt-1 truncate ${isSelected ? 'text-emerald-100' : 'text-zinc-400'}`}>
-                              {slot.note}
-                            </div>
+                            <div className="font-semibold text-white">{s.label}</div>
+                            <div className="text-[10px] text-zinc-400 pt-0.5">{s.note}</div>
                           </button>
-                        );
-                      })}
-                    </div>
-                  </div>
-
-                  {/* Form Inputs Grid */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {/* Customer Name */}
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-zinc-300">
-                        Your Full Name:
-                      </label>
-                      <input
-                        type="text"
-                        required
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                        placeholder="e.g. Ramesh Kumar"
-                        className="w-full px-4 py-3 rounded-2xl bg-zinc-800/90 border border-zinc-700 focus:border-emerald-400 focus:bg-zinc-800 text-white text-xs placeholder:text-zinc-500 outline-none transition"
-                      />
+                        ))}
+                      </div>
                     </div>
 
-                    {/* 10-Digit Mobile */}
-                    <div className="space-y-1.5">
-                      <label className="text-xs font-bold text-zinc-300">
-                        10-Digit Mobile Phone:
-                      </label>
-                      <div className="relative">
-                        <span className="absolute left-3.5 top-1/2 -translate-y-1/2 text-xs font-bold text-zinc-400">
-                          +91
-                        </span>
+                    {/* Inputs */}
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div>
+                        <label className="block text-[11px] font-semibold text-zinc-300 mb-1 tracking-apple-tight uppercase">
+                          Resident Name
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Arun Sharma"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
+                          className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500 transition"
+                        />
+                      </div>
+
+                      <div>
+                        <label className="block text-[11px] font-semibold text-zinc-300 mb-1 tracking-apple-tight uppercase">
+                          WhatsApp / Phone Number
+                        </label>
                         <input
                           type="tel"
                           required
-                          maxLength={10}
+                          placeholder="+91 85230 68882"
                           value={phone}
-                          onChange={(e) => setPhone(e.target.value.replace(/\D/g, ''))}
-                          placeholder="85230 68882"
-                          className="w-full pl-12 pr-4 py-3 rounded-2xl bg-zinc-800/90 border border-zinc-700 focus:border-emerald-400 focus:bg-zinc-800 text-white text-xs placeholder:text-zinc-500 outline-none transition font-mono"
+                          onChange={(e) => setPhone(e.target.value)}
+                          className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500 transition"
                         />
                       </div>
                     </div>
-                  </div>
 
-                  {/* Apartment / Locality */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-zinc-300 flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-emerald-400" />
-                      <span>Apartment Society &amp; Locality in Bengaluru:</span>
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={locality}
-                      onChange={(e) => setLocality(e.target.value)}
-                      placeholder="e.g. Prestige Shantiniketan, Whitefield / Sobha Dream Acres"
-                      className="w-full px-4 py-3 rounded-2xl bg-zinc-800/90 border border-zinc-700 focus:border-emerald-400 focus:bg-zinc-800 text-white text-xs placeholder:text-zinc-500 outline-none transition"
-                    />
-                  </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                      <div>
+                        <label className="block text-[11px] font-semibold text-zinc-300 mb-1 tracking-apple-tight uppercase">
+                          Apartment / Society Name &amp; Area
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          placeholder="e.g. Prestige Shantiniketan, Whitefield"
+                          value={locality}
+                          onChange={(e) => setLocality(e.target.value)}
+                          className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder:text-zinc-500 focus:outline-none focus:border-emerald-500 transition"
+                        />
+                      </div>
 
-                  {/* Service Required Dropdown */}
-                  <div className="space-y-1.5">
-                    <label className="text-xs font-bold text-zinc-300">
-                      Service System Required:
-                    </label>
-                    <select
-                      value={service}
-                      onChange={(e) => setService(e.target.value)}
-                      className="w-full px-4 py-3 rounded-2xl bg-zinc-800/90 border border-zinc-700 focus:border-emerald-400 focus:bg-zinc-800 text-white text-xs outline-none transition cursor-pointer"
-                    >
-                      {SERVICES_LIST.map((srv, idx) => (
-                        <option key={idx} value={srv} className="bg-zinc-900 text-white py-1">
-                          {srv}
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                      <div>
+                        <label className="block text-[11px] font-semibold text-zinc-300 mb-1 tracking-apple-tight uppercase">
+                          Service Required
+                        </label>
+                        <select
+                          value={service}
+                          onChange={(e) => setService(e.target.value)}
+                          className="w-full bg-zinc-900 border border-white/10 rounded-xl px-4 py-3 text-xs sm:text-sm text-white focus:outline-none focus:border-emerald-500 transition cursor-pointer"
+                        >
+                          {SERVICES_LIST.map((srv, idx) => (
+                            <option key={idx} value={srv} className="bg-zinc-900 text-white">
+                              {srv}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
 
-                  {/* Submit Button */}
-                  <div className="pt-2">
                     <button
                       type="submit"
-                      className="w-full py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white font-black text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2 transition shadow-xl shadow-emerald-600/30 active:scale-95 cursor-pointer"
+                      className="w-full py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs sm:text-sm tracking-apple-tight shadow-md transition flex items-center justify-center gap-2 cursor-pointer active:scale-98"
                     >
-                      <Truck className="w-4 h-4" />
-                      <span>Confirm &amp; Dispatch Van Survey Ticket</span>
-                      <ArrowRight className="w-4 h-4" />
+                      <Calendar className="w-4 h-4" />
+                      <span>Confirm Free Laser Survey Slot</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
                     </button>
-                    <div className="text-[11px] text-zinc-400 text-center pt-2">
-                      🔒 100% Free Doorstep Survey • Zero Sales Pressure • Official RWA Documentation
-                    </div>
-                  </div>
-                </form>
-              )}
+
+                  </form>
+                )}
+
+              </div>
 
             </div>
           </div>
