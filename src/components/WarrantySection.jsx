@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { 
-  ShieldCheck, 
-  FileText, 
   RotateCcw, 
   Award, 
   CheckCircle2, 
   Calendar, 
   Phone, 
-  ArrowRight, 
-  Check, 
-  Sparkles,
-  Building
+  ArrowRight
 } from 'lucide-react';
 import AuraLogo from './AuraLogo';
 

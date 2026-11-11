@@ -1,12 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { 
   Phone, 
   Calendar, 
   ShieldCheck, 
   HardHat, 
-  Sparkles, 
-  Flame, 
-  Sun, 
   CheckCircle2, 
   User, 
   MapPin, 

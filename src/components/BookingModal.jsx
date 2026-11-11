@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Phone, CheckCircle2, ShieldCheck, ArrowRight, MapPin, Calendar } from 'lucide-react';
-import WhatsAppIcon from './WhatsAppIcon';
+import { X, Phone, CheckCircle2, ShieldCheck, ArrowRight, Calendar } from 'lucide-react';
 
 export default function BookingModal({ isOpen, onClose, initialService }) {
   const [formData, setFormData] = useState({

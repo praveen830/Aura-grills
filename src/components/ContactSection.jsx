@@ -6,10 +6,6 @@ import {
   Truck, 
   Calendar, 
   CheckCircle2, 
-  Send, 
-  Building2, 
-  ShieldCheck, 
-  Sparkles,
   ArrowRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';

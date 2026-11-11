@@ -6,7 +6,6 @@ import {
   CheckCircle2, 
   Calendar, 
   Phone, 
-  ArrowRight,
   Sparkles,
   ChevronRight
 } from 'lucide-react';

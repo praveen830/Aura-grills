@@ -101,7 +101,7 @@ function MainLayout() {
       <Footer onOpenBooking={() => handleOpenBooking()} />
 
       {/* Desktop Floating Concierge Action Buttons (hidden md:block) */}
-      <FloatingConcierge onOpenBooking={handleOpenBooking} />
+      <FloatingConcierge />
 
       {/* Sticky Mobile Bottom Conversion Bar (md:hidden) */}
       <StickyMobileConversionBar onOpenBooking={handleOpenBooking} />

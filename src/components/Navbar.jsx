@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Phone, Calendar, ShieldCheck } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone, Calendar } from 'lucide-react';
 import AuraLogo from './AuraLogo';
 import WhatsAppIcon from './WhatsAppIcon';
 import { useRouter, Link } from '../router';

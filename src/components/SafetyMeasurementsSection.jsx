@@ -3,14 +3,11 @@ import {
   Crosshair, 
   ShieldCheck, 
   Flame, 
-  Zap, 
   Layers, 
   Compass, 
   Calendar, 
   Phone, 
-  ArrowRight, 
-  CheckCircle2,
-  Sparkles
+  ArrowRight
 } from 'lucide-react';
 import { handleResponsiveImgError } from '../utils/imageHandler';
 

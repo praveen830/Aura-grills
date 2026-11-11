@@ -3,10 +3,7 @@ import {
   ShieldCheck, 
   Sun, 
   Flame, 
-  Layers, 
   Compass, 
-  ArrowRight,
-  CheckCircle2,
   Sparkles
 } from 'lucide-react';
 import { handleResponsiveImgError } from '../utils/imageHandler';
@@ -16,7 +13,7 @@ import { handleResponsiveImgError } from '../utils/imageHandler';
  * Highlights the 4 engineering cornerstones of Aura Invisible Grills
  * Modeled after Apple Silicon / Pro Hardware feature grids.
  */
-export default function HardwareBentoGrid({ onOpenBooking }) {
+export default function HardwareBentoGrid() {
   const handleImgError = (e) => {
     handleResponsiveImgError(e.currentTarget);
   };

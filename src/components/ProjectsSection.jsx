@@ -7,7 +7,6 @@ import {
   ChevronLeft, 
   ChevronRight, 
   CheckCircle2, 
-  Maximize2,
   Calendar
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';

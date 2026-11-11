@@ -1,12 +1,12 @@
 import React from 'react';
-import { Phone, Calendar } from 'lucide-react';
+import { Phone } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 
 /**
  * Floating Concierge Dock (Desktop only: md:flex)
  * Modeled after Apple's minimalist floating control capsule
  */
-export default function FloatingConcierge({ onOpenBooking }) {
+export default function FloatingConcierge() {
   return (
     <aside aria-label="Aura Concierge Dock" className="hidden md:block">
       <div className="fixed bottom-6 right-6 z-40 flex items-center gap-2.5 p-1.5 rounded-full glass-dock border border-black/8 shadow-apple-float transition-all duration-300 hover:shadow-apple-hover">

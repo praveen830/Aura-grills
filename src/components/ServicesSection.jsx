@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { 
   CheckCircle2, 
   Calendar, 
-  Sparkles, 
   Layers, 
-  ShieldCheck, 
-  ArrowRight,
-  Phone,
   ChevronRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
