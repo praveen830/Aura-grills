@@ -7,20 +7,22 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Apple-Grade Official Color Palette
+        // True Apple Official Color Palette
         apple: {
           canvas: '#F5F5F7',      // Signature Apple light backdrop
           surface: '#FFFFFF',
           elevated: '#FFFFFF',
           subtle: '#FBFBFD',
           dark: '#161617',        // Signature Apple space dark
-          obsidian: '#0B0B0C',    // Deep cinematic black
+          obsidian: '#0B0B0C',    // Deep cinematic keynote black
           black: '#000000',
+          text: '#1D1D1F',        // Primary high-contrast text
+          textSecondary: '#424245',
           steel: '#86868B',       // Apple secondary body/caption text
           titanium: '#A1A1A6',    // Micro telemetry/metadata
-          silver: '#E5E5EA',      // Delicate hairline dividers
-          border: 'rgba(0, 0, 0, 0.08)',
-          borderDark: 'rgba(255, 255, 255, 0.12)',
+          silver: '#D2D2D7',      // Delicate hairline dividers
+          border: 'rgba(0, 0, 0, 0.06)',
+          borderDark: 'rgba(255, 255, 255, 0.1)',
           blue: '#0071E3',        // Apple action blue
           emerald: '#059669',     // Aura signature trust accent
           emeraldHover: '#047857'
@@ -52,47 +54,63 @@ export default {
           700: '#15803d',
           800: '#166534',
           900: '#14532d',
-          accent: '#0284c7', // Sky architectural steel
+          accent: '#0284c7',
           gold: '#f59e0b',
         }
       },
       fontFamily: {
         sans: [
-          '"Plus Jakarta Sans"',
-          'Inter',
           '-apple-system',
           'BlinkMacSystemFont',
           '"SF Pro Display"',
           '"SF Pro Text"',
+          '"Plus Jakarta Sans"',
+          'Inter',
           'system-ui',
           'sans-serif'
         ],
         serif: ['"Cormorant Garamond"', 'serif'],
-        mono: ['"JetBrains Mono"', '"SF Mono"', 'Menlo', 'monospace']
+        mono: ['"SF Mono"', '"JetBrains Mono"', 'Menlo', 'monospace']
+      },
+      fontSize: {
+        'apple-hero': ['clamp(2.35rem, 5.5vw, 4.75rem)', { lineHeight: '1.05', letterSpacing: '-0.04em', fontWeight: '600' }],
+        'apple-section': ['clamp(1.85rem, 4vw, 3.5rem)', { lineHeight: '1.08', letterSpacing: '-0.035em', fontWeight: '600' }],
+        'apple-headline': ['clamp(1.35rem, 2.5vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.025em', fontWeight: '600' }],
+        'apple-subhead': ['clamp(1rem, 1.5vw, 1.25rem)', { lineHeight: '1.5', letterSpacing: '-0.012em', fontWeight: '400' }],
+        'apple-metric': ['clamp(2.75rem, 6vw, 5rem)', { lineHeight: '1', letterSpacing: '-0.05em', fontWeight: '600' }],
+        'apple-caption': ['0.8125rem', { lineHeight: '1.38', letterSpacing: '-0.008em', fontWeight: '400' }]
       },
       letterSpacing: {
+        'apple-metric': '-0.05em',
+        'apple-hero': '-0.04em',
+        'apple-section': '-0.035em',
+        'apple-card': '-0.025em',
         'apple-tighter': '-0.045em',
         'apple-tight': '-0.025em',
-        'apple-normal': '-0.01em',
+        'apple-normal': '-0.012em',
       },
       boxShadow: {
-        'apple-sm': '0 1px 2px rgba(0, 0, 0, 0.04)',
-        'apple-card': '0 4px 24px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02)',
-        'apple-float': '0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.04)',
-        'apple-hover': '0 20px 40px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.02)',
+        'apple-sm': '0 1px 3px rgba(0, 0, 0, 0.04)',
+        'apple-card': '0 4px 20px rgba(0, 0, 0, 0.04)',
+        'apple-diffuse': '0 24px 64px -12px rgba(0, 0, 0, 0.06)',
+        'apple-float': '0 12px 32px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0, 0, 0, 0.03)',
+        'apple-hover': '0 24px 50px rgba(0, 0, 0, 0.08)',
         'apple-glass': '0 8px 32px 0 rgba(0, 0, 0, 0.06)',
-        'apple-dark-card': '0 8px 32px 0 rgba(0, 0, 0, 0.36), 0 1px 2px rgba(255, 255, 255, 0.08)',
+        'apple-dark-card': '0 12px 40px 0 rgba(0, 0, 0, 0.4)',
+        'apple-dark-diffuse': '0 32px 80px -16px rgba(0, 0, 0, 0.6)',
+        'apple-glow-emerald': '0 0 60px -15px rgba(5, 150, 105, 0.3)',
         'luxury': '0 20px 50px -12px rgba(15, 23, 42, 0.08)',
         'card': '0 10px 30px -10px rgba(15, 23, 42, 0.06)'
       },
       borderRadius: {
+        'apple-hero': '36px',
+        'apple-bento': '32px',
         'apple-card': '24px',
-        'apple-bento': '28px',
         'apple-pill': '980px',
       },
       backdropBlur: {
-        'apple': '20px',
-        'apple-subtle': '12px',
+        'apple': '24px',
+        'apple-subtle': '14px',
       },
       keyframes: {
         pulseGlow: {
