@@ -18,6 +18,11 @@ import { AURAB_SERVICES } from '../data/aurabServicesData';
 import AurabServiceDetailView from './AurabServiceDetailView';
 import { Link } from '../router';
 
+/**
+ * BangalorePlacesDashboard - Apple Store / City Hub Regional Corridors
+ * Modeled after Apple Store location guides with full-bleed architectural cards,
+ * verified apartment high-rise installations, and doorstep rapid survey dispatch.
+ */
 export default function BangalorePlacesDashboard({ 
   selectedPlaceId, 
   onSelectPlace, 
@@ -116,7 +121,7 @@ export default function BangalorePlacesDashboard({
   }
 
   return (
-    <section id="bangalore-dashboard" className="w-full py-20 sm:py-28 bg-[#F5F5F7] border-t border-black/5">
+    <section id="bangalore-dashboard" className="w-full py-20 sm:py-28 md:py-32 bg-[#F5F5F7] overflow-hidden">
       
       {/* =========================================================================
           STATE 1: MAIN REGIONAL HUBS OVERVIEW
@@ -125,23 +130,24 @@ export default function BangalorePlacesDashboard({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
           
           {/* Apple Keynote Section Header */}
-          <div className="text-center max-w-3xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white border border-black/5 text-[11px] font-semibold text-zinc-800 shadow-xs tracking-apple-tight">
+          <div className="text-center max-w-3xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-apple-sm text-[11px] font-semibold text-zinc-700 tracking-apple-tight">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
               <MapPin className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Bengaluru Regional Corridors</span>
+              <span className="uppercase tracking-wider">Bengaluru Regional Corridors</span>
             </div>
 
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-apple-tighter text-zinc-950 leading-[1.12]">
+            <h2 className="text-apple-section font-semibold tracking-apple-tight text-zinc-950 leading-[1.08]">
               Securing balconies across{' '}
-              <span className="text-gradient-apple-dark">Bengaluru's top high-rises.</span>
+              <span className="text-gradient-apple-dark block sm:inline">Bengaluru's top high-rises.</span>
             </h2>
 
-            <p className="text-sm sm:text-base text-zinc-600 font-normal leading-relaxed tracking-apple-normal max-w-2xl mx-auto">
+            <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto">
               Our certified survey vans operate daily with doorstep laser telemetry across Whitefield, JP Nagar, HSR Layout, Electronic City, KR Puram, and Hebbal.
             </p>
           </div>
 
-          {/* Apple-Style Regional Location Cards (Responsive Grid) */}
+          {/* Apple-Style Regional Location Cards (Responsive 3-Column Grid) */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {BANGALORE_PLACES.map((place, idx) => (
               <Link
@@ -151,13 +157,13 @@ export default function BangalorePlacesDashboard({
                   e.preventDefault();
                   handleOpenPlace(place.id);
                 }}
-                className="group relative rounded-[28px] overflow-hidden aspect-[4/5] sm:aspect-[3/4] bg-zinc-950 border border-black/6 shadow-apple-card hover:shadow-apple-hover transition-all duration-500 cursor-pointer text-left flex flex-col justify-between p-5 sm:p-6"
+                className="group relative rounded-[28px] overflow-hidden aspect-[4/5] sm:aspect-[3/4] bg-zinc-950 apple-card-surface hover:shadow-apple-hover transition-all duration-500 cursor-pointer text-left flex flex-col justify-between p-6 sm:p-7"
               >
                 {/* Full-bleed high-res background image */}
                 <img
                   src={place.image}
                   alt={`${place.displayName} Balcony Invisible Grills`}
-                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700"
+                  className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                   loading={idx === 0 ? "eager" : "lazy"}
                   decoding="async"
                 />
@@ -168,7 +174,7 @@ export default function BangalorePlacesDashboard({
 
                 {/* Top Badge: Van Active Status */}
                 <div className="relative z-10 flex items-center justify-between">
-                  <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] sm:text-[11px] font-semibold tracking-apple-tight uppercase text-white border border-white/15 shadow-xs flex items-center gap-1.5">
+                  <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] sm:text-[11px] font-semibold tracking-apple-tight uppercase text-white border border-white/15 shadow-apple-sm flex items-center gap-1.5">
                     <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
                     <span>{place.name}</span>
                   </span>
@@ -180,11 +186,11 @@ export default function BangalorePlacesDashboard({
 
                 {/* Bottom Content Area */}
                 <div className="relative z-10 space-y-2 pointer-events-none">
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-apple-tight leading-snug drop-shadow-sm">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-apple-tight leading-snug drop-shadow-sm">
                     {place.displayName}
                   </h3>
                   
-                  <p className="text-xs text-zinc-300 font-normal leading-relaxed line-clamp-1 tracking-apple-normal">
+                  <p className="text-xs text-zinc-300 font-normal leading-relaxed line-clamp-1">
                     {place.zone}
                   </p>
 
@@ -205,7 +211,7 @@ export default function BangalorePlacesDashboard({
         <div className="space-y-10 sm:space-y-12 animate-fadeIn max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           {/* Top Apple-Style Breadcrumb Navigation */}
-          <div className="flex items-center justify-between text-xs text-zinc-500 pb-2 border-b border-black/5">
+          <div className="flex items-center justify-between text-xs text-zinc-500 pb-3 border-b border-zinc-200/80">
             <Link
               to="/"
               onClick={(e) => {
@@ -217,14 +223,14 @@ export default function BangalorePlacesDashboard({
               <ArrowLeft className="w-4 h-4 group-hover:-translate-x-0.5 transition-transform" />
               <span>All Bengaluru Corridors</span>
             </Link>
-            <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80">
+            <span className="text-[11px] font-semibold text-emerald-800 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200/80">
               {selectedPlace.name} Corridor
             </span>
           </div>
 
           {/* Location Hero Showcase (Centered Apple Card) */}
           <div className="max-w-3xl mx-auto">
-            <div className="relative aspect-[4/5] sm:aspect-[16/10] w-full rounded-[28px] overflow-hidden shadow-apple-card border border-black/8 bg-zinc-950">
+            <div className="relative aspect-[4/5] sm:aspect-[16/10] w-full rounded-[28px] overflow-hidden apple-card-surface bg-zinc-950">
               <img
                 src={selectedPlace.image}
                 alt={`${selectedPlace.name} Balcony Invisible Grills`}
@@ -257,7 +263,7 @@ export default function BangalorePlacesDashboard({
                   <button
                     onClick={scrollToForm}
                     type="button"
-                    className="py-3 rounded-2xl bg-zinc-900/95 hover:bg-black text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-apple-sm active:scale-95 transition cursor-pointer text-center"
+                    className="py-3 rounded-2xl bg-zinc-950/95 hover:bg-black text-white font-semibold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-apple-sm active:scale-95 transition cursor-pointer text-center"
                     title="Book Free Site Visit"
                   >
                     <Calendar className="w-3.5 h-3.5 text-zinc-300 shrink-0" />
@@ -284,10 +290,10 @@ export default function BangalorePlacesDashboard({
           {/* Place Heading & Sub-Localities */}
           <div className="max-w-3xl mx-auto space-y-4 text-center sm:text-left">
             <div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-zinc-950 tracking-apple-tighter leading-tight">
+              <h1 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-zinc-950 tracking-apple-tight leading-tight">
                 {selectedPlace.displayName}
               </h1>
-              <p className="text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed pt-1 tracking-apple-normal">
+              <p className="text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed pt-1">
                 {selectedPlace.zone} • {selectedPlace.stats}
               </p>
             </div>
@@ -298,7 +304,7 @@ export default function BangalorePlacesDashboard({
                 {selectedPlace.subPlaces.map((sub, i) => (
                   <div
                     key={i}
-                    className="px-3.5 py-1.5 rounded-full bg-white border border-black/5 text-xs text-zinc-700 font-medium shadow-xs"
+                    className="px-3.5 py-1.5 rounded-full bg-white shadow-apple-sm text-xs text-zinc-700 font-medium"
                   >
                     <span className="font-semibold text-zinc-950">{sub.name}</span>
                     <span className="text-zinc-400 text-[11px] ml-1.5">({sub.verified})</span>
@@ -310,9 +316,9 @@ export default function BangalorePlacesDashboard({
 
           {/* Featured Apartment Projects in this Corridor */}
           {selectedPlace.projects && selectedPlace.projects.length > 0 && (
-            <div className="max-w-5xl mx-auto space-y-6 pt-6 border-t border-black/5">
+            <div className="max-w-5xl mx-auto space-y-6 pt-6 border-t border-zinc-200/80">
               <div className="text-left space-y-1">
-                <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 tracking-apple-tight">
+                <h3 className="text-xl sm:text-2xl font-semibold text-zinc-950 tracking-apple-tight">
                   Verified Apartment Installations in {selectedPlace.name}
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-600">
@@ -324,7 +330,7 @@ export default function BangalorePlacesDashboard({
                 {selectedPlace.projects.map((proj) => (
                   <div
                     key={proj.id}
-                    className="rounded-[24px] bg-white border border-black/6 shadow-apple-card hover:shadow-apple-hover transition-all duration-300 overflow-hidden flex flex-col justify-between text-left group"
+                    className="rounded-[24px] apple-card-surface hover:shadow-apple-hover transition-all duration-300 overflow-hidden flex flex-col justify-between text-left group"
                   >
                     <div>
                       <div className="relative aspect-[16/10] overflow-hidden bg-zinc-950">
@@ -340,8 +346,8 @@ export default function BangalorePlacesDashboard({
                         </div>
                       </div>
 
-                      <div className="p-4 space-y-2">
-                        <h4 className="text-base font-bold text-zinc-950 tracking-apple-tight">
+                      <div className="p-5 space-y-2">
+                        <h4 className="text-base font-semibold text-zinc-950 tracking-apple-tight">
                           {proj.name}
                         </h4>
                         <p className="text-xs text-zinc-500">
@@ -353,8 +359,8 @@ export default function BangalorePlacesDashboard({
                       </div>
                     </div>
 
-                    <div className="p-4 pt-0">
-                      <span className="block text-[10px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80 truncate">
+                    <div className="p-5 pt-0">
+                      <span className="block text-[10px] font-semibold text-emerald-800 bg-emerald-50 px-2.5 py-1 rounded-lg border border-emerald-200/80 truncate">
                         {proj.specs}
                       </span>
                     </div>
@@ -365,9 +371,9 @@ export default function BangalorePlacesDashboard({
           )}
 
           {/* Safety & Real Van Cards */}
-          <div className="max-w-5xl mx-auto space-y-6 pt-6 border-t border-black/5">
+          <div className="max-w-5xl mx-auto space-y-6 pt-6 border-t border-zinc-200/80">
             <div className="text-left space-y-1">
-              <h3 className="text-xl sm:text-2xl font-bold text-zinc-950 tracking-apple-tight flex items-center gap-2">
+              <h3 className="text-xl sm:text-2xl font-semibold text-zinc-950 tracking-apple-tight flex items-center gap-2">
                 <ShieldCheck className="w-5 h-5 text-emerald-600" />
                 <span>Certified High-Rise Installation Crew</span>
               </h3>
@@ -382,7 +388,7 @@ export default function BangalorePlacesDashboard({
                 return (
                   <div
                     key={card.id}
-                    className="rounded-[28px] border border-black/6 bg-white overflow-hidden shadow-apple-card hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between group text-left"
+                    className="rounded-[28px] apple-card-surface overflow-hidden hover:shadow-apple-hover transition-all duration-300 flex flex-col justify-between group text-left"
                   >
                     <div>
                       <div className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-950">
@@ -394,14 +400,14 @@ export default function BangalorePlacesDashboard({
                         />
                         <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-black/80 to-transparent pointer-events-none" />
 
-                        <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-semibold uppercase text-white tracking-apple-tight border border-white/15 flex items-center gap-1.5 shadow-xs">
+                        <div className="absolute top-3.5 left-3.5 px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-semibold uppercase text-white tracking-apple-tight border border-white/15 flex items-center gap-1.5 shadow-apple-sm">
                           <Icon className="w-3.5 h-3.5 text-emerald-400" />
                           <span>{card.badge}</span>
                         </div>
                       </div>
 
-                      <div className="p-6 space-y-3">
-                        <h4 className="text-lg font-bold text-zinc-950 tracking-apple-tight">
+                      <div className="p-6 sm:p-7 space-y-3">
+                        <h4 className="text-lg font-semibold text-zinc-950 tracking-apple-tight">
                           {card.title}
                         </h4>
 
@@ -422,8 +428,8 @@ export default function BangalorePlacesDashboard({
           </div>
 
           {/* Free Laser Site Measurement Form (Under Both) */}
-          <div ref={formRef} className="max-w-2xl mx-auto pt-6 border-t border-black/5">
-            <div className="rounded-[28px] bg-zinc-950 text-white p-6 sm:p-8 border border-white/10 shadow-apple-card relative overflow-hidden">
+          <div ref={formRef} className="max-w-2xl mx-auto pt-6 border-t border-zinc-200/80">
+            <div className="apple-card-dark text-white p-6 sm:p-8 rounded-[28px] relative overflow-hidden">
               <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-600/10 rounded-full blur-[100px] pointer-events-none" />
 
               <div className="relative z-10 space-y-5">
@@ -432,10 +438,10 @@ export default function BangalorePlacesDashboard({
                     <CheckCircle2 className="w-3.5 h-3.5" />
                     <span>Zero Obligation • Doorstep Rapid Van</span>
                   </span>
-                  <h3 className="text-xl sm:text-2xl font-bold text-white tracking-apple-tight">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-white tracking-apple-tight">
                     Schedule Free Laser Site Measurement
                   </h3>
-                  <p className="text-xs text-zinc-400 leading-relaxed tracking-apple-normal">
+                  <p className="text-xs text-zinc-400 leading-relaxed">
                     Enter your details below to confirm a technician van visit for your {selectedPlace.name} apartment.
                   </p>
                 </div>
@@ -445,7 +451,7 @@ export default function BangalorePlacesDashboard({
                     <div className="w-12 h-12 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto">
                       <CheckCircle2 className="w-6 h-6" />
                     </div>
-                    <h4 className="text-base font-bold text-white tracking-apple-tight">Survey Dispatched!</h4>
+                    <h4 className="text-base font-semibold text-white tracking-apple-tight">Survey Dispatched!</h4>
                     <p className="text-xs text-zinc-300">
                       WhatsApp chat initiated with our {selectedPlace.name} technician van. We will verify your balcony with laser meters.
                     </p>
