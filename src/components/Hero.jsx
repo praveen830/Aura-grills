@@ -126,18 +126,18 @@ export default function Hero({ onOpenBooking }) {
             ========================================================================= */}
         <div className="relative w-full aspect-[16/10] sm:aspect-[16/9] lg:aspect-[21/9] rounded-[28px] sm:rounded-apple-hero overflow-hidden shadow-apple-diffuse hover:shadow-apple-hover transition-all duration-700 bg-zinc-950 group">
           
-          {/* HTML5 <picture> tag with dual desktop/mobile WebP sources */}
+          {/* HTML5 <picture> tag with dual desktop/mobile high-resolution sources */}
           <picture className="block w-full h-full">
             <source 
               media="(min-width: 768px)" 
-              srcSet="/images/desktop/hero-main-balcony.webp" 
+              srcSet="/images/desktop/hero-main-balcony.jpg" 
             />
             <img
-              src="/images/mobile/hero-main-balcony.webp"
-              data-fallback-desktop="/images/aura-grills-brand-hero.jpg"
-              data-fallback-mobile="/images/aura-grills-brand-hero.jpg"
+              src="/images/mobile/hero-main-balcony.jpg"
+              data-fallback-desktop="/images/desktop/hero-main-balcony.webp"
+              data-fallback-mobile="/images/mobile/hero-main-balcony.webp"
               onError={handleImgError}
-              alt="Aura SS-316 Invisible Safety Grills for Bengaluru Balconies"
+              alt="Aura SS-316 Invisible Safety Grills on Luxury Bengaluru Penthouse Balcony at Golden Hour"
               className="w-full h-full object-cover object-center group-hover:scale-102 transition-transform duration-1000"
               loading="eager"
               fetchPriority="high"
