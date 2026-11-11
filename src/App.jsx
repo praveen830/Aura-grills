@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import HardwareBentoGrid from './components/HardwareBentoGrid';
 import ServicesSection from './components/ServicesSection';
 import SafetyMeasurementsSection from './components/SafetyMeasurementsSection';
 import WarrantySection from './components/WarrantySection';
@@ -49,6 +50,11 @@ function MainLayout() {
         {/* SECTION 01: Main Introduction & Realistic Hero Showcase */}
         {!selectedPlaceId && !selectedServiceId && (
           <Hero onOpenBooking={handleOpenBooking} />
+        )}
+
+        {/* SECTION 01B: Apple Hardware Bento Grid (Engineering Core & Precision) */}
+        {!selectedPlaceId && !selectedServiceId && (
+          <HardwareBentoGrid onOpenBooking={handleOpenBooking} />
         )}
 
         {/* SECTION 02: Mana Services (Architectural Safety Suite) */}
