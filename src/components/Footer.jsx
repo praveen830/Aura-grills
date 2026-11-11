@@ -147,7 +147,8 @@ export default function Footer({ onOpenBooking }) {
   };
 
   return (
-    <footer id="footer-contact" className="bg-zinc-950 text-white pt-16 sm:pt-20 pb-24 sm:pb-16 border-t border-zinc-900 relative">
+    <footer id="contact" className="bg-zinc-950 text-white pt-16 sm:pt-20 pb-24 sm:pb-16 border-t border-zinc-900 relative">
+      <span id="footer-contact" className="sr-only" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14 sm:space-y-16">
         
         {/* =========================================================================

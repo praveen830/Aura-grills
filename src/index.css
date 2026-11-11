@@ -5,27 +5,29 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Plus Jakarta Sans", Inter, system-ui, sans-serif;
     -webkit-tap-highlight-color: transparent;
     -webkit-text-size-adjust: 100%;
     text-size-adjust: 100%;
+    background-color: #F5F5F7;
   }
   body {
-    @apply bg-slate-50 text-slate-900 antialiased selection:bg-emerald-600 selection:text-white;
+    @apply bg-white text-zinc-900 antialiased selection:bg-emerald-600 selection:text-white;
     overscroll-behavior-y: none;
+    letter-spacing: -0.011em;
   }
   button, a, input, select {
     touch-action: manipulation;
   }
 }
 
-/* Instant tap and smooth touch scrolling */
+/* Apple-Grade Smoothing and Subpixel Rendering */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide scrollbars for clean story-like horizontal reels while allowing swipe */
+/* Hide scrollbars for clean story reels & bento grids while allowing swipe */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -35,11 +37,36 @@
   -webkit-overflow-scrolling: touch;
 }
 
-/* Glassmorphism effects */
+/* =========================================================================
+   APPLE-GRADE GLASSMORPHISM & TRANSLUCENT DOCKS
+   ========================================================================= */
+
+.glass-apple {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.glass-apple-dark {
+  background: rgba(22, 22, 23, 0.82);
+  backdrop-filter: blur(24px) saturate(190%);
+  -webkit-backdrop-filter: blur(24px) saturate(190%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.glass-dock {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.06);
+}
+
+/* Legacy Glass Support */
 .glass-panel {
   background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
@@ -50,19 +77,42 @@
   border: 1px solid rgba(51, 65, 85, 0.5);
 }
 
-/* Instagram story gradient ring */
-.story-ring {
-  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-  padding: 2.5px;
-  border-radius: 9999px;
+/* Hairline dividers matching Apple iOS / macOS aesthetic */
+.border-hairline {
+  border-color: rgba(0, 0, 0, 0.07);
 }
 
-.active-ring {
-  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
-  padding: 2.5px;
-  border-radius: 9999px;
+.border-hairline-dark {
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
+/* =========================================================================
+   APPLE HARDWARE METALLIC & EDITORIAL GRADIENTS
+   ========================================================================= */
+
+.text-gradient-apple-dark {
+  background: linear-gradient(180deg, #1d1d1f 0%, #434344 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(180deg, #FFFFFF 0%, #A1A1A6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-emerald {
+  background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-titanium {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.15), transparent 70%);
+}
+
+/* Shimmer & subtle pulse effects */
 @keyframes shimmer {
   0% {
     background-position: -200% 0;
@@ -75,3 +125,9 @@
 .animate-shimmer {
   animation: shimmer 3s infinite linear;
 }
+
+/* 3D Flippable Certificate */
+.perspective-1000 { perspective: 1200px; }
+.transform-style-3d { transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+.rotate-y-180 { transform: rotateY(180deg); }

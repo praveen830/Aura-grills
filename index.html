@@ -4,8 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
     <meta name="theme-color" content="#047857" />
-    <link rel="icon" type="image/jpeg" href="/images/aura-grills-logo.jpg" />
-    <link rel="apple-touch-icon" href="/images/aura-grills-logo.jpg" />
+
+    <!-- Googlebot & High-Resolution Favicon Declarations -->
+    <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+    <link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17577365128"></script>
@@ -15,6 +21,35 @@
       gtag('js', new Date());
 
       gtag('config', 'AW-17577365128');
+    </script>
+
+    <!-- Global Responsive Image Fallback Handler (16:10 Desktop / 4:5 Mobile) -->
+    <script>
+      function handleResponsiveImgError(img) {
+        if (!img || img.dataset.errorHandled) return;
+        img.dataset.errorHandled = "true";
+        var isDesktop = window.matchMedia("(min-width: 768px)").matches;
+        var fallback = isDesktop 
+          ? (img.getAttribute("data-fallback-desktop") || img.getAttribute("data-fallback-mobile"))
+          : (img.getAttribute("data-fallback-mobile") || img.getAttribute("data-fallback-desktop"));
+        
+        if (fallback) {
+          var picture = img.parentElement;
+          if (picture && picture.tagName && picture.tagName.toLowerCase() === "picture") {
+            var sources = picture.getElementsByTagName("source");
+            for (var i = 0; i < sources.length; i++) {
+              if (isDesktop && img.getAttribute("data-fallback-desktop")) {
+                sources[i].srcset = img.getAttribute("data-fallback-desktop");
+              } else if (!isDesktop && img.getAttribute("data-fallback-mobile")) {
+                sources[i].srcset = img.getAttribute("data-fallback-mobile");
+              } else {
+                sources[i].removeAttribute("srcset");
+              }
+            }
+          }
+          img.src = fallback;
+        }
+      }
     </script>
 
     <!-- Performance: DNS Prefetch & Preconnect -->
@@ -55,11 +90,11 @@
     <meta name="twitter:description" content="Certified SS-316 marine-grade invisible safety grills in Bangalore. 400kg tensile load, toddler safety, zero pigeon nesting. Call +91 85230 68882 (8523068882)." />
     <meta name="twitter:image" content="https://www.auragrills.in/images/aura-grills-brand-hero.jpg" />
 
-    <!-- Fast Non-Blocking Google Font: Plus Jakarta Sans -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" />
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <!-- Fast Non-Blocking Google Fonts: Inter, Plus Jakarta Sans, Cormorant Garamond, JetBrains Mono -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
     <noscript>
-      <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+      <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
     </noscript>
 
     <!-- Structured Data Schema for Local Business SEO in Bangalore -->

@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Aura Grills™ Bengaluru | SS-316 Invisible Safety Grills, Cloth Hangers & Balcony Nets</title>
+  <meta name="description" content="Bengaluru's #1 RWA-Approved Architectural Balcony Safety Specialists. Marine-Grade SS-316 Invisible Grills, Ceiling Cloth Hangers & Anti-Bird Nets. Free 0.1mm Laser Survey + 10-Year Stamped Warranty. Talk directly to our engineers: +91 85230 68882." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=JetBrains+Mono:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            pearl: '#F4F6F9',
+            mist: '#E8EEF5',
+            navy: {
+              800: '#1E293B',
+              900: '#0F172A',
+              950: '#090E1A'
+            },
+            champagne: {
+              400: '#D8B480',
+              500: '#C89D66',
+              600: '#B08249'
+            },
+            cyan: {
+              500: '#0EA5E9',
+              600: '#0284C7'
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            serif: ['"Cormorant Garamond"', 'serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          },
+          boxShadow: {
+            'luxury': '0 20px 50px -12px rgba(15, 23, 42, 0.08)',
+            'card': '0 10px 30px -10px rgba(15, 23, 42, 0.06)'
+          }
+        }
+      }
+    }
+
+    /**
+     * DUAL-FOLDER RESPONSIVE IMAGE FALLBACK ENGINE
+     */
+    function handleResponsiveImgError(imgEl) {
+      if (imgEl.dataset.fallbackApplied === 'true') return;
+      imgEl.dataset.fallbackApplied = 'true';
+      const isDesktop = window.matchMedia('(min-width: 768px)').matches;
+      const fallbackUrl = isDesktop
+        ? (imgEl.getAttribute('data-fallback-desktop') || imgEl.getAttribute('data-fallback-mobile'))
+        : (imgEl.getAttribute('data-fallback-mobile') || imgEl.getAttribute('data-fallback-desktop'));
+
+      const picture = imgEl.closest('picture');
+      if (picture) {
+        const sources = picture.querySelectorAll('source');
+        sources.forEach(s => s.remove());
+      }
+      if (fallbackUrl) {
+        imgEl.src = fallbackUrl;
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #F4F6F9;
+      color: #0F172A;
+      overflow-x: hidden;
+    }
+    .glass-nav {
+      background: rgba(244, 246, 249, 0.92);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* 3D Flippable Warranty Certificate */
+    .perspective-1000 { perspective: 1200px; }
+    .transform-style-3d { transform-style: preserve-3d; transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+    .backface-hidden { backface-visibility: hidden; -webkit-backface-visibility: hidden; }
+    .rotate-y-180 { transform: rotateY(180deg); }
+  </style>
+</head>
+<body class="antialiased pb-20 md:pb-0 selection:bg-champagne-500 selection:text-white">
+
+  <!-- TOP TELEMETRY & DIRECT CUSTOMER HELPLINE BAR -->
+  <div class="bg-navy-900 text-slate-200 text-[11px] font-mono py-2 px-4 border-b border-slate-800">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+      <div class="flex items-center gap-4">
+        <span class="inline-flex items-center gap-1.5 text-emerald-400 font-semibold">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          DIRECT CUSTOMER HELPLINE ACTIVE
+        </span>
+        <span class="hidden sm:inline text-slate-400">|</span>
+        <span class="hidden sm:inline text-champagne-400">
+          FREE 0.1MM BOSCH LASER SURVEY ACROSS BENGALURU
+        </span>
+      </div>
+      <div class="flex items-center gap-3 ml-auto">
+        <span class="text-slate-300 hidden md:inline">BENGALURU RWA COMPLIANT</span>
+        <a href="tel:+918523068882" class="text-champagne-400 hover:underline font-semibold flex items-center gap-1">
+          <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+          <span>TALK DIRECTLY: +91 85230 68882</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER WITH CLEAN 5-SECTION PILLS -->
+  <header class="sticky top-0 z-50 glass-nav border-b border-slate-200/80 transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20 gap-3">
+        <!-- Brand Identity -->
+        <a href="#intro" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-navy-900 text-white flex flex-col items-center justify-center font-mono border border-champagne-500/40 shadow-sm group-hover:border-champagne-500 transition-colors">
+            <span class="text-xs font-bold tracking-tighter leading-none">AG</span>
+            <span class="text-[9px] text-champagne-400 leading-none mt-0.5">316</span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1">
+              <span class="font-extrabold text-base md:text-lg tracking-tight text-navy-900">AURA GRILLS</span>
+              <span class="text-[10px] font-mono uppercase text-champagne-600 font-bold">™</span>
+            </div>
+            <p class="text-[10px] font-mono uppercase tracking-widest text-slate-500">ARCHITECTURAL SS-316 SYSTEMS • BENGALURU</p>
+          </div>
+        </a>
+
+        <!-- Conversion Buttons: Direct Call & WhatsApp -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          <a href="tel:+918523068882" class="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-white border border-slate-200/90 text-navy-900 text-xs md:text-sm font-bold shadow-sm hover:border-cyan-600 transition-all">
+            <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-600"></i>
+            <span>+91 85230 68882</span>
+          </a>
+          <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%20Bengaluru%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20my%20balcony%20safety%20quote." target="_blank" rel="noopener" class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-navy-900 hover:bg-navy-800 text-white text-xs md:text-sm font-bold shadow-sm transition-all">
+            <i data-lucide="message-circle" class="w-3.5 h-3.5 text-emerald-400"></i>
+            <span>WhatsApp</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- 5-Section Ordered Navigation Bar (Zero Clutter) -->
+      <nav aria-label="Section navigation" class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-2.5 border-t border-slate-200/60">
+        <a href="#intro" class="nav-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-navy-900 text-white transition-all">
+          <span class="font-mono text-champagne-400 mr-1">01.</span>Intro
+        </a>
+        <a href="#services" class="nav-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition-all">
+          <span class="font-mono text-champagne-600 mr-1">02.</span>Services
+        </a>
+        <a href="#measurements" class="nav-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition-all">
+          <span class="font-mono text-champagne-600 mr-1">03.</span>Safety Measurements
+        </a>
+        <a href="#warranty" class="nav-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition-all">
+          <span class="font-mono text-champagne-600 mr-1">04.</span>Warranty
+        </a>
+        <a href="#contact" class="nav-pill shrink-0 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/80 hover:bg-white text-slate-700 border border-slate-200/80 transition-all">
+          <span class="font-mono text-champagne-600 mr-1">05.</span>Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===================================================================
+         01. INTRO: CLEAN BRAND INTRODUCTION + REALISTIC HERO SHOWCASE IMAGE
+    ==================================================================== -->
+    <section id="intro" class="pt-6 pb-14 md:py-16 border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+
+          <!-- Left 5 Columns: Crisp Introduction & Telemetry -->
+          <div class="lg:col-span-5 space-y-5">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white border border-slate-200 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-cyan-600"></span>
+              <span class="text-[11px] font-mono uppercase tracking-wider font-semibold text-navy-900">01 • BENGALURU HIGH-RISE BALCONY SPECIALISTS</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-navy-900 tracking-tight leading-[1.12]">
+              Unobstructed Skyline Views.
+              <span class="block font-serif italic font-semibold text-champagne-600 mt-1">Zero-Rust SS-316 Safety.</span>
+            </h1>
+
+            <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+              Aura Grills™ replaces bulky iron cages with ultra-sleek <strong class="text-navy-900">2.0mm Marine-Grade SS-316 Invisible Grills</strong>, <strong class="text-navy-900">Pulley Ceiling Cloth Hangers</strong>, and <strong class="text-navy-900">UV-Stabilized Safety Nets</strong>—engineered to match RWA standards across Prestige, Sobha, Brigade &amp; Godrej societies. Talk directly to our senior engineers for custom quotations.
+            </p>
+
+            <!-- 4 Clean Telemetry Cards -->
+            <div class="grid grid-cols-2 gap-3 pt-1">
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200/90 shadow-card">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs uppercase text-slate-400">MATERIAL</span>
+                  <i data-lucide="shield-check" class="w-4 h-4 text-cyan-600"></i>
+                </div>
+                <p class="font-mono text-lg font-bold text-navy-900 mt-1">SS-316 Marine</p>
+                <p class="text-[11px] text-slate-500">3.5% Molybdenum Anti-Rust</p>
+              </div>
+
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200/90 shadow-card">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs uppercase text-slate-400">TENSILE LOAD</span>
+                  <i data-lucide="gauge" class="w-4 h-4 text-champagne-600"></i>
+                </div>
+                <p class="font-mono text-lg font-bold text-navy-900 mt-1">400 KG / Cable</p>
+                <p class="text-[11px] text-slate-500">Child &amp; Pet Impact Lock</p>
+              </div>
+
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200/90 shadow-card">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs uppercase text-slate-400">MEASUREMENT</span>
+                  <i data-lucide="scan-line" class="w-4 h-4 text-cyan-600"></i>
+                </div>
+                <p class="font-mono text-lg font-bold text-navy-900 mt-1">0.1 MM Laser</p>
+                <p class="text-[11px] text-slate-500">Free Doorstep Survey</p>
+              </div>
+
+              <div class="bg-white p-3.5 rounded-2xl border border-slate-200/90 shadow-card">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono text-xs uppercase text-slate-400">PROTECTION</span>
+                  <i data-lucide="award" class="w-4 h-4 text-champagne-600"></i>
+                </div>
+                <p class="font-mono text-lg font-bold text-navy-900 mt-1">10-Yr Warranty</p>
+                <p class="text-[11px] text-slate-500">Stamped Bond Certificate</p>
+              </div>
+            </div>
+
+            <!-- Primary Direct Customer CTAs: Call & Free Laser Survey -->
+            <div class="flex flex-col sm:flex-row gap-3 pt-2">
+              <a href="tel:+918523068882" class="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-sm shadow-luxury transition-all">
+                <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
+                <span>Talk Directly to Engineer: +91 85230 68882</span>
+              </a>
+              <button onclick="openBookingModal('General Balcony Survey')" class="inline-flex items-center justify-center gap-2 px-5 py-3.5 rounded-xl bg-white hover:bg-slate-50 text-navy-900 border border-slate-300 font-bold text-sm transition-all">
+                <i data-lucide="calendar" class="w-4 h-4 text-cyan-600"></i>
+                <span>Book Free Laser Survey</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right 7 Columns: Clean Realistic Balcony Image Showcase -->
+          <div class="lg:col-span-7">
+            <div class="bg-white p-2.5 sm:p-3.5 rounded-3xl border border-slate-200/90 shadow-luxury">
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[16/10] bg-navy-900">
+                <picture class="block w-full h-full">
+                  <source media="(min-width: 768px)" srcset="/images/desktop/hero-main-balcony.webp" />
+                  <img
+                    src="/images/mobile/hero-main-balcony.webp"
+                    data-fallback-desktop="/images/aura-grills-brand-hero.jpg"
+                    data-fallback-mobile="/images/aura-grills-brand-hero.jpg"
+                    onerror="handleResponsiveImgError(this)"
+                    alt="Aura Grills Bengaluru Luxury High-Rise Balcony fitted with 2mm SS-316 Invisible Safety Grills"
+                    class="w-full h-full object-cover brightness-95"
+                  />
+                </picture>
+
+                <!-- Subtle Architectural Vertical Cable Overlay Lines for Realism -->
+                <div class="absolute inset-0 pointer-events-none opacity-35" style="background-image: repeating-linear-gradient(90deg, rgba(255,255,255,0.65) 0px, rgba(255,255,255,0.65) 1px, transparent 1px, transparent 38px);"></div>
+
+                <!-- Top-Left RWA Badge & Direct Contact Pill -->
+                <div class="absolute top-3.5 left-3.5 right-3.5 flex flex-wrap items-center justify-between gap-2">
+                  <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-navy-900/85 backdrop-blur-md text-white text-[11px] font-mono font-semibold border border-white/15">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                    RWA APPROVED • PRESTIGE, SOBHA &amp; BRIGADE STANDARD
+                  </span>
+                  <a href="tel:+918523068882" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-champagne-500 hover:bg-champagne-400 text-navy-950 text-[11px] font-mono font-bold shadow transition-all">
+                    <i data-lucide="phone" class="w-3 h-3"></i>
+                    <span>TALK DIRECTLY</span>
+                  </a>
+                </div>
+
+                <!-- Bottom Realistic Spec & Direct Action Bar -->
+                <div class="absolute bottom-3.5 left-3.5 right-3.5 bg-navy-950/90 backdrop-blur-md border border-white/15 rounded-2xl p-3.5 sm:p-4 text-white flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <div class="flex items-center gap-2">
+                      <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px] font-semibold">98.4% SKYLINE CLARITY</span>
+                      <span class="text-xs font-mono text-champagne-400">2.0mm Virgin SS-316 Cable</span>
+                    </div>
+                    <p class="text-xs sm:text-sm font-semibold text-slate-100 mt-1">
+                      50mm Child-Safe Gap • Dust-Free Vacuum Installation in 4 Hours
+                    </p>
+                  </div>
+                  <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20please%20connect%20me%20directly%20with%20an%20engineer%20for%20a%20balcony%20quotation." target="_blank" rel="noopener" class="shrink-0 inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-xl bg-champagne-500 hover:bg-champagne-400 text-navy-950 font-bold text-xs transition-all">
+                    <i data-lucide="message-square" class="w-3.5 h-3.5"></i>
+                    <span>Talk on WhatsApp</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         02. MANA SERVICES: ARCHITECTURAL SAFETY SUITE
+    ==================================================================== -->
+    <section id="services" class="py-14 md:py-20 border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Section Header + Filter Pills -->
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+          <div>
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-[11px] font-mono uppercase tracking-wider text-cyan-600 font-semibold mb-3">
+              02 • MANA SERVICES (ARCHITECTURAL SAFETY SUITE)
+            </div>
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
+              Our Core Balcony Safety &amp; Utility Services
+            </h2>
+            <p class="text-slate-600 text-sm sm:text-base mt-2 max-w-2xl">
+              Every system is custom-fabricated for Bengaluru apartments with rust-proof SS-316 hardware, complimentary doorstep laser surveys, and direct engineer consultations.
+            </p>
+          </div>
+
+          <!-- Interactive Service Filter Tabs -->
+          <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+            <button onclick="filterServices('all')" data-service-filter="all" class="service-tab shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-navy-900 text-white transition-all">
+              All Services (6)
+            </button>
+            <button onclick="filterServices('grills')" data-service-filter="grills" class="service-tab shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-navy-900 transition-all">
+              Invisible Grills
+            </button>
+            <button onclick="filterServices('hangers')" data-service-filter="hangers" class="service-tab shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-navy-900 transition-all">
+              Ceiling Cloth Hangers
+            </button>
+            <button onclick="filterServices('nets')" data-service-filter="nets" class="service-tab shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-navy-900 transition-all">
+              Safety &amp; Bird Nets
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 Services Responsive Grid (No Price Tags, 100% Direct Contact) -->
+        <div id="servicesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <!-- Service 1: Invisible Safety Grills -->
+          <article data-category="grills" class="service-card bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-card hover:shadow-luxury transition-all flex flex-col">
+            <div class="relative aspect-[4/5] md:aspect-[16/10] bg-navy-900 overflow-hidden">
+              <picture class="block w-full h-full">
+                <source media="(min-width: 768px)" srcset="/images/desktop/service-invisible-grill.webp" />
+                <img
+                  src="/images/mobile/service-invisible-grill.webp"
+                  data-fallback-desktop="/images/services/ig-lakeview-hero.jpg"
+                  data-fallback-mobile="/images/services/ig-lakeview-hero.jpg"
+                  onerror="handleResponsiveImgError(this)"
+                  alt="Marine Grade SS-316 Balcony Invisible Safety Grills Bengaluru"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </picture>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-white font-mono text-[10px] font-semibold">
+                MOST POPULAR • SS-316
+              </span>
+              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-champagne-500 text-navy-950 font-mono text-[10px] font-bold shadow flex items-center gap-1">
+                <i data-lucide="phone-call" class="w-3 h-3"></i>
+                <span>TALK DIRECTLY</span>
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div>
+                <h3 class="text-lg font-extrabold text-navy-900">Balcony Invisible Safety Grills</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                  2.0mm &amp; 2.5mm Virgin Marine-Grade SS-316 cables with UV-12 nylon coating locked into 6063-T6 powder-coated tracks.
+                </p>
+                <ul class="mt-4 space-y-1.5 text-xs text-slate-700 font-medium">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> 2.0 Inch Toddler &amp; Pet Lock Gap</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> 400 KG Tensile Load Tested Per Rope</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> 100% RWA Facade Compliant</li>
+                </ul>
+              </div>
+              <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+                <a href="tel:+918523068882" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition-all">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Call Directly</span>
+                </a>
+                <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20Balcony%20Invisible%20Safety%20Grills." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs transition-all">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 2: Ceiling Cloth Drying Hangers -->
+          <article data-category="hangers" class="service-card bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-card hover:shadow-luxury transition-all flex flex-col">
+            <div class="relative aspect-[4/5] md:aspect-[16/10] bg-navy-900 overflow-hidden">
+              <picture class="block w-full h-full">
+                <source media="(min-width: 768px)" srcset="/images/desktop/service-cloth-hanger.webp" />
+                <img
+                  src="/images/mobile/service-cloth-hanger.webp"
+                  data-fallback-desktop="/images/services/cloth-hanger.jpg"
+                  data-fallback-mobile="/images/services/cloth-hanger.jpg"
+                  onerror="handleResponsiveImgError(this)"
+                  alt="Smart Pulley Ceiling Cloth Drying Hangers Bengaluru"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </picture>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-white font-mono text-[10px] font-semibold">
+                6-ROD PULLEY SYSTEM
+              </span>
+              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-champagne-500 text-navy-950 font-mono text-[10px] font-bold shadow flex items-center gap-1">
+                <i data-lucide="phone-call" class="w-3 h-3"></i>
+                <span>TALK DIRECTLY</span>
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div>
+                <h3 class="text-lg font-extrabold text-navy-900">Ceiling Cloth Drying Hangers</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                  Space-saving overhead pulley drying rods crafted from mirror-finish SS-304/316 pipes with zero-tangle nylon ropes.
+                </p>
+                <ul class="mt-4 space-y-1.5 text-xs text-slate-700 font-medium">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Available in 4ft, 5ft, 6ft, 7ft &amp; 8ft Rods</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Holds up to 60 KG Wet Laundry Load</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Free Same-Day Fitting in 45 Minutes</li>
+                </ul>
+              </div>
+              <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+                <a href="tel:+918523068882" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition-all">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Call Directly</span>
+                </a>
+                <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20Ceiling%20Cloth%20Drying%20Hangers." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs transition-all">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 3: Pigeon & Balcony Safety Nets -->
+          <article data-category="nets" class="service-card bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-card hover:shadow-luxury transition-all flex flex-col">
+            <div class="relative aspect-[4/5] md:aspect-[16/10] bg-navy-900 overflow-hidden">
+              <picture class="block w-full h-full">
+                <source media="(min-width: 768px)" srcset="/images/desktop/service-pigeon-net.webp" />
+                <img
+                  src="/images/mobile/service-pigeon-net.webp"
+                  data-fallback-desktop="/images/services/pigeon-safety-net.jpg"
+                  data-fallback-mobile="/images/services/pigeon-safety-net.jpg"
+                  onerror="handleResponsiveImgError(this)"
+                  alt="Garware High-Density Pigeon & Balcony Safety Nets Bengaluru"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </picture>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-white font-mono text-[10px] font-semibold">
+                GARWARE UV-STABILIZED
+              </span>
+              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-champagne-500 text-navy-950 font-mono text-[10px] font-bold shadow flex items-center gap-1">
+                <i data-lucide="phone-call" class="w-3 h-3"></i>
+                <span>TALK DIRECTLY</span>
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div>
+                <h3 class="text-lg font-extrabold text-navy-900">Pigeon &amp; Balcony Safety Nets</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                  Translucent nylon &amp; virgin HDPE Garware nets that block pigeons completely without blocking airflow or sunlight.
+                </p>
+                <ul class="mt-4 space-y-1.5 text-xs text-slate-700 font-medium">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Rust-Proof SS-304 Hooks &amp; Border Wire</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> All-Weather Monsoon &amp; Sun Resistant</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> 5-Year Replacement Guarantee</li>
+                </ul>
+              </div>
+              <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+                <a href="tel:+918523068882" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition-all">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Call Directly</span>
+                </a>
+                <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20Pigeon%20Safety%20Nets." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs transition-all">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 4: Stainless Steel Bird Spikes -->
+          <article data-category="nets" class="service-card bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-card hover:shadow-luxury transition-all flex flex-col">
+            <div class="relative aspect-[4/5] md:aspect-[16/10] bg-navy-900 overflow-hidden">
+              <picture class="block w-full h-full">
+                <source media="(min-width: 768px)" srcset="/images/desktop/service-bird-spikes.webp" />
+                <img
+                  src="/images/mobile/service-bird-spikes.webp"
+                  data-fallback-desktop="/images/services/bird-spikes.jpg"
+                  data-fallback-mobile="/images/services/bird-spikes.jpg"
+                  onerror="handleResponsiveImgError(this)"
+                  alt="Architectural Stainless Steel Bird Spikes for AC Units & Ledges"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </picture>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-white font-mono text-[10px] font-semibold">
+                HUMANE DETERRENT
+              </span>
+              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-champagne-500 text-navy-950 font-mono text-[10px] font-bold shadow flex items-center gap-1">
+                <i data-lucide="phone-call" class="w-3 h-3"></i>
+                <span>TALK DIRECTLY</span>
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div>
+                <h3 class="text-lg font-extrabold text-navy-900">Stainless Steel Bird Spikes</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                  Blunt-tip SS-304 spikes on UV polycarbonate bases designed to stop pigeons from nesting on AC outdoor units and ledges.
+                </p>
+                <ul class="mt-4 space-y-1.5 text-xs text-slate-700 font-medium">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> 100% Humane &amp; Non-Harmful to Birds</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Weatherproof 3M Industrial Adhesive + Screws</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Ideal for AC Units, Parapets &amp; Pipes</li>
+                </ul>
+              </div>
+              <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+                <a href="tel:+918523068882" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition-all">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Call Directly</span>
+                </a>
+                <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20Stainless%20Steel%20Bird%20Spikes." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs transition-all">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 5: French Window Invisible Grills -->
+          <article data-category="grills" class="service-card bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-card hover:shadow-luxury transition-all flex flex-col">
+            <div class="relative aspect-[4/5] md:aspect-[16/10] bg-navy-900 overflow-hidden">
+              <picture class="block w-full h-full">
+                <source media="(min-width: 768px)" srcset="/images/desktop/service-window-grill.webp" />
+                <img
+                  src="/images/mobile/service-window-grill.webp"
+                  data-fallback-desktop="/images/services/ig-french-window.jpg"
+                  data-fallback-mobile="/images/services/ig-french-window.jpg"
+                  onerror="handleResponsiveImgError(this)"
+                  alt="French Window & Bay Window SS-316 Invisible Grills"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </picture>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-white font-mono text-[10px] font-semibold">
+                SLIM RECESSED TRACK
+              </span>
+              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-champagne-500 text-navy-950 font-mono text-[10px] font-bold shadow flex items-center gap-1">
+                <i data-lucide="phone-call" class="w-3 h-3"></i>
+                <span>TALK DIRECTLY</span>
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div>
+                <h3 class="text-lg font-extrabold text-navy-900">French Window Invisible Grills</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                  Custom-fitted horizontal or vertical SS-316 safety cables that integrate seamlessly inside UPVC and aluminium sliding windows.
+                </p>
+                <ul class="mt-4 space-y-1.5 text-xs text-slate-700 font-medium">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Color-Matched Charcoal, White &amp; Bronze Tracks</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Keep Windows Wide Open Without Fall Risk</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Emergency Fire Cut-Out Capability</li>
+                </ul>
+              </div>
+              <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+                <a href="tel:+918523068882" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition-all">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Call Directly</span>
+                </a>
+                <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20French%20Window%20Invisible%20Grills." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs transition-all">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Service 6: Toddler & Pet Balcony Shields -->
+          <article data-category="grills" class="service-card bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-card hover:shadow-luxury transition-all flex flex-col">
+            <div class="relative aspect-[4/5] md:aspect-[16/10] bg-navy-900 overflow-hidden">
+              <picture class="block w-full h-full">
+                <source media="(min-width: 768px)" srcset="/images/desktop/service-child-safety.webp" />
+                <img
+                  src="/images/mobile/service-child-safety.webp"
+                  data-fallback-desktop="/images/services/invisible-grills-child-safe.jpg"
+                  data-fallback-mobile="/images/services/invisible-grills-child-safe.jpg"
+                  onerror="handleResponsiveImgError(this)"
+                  alt="Toddler & Cat Safe 50mm Gap Invisible Grills Bengaluru"
+                  class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                />
+              </picture>
+              <span class="absolute top-3 left-3 px-2.5 py-1 rounded-full bg-navy-900/85 backdrop-blur-md text-white font-mono text-[10px] font-semibold">
+                50MM BABY-LOCK SERIES
+              </span>
+              <span class="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-champagne-500 text-navy-950 font-mono text-[10px] font-bold shadow flex items-center gap-1">
+                <i data-lucide="phone-call" class="w-3 h-3"></i>
+                <span>TALK DIRECTLY</span>
+              </span>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-5">
+              <div>
+                <h3 class="text-lg font-extrabold text-navy-900">Toddler &amp; Pet Balcony Shields</h3>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1.5 leading-relaxed">
+                  High-tension 50mm (2.0 inch) vertical cable pitch with horizontal anti-spread stiffener wire so toddlers and cats can never slip through.
+                </p>
+                <ul class="mt-4 space-y-1.5 text-xs text-slate-700 font-medium">
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Anti-Climb Vertical Lacing Architecture</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Smooth Nylon Coat Protects Little Hands</li>
+                  <li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-600 shrink-0"></i> Optional Smart Alarm Sensor Integration</li>
+                </ul>
+              </div>
+              <div class="grid grid-cols-2 gap-2.5 pt-2 border-t border-slate-100">
+                <a href="tel:+918523068882" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs transition-all">
+                  <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-400"></i>
+                  <span>Call Directly</span>
+                </a>
+                <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20Toddler%20%26%20Pet%20Balcony%20Safety%20Grills." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 font-bold text-xs transition-all">
+                  <i data-lucide="message-circle" class="w-3.5 h-3.5"></i> WhatsApp
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         03. SAFETY MEASUREMENTS: HARDWARE VISUAL + 4-STEP LASER PROTOCOL
+    ==================================================================== -->
+    <section id="measurements" class="py-14 md:py-20 border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-3xl mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-slate-200 text-[11px] font-mono uppercase tracking-wider text-cyan-600 font-semibold mb-3">
+            03 • SAFETY MEASUREMENTS &amp; STRUCTURAL PRECISION
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
+            0.1mm Bosch Laser Survey &amp; 400 KG Tension Engineering
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            Every balcony is laser-mapped before installation to ensure zero tile cracking, uniform 50mm toddler-safe spacing, and certified load anchoring.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+
+          <!-- Left 6 Columns: Realistic Hardware Visual + 4 Technical Spec Cards -->
+          <div class="lg:col-span-6 bg-white p-4 sm:p-6 rounded-3xl border border-slate-200/90 shadow-card space-y-5">
+            <div class="relative rounded-2xl overflow-hidden aspect-[4/5] md:aspect-[16/10] bg-navy-900">
+              <picture class="block w-full h-full">
+                <source media="(min-width: 768px)" srcset="/images/desktop/safety-laser-hardware.webp" />
+                <img
+                  src="/images/mobile/safety-laser-hardware.webp"
+                  data-fallback-desktop="/images/laser-measurement.jpg"
+                  data-fallback-mobile="/images/laser-measurement.jpg"
+                  onerror="handleResponsiveImgError(this)"
+                  alt="Bosch Laser Measurement & Marine Grade SS-316 Track Hardware"
+                  class="w-full h-full object-cover"
+                />
+              </picture>
+              <div class="absolute inset-0 bg-gradient-to-t from-navy-950/85 via-navy-950/20 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <span class="px-2.5 py-1 rounded-full bg-cyan-500/25 border border-cyan-400/40 text-cyan-300 font-mono text-[10px] font-semibold">
+                  CERTIFIED HARDWARE ARCHITECTURE
+                </span>
+                <h3 class="text-lg font-extrabold mt-1.5">Concealed 6063-T6 Track + Swaged SS-316 Ferrules</h3>
+                <p class="text-xs text-slate-300 mt-0.5">All tension screws and anchor bolts are concealed inside anodized aluminium moulding caps.</p>
+              </div>
+            </div>
+
+            <!-- 4 Clean Hardware Spec Cards -->
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-2xl bg-pearl border border-slate-200/80">
+                <span class="font-mono text-[11px] uppercase text-cyan-600 font-bold">CABLE PITCH</span>
+                <p class="font-mono text-xl font-extrabold text-navy-900 mt-1">50 MM (2.0")</p>
+                <p class="text-xs text-slate-600 mt-0.5">Toddler &amp; Cat Lock Standard</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-pearl border border-slate-200/80">
+                <span class="font-mono text-[11px] uppercase text-champagne-600 font-bold">BREAKING LOAD</span>
+                <p class="font-mono text-xl font-extrabold text-navy-900 mt-1">400 KG+</p>
+                <p class="text-xs text-slate-600 mt-0.5">7x7 Stranded Virgin SS-316</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-pearl border border-slate-200/80">
+                <span class="font-mono text-[11px] uppercase text-cyan-600 font-bold">FRAME TRACK</span>
+                <p class="font-mono text-xl font-extrabold text-navy-900 mt-1">6063-T6 Alloy</p>
+                <p class="text-xs text-slate-600 mt-0.5">2.2mm Thick Powder-Coated</p>
+              </div>
+              <div class="p-4 rounded-2xl bg-pearl border border-slate-200/80">
+                <span class="font-mono text-[11px] uppercase text-champagne-600 font-bold">FIRE EGRESS</span>
+                <p class="font-mono text-xl font-extrabold text-navy-900 mt-1">10 Seconds</p>
+                <p class="text-xs text-slate-600 mt-0.5">Emergency Cutter Release</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 6 Columns: 4-Step Doorstep Laser Protocol -->
+          <div class="lg:col-span-6 space-y-3.5">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-card flex gap-4">
+              <div class="w-11 h-11 rounded-xl bg-navy-900 text-champagne-400 font-mono font-bold text-sm flex items-center justify-center shrink-0">01</div>
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <h3 class="font-extrabold text-base text-navy-900">Bosch Digital Laser Perimeter Scan</h3>
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 font-semibold">±0.1MM ACCURACY</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                  We map the exact parapet curvature, ceiling plumb line, and square-foot area using a digital laser distometer in front of you.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-card flex gap-4">
+              <div class="w-11 h-11 rounded-xl bg-navy-900 text-champagne-400 font-mono font-bold text-sm flex items-center justify-center shrink-0">02</div>
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <h3 class="font-extrabold text-base text-navy-900">RCC Slab &amp; Granite Core Evaluation</h3>
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 font-semibold">50MM ANCHOR DEPTH</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                  Fasteners bypass hollow plaster and tiles to anchor 50mm deep directly into the structural RCC beam using SS-316 expansion bolts.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-card flex gap-4">
+              <div class="w-11 h-11 rounded-xl bg-navy-900 text-champagne-400 font-mono font-bold text-sm flex items-center justify-center shrink-0">03</div>
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <h3 class="font-extrabold text-base text-navy-900">Dust-Free HEPA Vacuum Core Drilling</h3>
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 font-semibold">ZERO TILE CRACKS</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                  Diamond-tipped bits paired with industrial vacuum nozzles capture 99% of drilling dust and seal every hole with waterproof silicone.
+                </p>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200/90 shadow-card flex gap-4">
+              <div class="w-11 h-11 rounded-xl bg-navy-900 text-champagne-400 font-mono font-bold text-sm flex items-center justify-center shrink-0">04</div>
+              <div>
+                <div class="flex flex-wrap items-center justify-between gap-2">
+                  <h3 class="font-extrabold text-base text-navy-900">Digital Dynamometer Cable Tensioning</h3>
+                  <span class="font-mono text-[10px] px-2 py-0.5 rounded bg-cyan-50 text-cyan-700 font-semibold">400 KG CALIBRATION</span>
+                </div>
+                <p class="text-xs sm:text-sm text-slate-600 mt-1">
+                  Every individual SS-316 rope is tensioned to acoustic rigidity so children or pets cannot push the cables apart.
+                </p>
+              </div>
+            </div>
+
+            <!-- Direct Measurement Booking Strip -->
+            <div class="bg-navy-900 text-white p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div>
+                <p class="font-mono text-[11px] text-champagne-400 uppercase">FREE DOORSTEP INSPECTION</p>
+                <p class="text-sm font-bold mt-0.5">Our engineer brings physical SS-316 &amp; track samples to your flat.</p>
+              </div>
+              <a href="tel:+918523068882" class="shrink-0 inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-champagne-500 hover:bg-champagne-400 text-navy-950 font-bold text-xs transition-all">
+                <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
+                <span>Call Engineer Now</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         04. WARRANTY: 10-YEAR STAMPED BOND + 4-POINT GUARANTEE CHECKLIST
+    ==================================================================== -->
+    <section id="warranty" class="py-14 md:py-20 bg-white border-b border-slate-200/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <div class="max-w-3xl mb-10">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pearl border border-slate-200 text-[11px] font-mono uppercase tracking-wider text-champagne-600 font-semibold mb-3">
+            04 • 10-YEAR STAMPED WARRANTY &amp; QUALITY ASSURANCE
+          </div>
+          <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-navy-900 tracking-tight">
+            Backed by a 10-Year Written Anti-Rust &amp; Tension Bond
+          </h2>
+          <p class="text-slate-600 text-sm sm:text-base mt-2">
+            Every installation includes a serial-numbered physical &amp; digital warranty bond certifying genuine Marine-Grade AISI 316 stainless steel.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+
+          <!-- Left 6 Columns: Interactive Flippable 3D Warranty Certificate -->
+          <div class="lg:col-span-6 flex flex-col justify-between">
+            <div class="perspective-1000 w-full h-[360px] sm:h-[380px] cursor-pointer" onclick="flipWarrantyCard()">
+              <div id="warrantyCardInner" class="relative w-full h-full transform-style-3d">
+
+                <!-- Front of Certificate -->
+                <div class="absolute inset-0 backface-hidden rounded-3xl bg-gradient-to-br from-navy-900 via-navy-950 to-slate-900 text-white p-6 sm:p-8 border border-champagne-500/40 shadow-luxury flex flex-col justify-between">
+                  <div class="flex items-start justify-between gap-4">
+                    <div>
+                      <span class="font-mono text-[10px] uppercase tracking-widest text-champagne-400 block">OFFICIAL METALLURGICAL WARRANTY BOND</span>
+                      <h3 class="font-serif italic text-2xl sm:text-3xl text-white mt-1">Aura Grills™ 10-Year Guarantee</h3>
+                    </div>
+                    <div class="w-12 h-12 rounded-2xl bg-champagne-500/20 border border-champagne-400/50 flex items-center justify-center shrink-0">
+                      <i data-lucide="shield-check" class="w-6 h-6 text-champagne-400"></i>
+                    </div>
+                  </div>
+
+                  <div class="grid grid-cols-2 gap-4 my-4 py-4 border-y border-white/10 text-xs">
+                    <div>
+                      <span class="text-slate-400 font-mono text-[10px] block">WIRE CORE GRADE</span>
+                      <span class="font-mono font-bold text-sm text-white">AISI SS-316 Marine</span>
+                    </div>
+                    <div>
+                      <span class="text-slate-400 font-mono text-[10px] block">COATING PROTECTION</span>
+                      <span class="font-mono font-bold text-sm text-white">UV-12 Polyamide Nylon</span>
+                    </div>
+                    <div>
+                      <span class="text-slate-400 font-mono text-[10px] block">CORROSION COVERAGE</span>
+                      <span class="font-mono font-bold text-sm text-emerald-400">100% Zero-Rust Replacement</span>
+                    </div>
+                    <div>
+                      <span class="text-slate-400 font-mono text-[10px] block">TENSION CALIBRATION</span>
+                      <span class="font-mono font-bold text-sm text-champagne-400">Free Annual Checkup</span>
+                    </div>
+                  </div>
+
+                  <div class="flex items-center justify-between text-xs">
+                    <span class="font-mono text-[11px] text-slate-300">BOND SERIES: #AG-BLR-2026-316</span>
+                    <span class="inline-flex items-center gap-1.5 text-champagne-400 font-mono text-xs font-semibold">
+                      <i data-lucide="rotate-cw" class="w-3.5 h-3.5"></i> Tap to View Lab Specs
+                    </span>
+                  </div>
+                </div>
+
+                <!-- Back of Certificate -->
+                <div class="absolute inset-0 backface-hidden rotate-y-180 rounded-3xl bg-navy-950 text-white p-6 sm:p-8 border border-cyan-500/40 shadow-luxury flex flex-col justify-between">
+                  <div>
+                    <div class="flex items-center justify-between">
+                      <span class="font-mono text-[10px] uppercase tracking-widest text-cyan-400">NABL METALLURGICAL TEST READOUT</span>
+                      <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 font-mono text-[10px]">PASSED</span>
+                    </div>
+                    <h4 class="text-lg font-bold mt-1">AISI 316 vs Ordinary 202/304 Steel</h4>
+                    <div class="mt-4 space-y-2.5 text-xs font-mono">
+                      <div class="flex justify-between py-1.5 border-b border-white/10">
+                        <span class="text-slate-400">Molybdenum (Mo) Content:</span>
+                        <span class="text-emerald-400 font-bold">2.5% – 3.5% (Anti-Pitting)</span>
+                      </div>
+                      <div class="flex justify-between py-1.5 border-b border-white/10">
+                        <span class="text-slate-400">Chromium / Nickel Ratio:</span>
+                        <span class="text-white font-bold">17.2% Cr / 12.1% Ni</span>
+                      </div>
+                      <div class="flex justify-between py-1.5 border-b border-white/10">
+                        <span class="text-slate-400">Salt-Spray Test Duration:</span>
+                        <span class="text-white font-bold">2,400 Hours Zero Oxidation</span>
+                      </div>
+                      <div class="flex justify-between py-1.5">
+                        <span class="text-slate-400">Single Rope Breaking Force:</span>
+                        <span class="text-champagne-400 font-bold">412.8 KGf Certified</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex items-center justify-between text-xs pt-3 border-t border-white/10">
+                    <span class="text-slate-400">Signed at Handover with GST Invoice</span>
+                    <span class="text-cyan-400 font-mono font-semibold inline-flex items-center gap-1">
+                      <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i> Flip Back
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 6 Columns: Clean 4-Point Guarantee Checklist -->
+          <div class="lg:col-span-6 bg-pearl p-6 sm:p-8 rounded-3xl border border-slate-200/90 flex flex-col justify-between space-y-6">
+            <div>
+              <span class="font-mono text-xs uppercase text-cyan-600 font-bold">WHAT YOUR 10-YEAR WARRANTY COVERS</span>
+              <h3 class="text-xl sm:text-2xl font-extrabold text-navy-900 mt-1">4-Point Zero-Compromise Guarantee</h3>
+
+              <div class="mt-5 space-y-4">
+                <div class="flex items-start gap-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-navy-900">1. 100% Zero-Rust SS-316 Replacement Guarantee</h4>
+                    <p class="text-xs text-slate-600 mt-0.5">If any cable or fastener shows rust or oxidation within 10 years, we replace the entire run free of cost.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-navy-900">2. UV-12 Polyamide Coating Protection</h4>
+                    <p class="text-xs text-slate-600 mt-0.5">Engineered for harsh Indian sun and monsoon rains—will never peel, yellow, or turn brittle.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-navy-900">3. Complete Society RWA Approval Documentation</h4>
+                    <p class="text-xs text-slate-600 mt-0.5">We provide technical specification sheets and NOC drawings required by Prestige, Sobha &amp; Brigade facility teams.</p>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-3.5">
+                  <div class="w-8 h-8 rounded-lg bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 mt-0.5">
+                    <i data-lucide="check" class="w-4 h-4"></i>
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-sm text-navy-900">4. Free Doorstep Tension Re-Calibration</h4>
+                    <p class="text-xs text-slate-600 mt-0.5">Dedicated Bengaluru service teams respond within 24 hours for any tension adjustment or service request.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4 border-t border-slate-200 flex flex-col sm:flex-row gap-3">
+              <a href="tel:+918523068882" class="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-navy-900 hover:bg-navy-800 text-white font-bold text-xs sm:text-sm transition-all">
+                <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
+                <span>Talk Directly: +91 85230 68882</span>
+              </a>
+              <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%2C%20please%20share%20your%20SS-316%20Warranty%20Details." target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-white hover:bg-slate-50 text-navy-900 border border-slate-300 font-bold text-xs sm:text-sm transition-all">
+                <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
+                <span>WhatsApp Expert</span>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================
+         05. CONTACT: EXPRESS SURVEY VAN DISPATCH & DIRECT CONVERSION
+    ==================================================================== -->
+    <section id="contact" class="py-14 md:py-20 bg-navy-950 text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+
+          <!-- Left 5 Columns: Direct Contact & Bengaluru Dispatch Hubs -->
+          <div class="lg:col-span-5 space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/15 text-[11px] font-mono uppercase tracking-wider text-champagne-400 font-semibold">
+              05 • EXPRESS DOORSTEP SURVEY DISPATCH
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight">
+              Book Your Free 0.1mm Laser Survey Today
+            </h2>
+
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Our mobile survey vans carry physical SS-316 cable samples, anodized track shades, Garware safety nets, and ceiling hanger rods across all Bengaluru zones—100% free with zero obligation.
+            </p>
+
+            <!-- Direct Phone & WhatsApp Cards -->
+            <div class="space-y-3">
+              <a href="tel:+918523068882" class="flex items-center justify-between p-4 rounded-2xl bg-white/5 hover:bg-white/10 border border-white/15 transition-all">
+                <div class="flex items-center gap-3.5">
+                  <div class="w-11 h-11 rounded-xl bg-champagne-500 text-navy-950 flex items-center justify-center">
+                    <i data-lucide="phone-call" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="font-mono text-[10px] uppercase text-champagne-400 block">DIRECT ENGINEERING DESK (7 AM – 10 PM)</span>
+                    <span class="text-lg font-extrabold text-white">+91 85230 68882</span>
+                  </div>
+                </div>
+                <span class="text-xs font-mono text-champagne-400">Call Now →</span>
+              </a>
+
+              <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%20Bengaluru%2C%20I%20would%20like%20to%20talk%20directly%20with%20an%20engineer%20for%20a%20free%20laser%20survey." target="_blank" rel="noopener" class="flex items-center justify-between p-4 rounded-2xl bg-emerald-500/10 hover:bg-emerald-500/20 border border-emerald-500/30 transition-all">
+                <div class="flex items-center gap-3.5">
+                  <div class="w-11 h-11 rounded-xl bg-emerald-500 text-navy-950 flex items-center justify-center">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                  </div>
+                  <div>
+                    <span class="font-mono text-[10px] uppercase text-emerald-300 block">INSTANT WHATSAPP DESK</span>
+                    <span class="text-base font-extrabold text-white">Send Balcony Video / Dimensions</span>
+                  </div>
+                </div>
+                <span class="text-xs font-mono text-emerald-300">Chat →</span>
+              </a>
+            </div>
+
+            <!-- Active Service Hubs -->
+            <div class="pt-2">
+              <span class="font-mono text-[11px] uppercase text-slate-400 block mb-2.5">ACTIVE 60-MIN SURVEY VAN HUBS IN BENGALURU:</span>
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono text-slate-300">
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Whitefield</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Sarjapur ORR</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Bellandur</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">HSR Layout</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Hebbal</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Yelahanka</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Electronic City</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Kanakapura Rd</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">Indiranagar</span>
+                <span class="px-2.5 py-1 rounded-lg bg-white/5 border border-white/10">JP Nagar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right 7 Columns: Express Doorstep Survey Form -->
+          <div class="lg:col-span-7">
+            <form id="expressSurveyForm" onsubmit="submitSurveyForm(event)" class="bg-white text-navy-900 p-6 sm:p-8 rounded-3xl shadow-luxury space-y-5">
+              <div class="flex items-center justify-between border-b border-slate-200 pb-4">
+                <div>
+                  <span class="font-mono text-[11px] uppercase text-cyan-600 font-bold">ZERO-OBLIGATION VISIT</span>
+                  <h3 class="text-xl font-extrabold text-navy-900">Schedule Free Laser Measurement &amp; Sample Kit</h3>
+                </div>
+                <span class="px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 font-mono text-xs font-bold">FREE VISIT</span>
+              </div>
+
+              <!-- 1-Tap Time Slot Selector -->
+              <div>
+                <label class="block text-xs font-bold uppercase font-mono text-slate-600 mb-2">1. Choose Preferred Visit Slot</label>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+                  <button type="button" onclick="selectSlot(this, 'Today Express (Within 2 Hrs)')" class="slot-btn px-3 py-2 rounded-xl text-xs font-bold border border-navy-900 bg-navy-900 text-white transition-all">
+                    Today Express
+                  </button>
+                  <button type="button" onclick="selectSlot(this, 'Tomorrow Morning (10AM - 1PM)')" class="slot-btn px-3 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-pearl text-slate-700 hover:border-navy-900 transition-all">
+                    Tomorrow 10–1
+                  </button>
+                  <button type="button" onclick="selectSlot(this, 'Tomorrow Evening (4PM - 7PM)')" class="slot-btn px-3 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-pearl text-slate-700 hover:border-navy-900 transition-all">
+                    Tomorrow 4–7
+                  </button>
+                  <button type="button" onclick="selectSlot(this, 'Weekend Priority Slot')" class="slot-btn px-3 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-pearl text-slate-700 hover:border-navy-900 transition-all">
+                    Weekend Slot
+                  </button>
+                </div>
+                <input type="hidden" id="selectedTimeSlot" value="Today Express (Within 2 Hrs)" />
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="leadName" class="block text-xs font-bold text-slate-700 mb-1">Your Full Name *</label>
+                  <input id="leadName" type="text" required placeholder="e.g., Karthik Reddy" class="w-full px-4 py-3 rounded-xl bg-pearl border border-slate-300 text-sm focus:outline-none focus:border-navy-900" />
+                </div>
+                <div>
+                  <label for="leadPhone" class="block text-xs font-bold text-slate-700 mb-1">10-Digit Mobile Number *</label>
+                  <input id="leadPhone" type="tel" required pattern="[0-9+\s-]{10,15}" placeholder="e.g., 98450 12345" class="w-full px-4 py-3 rounded-xl bg-pearl border border-slate-300 text-sm focus:outline-none focus:border-navy-900" />
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label for="leadSociety" class="block text-xs font-bold text-slate-700 mb-1">Apartment Society / Area in Bengaluru *</label>
+                  <input id="leadSociety" type="text" required placeholder="e.g., Prestige Shantiniketan, Whitefield" class="w-full px-4 py-3 rounded-xl bg-pearl border border-slate-300 text-sm focus:outline-none focus:border-navy-900" />
+                </div>
+                <div>
+                  <label for="leadService" class="block text-xs font-bold text-slate-700 mb-1">Primary Service Required *</label>
+                  <select id="leadService" class="w-full px-4 py-3 rounded-xl bg-pearl border border-slate-300 text-sm font-semibold focus:outline-none focus:border-navy-900">
+                    <option value="Invisible Safety Grills (SS-316)">Invisible Safety Grills (SS-316)</option>
+                    <option value="Invisible Grills + Ceiling Cloth Hanger">Invisible Grills + Ceiling Cloth Hanger Combo</option>
+                    <option value="Ceiling Cloth Drying Hangers">Ceiling Cloth Drying Hangers</option>
+                    <option value="Pigeon & Balcony Safety Nets">Pigeon &amp; Balcony Safety Nets</option>
+                    <option value="French Window Invisible Grills">French Window Invisible Grills</option>
+                  </select>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full py-4 rounded-xl bg-champagne-500 hover:bg-champagne-400 text-navy-950 font-extrabold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                <i data-lucide="send" class="w-4 h-4"></i>
+                <span>Confirm Free Doorstep Laser Survey</span>
+              </button>
+
+              <p id="formFeedback" class="hidden text-center text-xs font-bold text-emerald-700 bg-emerald-50 py-2.5 px-4 rounded-xl"></p>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- Footer Copyright -->
+        <div class="mt-14 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          <p>© 2026 Aura Grills™ Bengaluru (auragrills.in). All Rights Reserved. Marine-Grade SS-316 Balcony Safety Systems.</p>
+          <div class="flex items-center gap-4">
+            <a href="#intro" class="hover:text-white">01. Intro</a>
+            <a href="#services" class="hover:text-white">02. Services</a>
+            <a href="#measurements" class="hover:text-white">03. Measurements</a>
+            <a href="#warranty" class="hover:text-white">04. Warranty</a>
+            <a href="#contact" class="hover:text-white">05. Contact</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- STICKY MOBILE CONVERSION BOTTOM BAR -->
+  <div class="fixed bottom-0 inset-x-0 z-50 md:hidden bg-navy-950/95 backdrop-blur-md border-t border-white/15 px-3 py-2.5">
+    <div class="grid grid-cols-3 gap-2 max-w-md mx-auto">
+      <a href="tel:+918523068882" class="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-white text-navy-950 font-extrabold text-xs">
+        <i data-lucide="phone-call" class="w-3.5 h-3.5 text-cyan-600"></i>
+        <span>Call Now</span>
+      </a>
+      <a href="https://wa.me/918523068882?text=Hi%20Aura%20Grills%20Bengaluru%2C%20I%20want%20to%20talk%20directly%20with%20an%20expert%20for%20my%20balcony." target="_blank" rel="noopener" class="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-emerald-500 text-navy-950 font-extrabold text-xs">
+        <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+        <span>WhatsApp</span>
+      </a>
+      <button onclick="openBookingModal('Express Mobile Survey')" class="flex items-center justify-center gap-1.5 py-2.5 rounded-xl bg-champagne-500 text-navy-950 font-extrabold text-xs">
+        <i data-lucide="calendar" class="w-3.5 h-3.5"></i>
+        <span>Free Survey</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- INTERACTIVE SCRIPTS -->
+  <script>
+    lucide.createIcons();
+
+    // 02. Services Category Filter
+    function filterServices(category) {
+      document.querySelectorAll('.service-tab').forEach(btn => {
+        const active = btn.getAttribute('data-service-filter') === category;
+        btn.className = active
+          ? 'service-tab shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-navy-900 text-white transition-all'
+          : 'service-tab shrink-0 px-4 py-2 rounded-full text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:border-navy-900 transition-all';
+      });
+      document.querySelectorAll('.service-card').forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // 04. Flip 3D Warranty Certificate Card
+    function flipWarrantyCard() {
+      const card = document.getElementById('warrantyCardInner');
+      if (card) {
+        card.classList.toggle('rotate-y-180');
+      }
+    }
+
+    // 05. Select Express Slot & Pre-fill Service Booking
+    function selectSlot(btnEl, slotText) {
+      document.querySelectorAll('.slot-btn').forEach(b => {
+        b.className = 'slot-btn px-3 py-2 rounded-xl text-xs font-bold border border-slate-200 bg-pearl text-slate-700 hover:border-navy-900 transition-all';
+      });
+      btnEl.className = 'slot-btn px-3 py-2 rounded-xl text-xs font-bold border border-navy-900 bg-navy-900 text-white transition-all';
+      document.getElementById('selectedTimeSlot').value = slotText;
+    }
+
+    function openBookingModal(serviceName) {
+      const selectEl = document.getElementById('leadService');
+      if (selectEl && serviceName) {
+        for (let i = 0; i < selectEl.options.length; i++) {
+          if (selectEl.options[i].value.toLowerCase().includes(serviceName.toLowerCase().slice(0, 12))) {
+            selectEl.selectedIndex = i;
+            break;
+          }
+        }
+      }
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      setTimeout(() => document.getElementById('leadName')?.focus(), 600);
+    }
+
+    function submitSurveyForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('leadName').value.trim();
+      const phone = document.getElementById('leadPhone').value.trim();
+      const society = document.getElementById('leadSociety').value.trim();
+      const service = document.getElementById('leadService').value;
+      const slot = document.getElementById('selectedTimeSlot').value;
+
+      const feedback = document.getElementById('formFeedback');
+      feedback.textContent = `Survey Confirmed for ${name} (${slot}). Opening WhatsApp Dispatch Ticket...`;
+      feedback.classList.remove('hidden');
+
+      const msg = encodeURIComponent(
+        `Hi Aura Grills Bengaluru, please book my Free Doorstep Laser Survey:\n` +
+        `• Name: ${name}\n` +
+        `• Phone: ${phone}\n` +
+        `• Society/Area: ${society}\n` +
+        `• Service: ${service}\n` +
+        `• Preferred Slot: ${slot}`
+      );
+      setTimeout(() => {
+        window.open(`https://wa.me/918523068882?text=${msg}`, '_blank');
+      }, 500);
+    }
+  </script>
+</body>
+</html>

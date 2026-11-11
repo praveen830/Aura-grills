@@ -281,60 +281,6 @@ export default function BangalorePlacesDashboard({
             ))}
           </div>
 
-          {/* =========================================================================
-              SECTION: 4 CORE BALCONY SERVICES
-              ========================================================================= */}
-          <div id="balcony-services" className="pt-2 space-y-5 px-3 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-            <div className="flex items-center justify-between border-b border-zinc-200 pb-3">
-              <div>
-                <h2 className="text-xl sm:text-2xl font-black text-zinc-950 tracking-tight">
-                  Balcony Safety &amp; Utility Services
-                </h2>
-                <p className="text-xs text-zinc-500">
-                  Bangalore certified safety solutions with 10-year manufacturer warranty
-                </p>
-              </div>
-              <span className="text-[11px] font-bold text-zinc-400 uppercase tracking-widest hidden sm:inline-block">
-                Bangalore Certified
-              </span>
-            </div>
-
-            {/* 4 Services Grid in Clean Mobile View */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-              {AURAB_SERVICES.map((srv) => (
-                <Link
-                  key={srv.id}
-                  to={`/balcony-services/${srv.id}`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    handleOpenService(srv.id);
-                  }}
-                  className="group relative block w-full aspect-[4/5] rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl bg-zinc-950 cursor-pointer border border-zinc-200 hover:border-emerald-500/50 transition-all duration-300 text-left"
-                >
-                  <img
-                    src={srv.image}
-                    alt={srv.displayName}
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                    loading="lazy"
-                  />
-
-                  {/* Bottom Vignette */}
-                  <div className="absolute inset-x-0 bottom-0 h-44 bg-gradient-to-t from-black/90 via-black/40 to-transparent pointer-events-none" />
-
-                  {/* Service Info at Bottom */}
-                  <div className="absolute inset-x-4 bottom-5 z-20 space-y-1 pointer-events-none">
-                    <span className="px-3 py-1 rounded-full bg-black/80 backdrop-blur-md text-[10px] sm:text-xs font-black tracking-wide uppercase text-white border border-white/20 shadow-md inline-block">
-                      {srv.name}
-                    </span>
-                    <h3 className="text-base sm:text-lg font-black text-white leading-snug drop-shadow-sm">
-                      {srv.displayName}
-                    </h3>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
-
         </div>
       ) : (
         /* =========================================================================

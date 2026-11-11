@@ -163,7 +163,8 @@ export const SERVICE_ROUTES = [
       'french window protection',
       'french-windows',
       'french windows',
-      'french-window-grills'
+      'french-window-grills',
+      'service-window-grill'
     ]
   },
   {
@@ -178,7 +179,10 @@ export const SERVICE_ROUTES = [
       'toddler balcony shields',
       'child-safety-grills',
       'child safety grills',
-      'toddler-safe'
+      'toddler-safe',
+      'child-safety-shields',
+      'child-safety',
+      'service-child-safety'
     ]
   }
 ];

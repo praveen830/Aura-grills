@@ -2,15 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { X, Phone, CheckCircle2, ShieldCheck, ArrowRight, MapPin } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 
-export default function BookingModal({ isOpen, onClose }) {
+export default function BookingModal({ isOpen, onClose, initialService }) {
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
     areaOrSociety: '',
-    installationType: 'High-Rise Balcony (10th+ Floor)',
+    installationType: initialService || 'High-Rise Balcony (10th+ Floor)',
     preferredSlot: 'Tomorrow Morning (10:00 AM - 1:00 PM)'
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (initialService) {
+      setFormData(prev => ({ ...prev, installationType: initialService }));
+    }
+  }, [initialService, isOpen]);
 
   const handleClose = () => {
     setIsSubmitted(false);

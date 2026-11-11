@@ -4,7 +4,7 @@ import WhatsAppIcon from './WhatsAppIcon';
 
 export default function FloatingConcierge() {
   return (
-    <aside aria-label="Floating Quick Actions">
+    <aside aria-label="Floating Quick Actions" className="hidden md:block">
       {/* Floating Call Pill (Bottom-Left) */}
       <a
         href="tel:+918523068882"

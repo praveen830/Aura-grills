@@ -17,10 +17,11 @@ export default function Navbar({ onGoToDashboard }) {
   }, []);
 
   const navLinks = [
-    { name: 'Bangalore Hubs', href: '/#bangalore-dashboard' },
-    { name: 'Balcony Services', href: '/#balcony-services' },
-    { name: 'Reviews', href: '/#reviews' },
-    { name: 'Helpline', href: '/#footer-contact' },
+    { id: '01', name: '01. Intro', href: '/#intro' },
+    { id: '02', name: '02. Services', href: '/#services' },
+    { id: '03', name: '03. Measurements', href: '/#measurements' },
+    { id: '04', name: '04. Warranty', href: '/#warranty' },
+    { id: '05', name: '05. Contact', href: '/#contact' },
   ];
 
   const handleScrollTo = (e, href) => {
@@ -49,7 +50,7 @@ export default function Navbar({ onGoToDashboard }) {
 
   return (
     <>
-      <header className="fixed top-3 sm:top-5 inset-x-0 z-50 mx-auto w-[94%] max-w-5xl pointer-events-none transition-all duration-300">
+      <header className="fixed top-3 sm:top-5 inset-x-0 z-50 mx-auto w-[94%] max-w-6xl pointer-events-none transition-all duration-300">
         <div
           className={`pointer-events-auto flex items-center justify-between px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full border transition-all duration-300 ${
             isScrolled
@@ -79,29 +80,29 @@ export default function Navbar({ onGoToDashboard }) {
             </div>
           </Link>
 
-          {/* Desktop Nav Links */}
-          <nav className="hidden md:flex items-center gap-1 lg:gap-1.5">
+          {/* Desktop Nav Links: 6 Numbered Pills */}
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-1.5">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, link.href)}
-                className="px-3 py-1.5 rounded-full text-xs font-semibold text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100/80 transition-colors"
+                className="px-2.5 xl:px-3 py-1.5 rounded-full text-xs font-bold text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100 transition-colors whitespace-nowrap"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="tel:+918523068882"
-              className="ml-2 px-3.5 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold transition shadow-xs flex items-center gap-1.5 active:scale-95"
+              className="ml-2 px-3.5 py-1.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-black transition shadow-xs flex items-center gap-1.5 active:scale-95 shrink-0"
             >
               <Phone className="w-3.5 h-3.5" />
               <span>Call</span>
             </a>
           </nav>
 
-          {/* Mobile Menu Toggle */}
-          <div className="md:hidden flex items-center gap-1.5">
+          {/* Mobile & Tablet Menu Toggle (Zero horizontal overflow) */}
+          <div className="lg:hidden flex items-center gap-1.5">
             <a
               href="tel:+918523068882"
               className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[10px] font-bold"
@@ -122,10 +123,10 @@ export default function Navbar({ onGoToDashboard }) {
 
         {/* Mobile Dropdown Drawer Aligned to Right Side */}
         {mobileMenuOpen && (
-          <div className="pointer-events-auto md:hidden mt-2 ml-auto max-w-xs w-full p-4 rounded-3xl bg-white/95 backdrop-blur-xl border border-zinc-200/90 shadow-2xl shadow-zinc-950/15 space-y-1 animate-fadeIn">
+          <div className="pointer-events-auto lg:hidden mt-2 ml-auto max-w-xs w-full p-4 rounded-3xl bg-white/95 backdrop-blur-xl border border-zinc-200/90 shadow-2xl shadow-zinc-950/15 space-y-1 animate-fadeIn">
             <div className="px-3 py-1.5 pb-2 border-b border-zinc-100 mb-1">
               <span className="text-[10px] uppercase font-bold tracking-wider text-emerald-600">
-                Aura Grills • SS-316 Stainless Steel
+                Aura Grills • Navigation (01-06)
               </span>
             </div>
             {navLinks.map((link) => (
@@ -133,9 +134,14 @@ export default function Navbar({ onGoToDashboard }) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, link.href)}
-                className="flex items-center justify-between px-3 py-2.5 rounded-2xl text-xs font-bold text-zinc-800 hover:bg-zinc-100 transition"
+                className="flex items-center justify-between px-3 py-2 rounded-2xl text-xs font-bold text-zinc-800 hover:bg-zinc-100 transition"
               >
-                <span>{link.name}</span>
+                <span className="flex items-center gap-2">
+                  <span className="w-6 h-6 rounded-lg bg-emerald-50 text-emerald-700 font-mono text-[10px] flex items-center justify-center font-black">
+                    {link.id}
+                  </span>
+                  <span>{link.name.replace(/^[0-9]+\.\s*/, '')}</span>
+                </span>
                 <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
               </a>
             ))}
