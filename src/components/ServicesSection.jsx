@@ -3,7 +3,8 @@ import {
   CheckCircle2, 
   Calendar, 
   Layers, 
-  ChevronRight
+  ChevronRight,
+  ArrowRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { handleResponsiveImgError } from '../utils/imageHandler';
@@ -11,6 +12,7 @@ import { handleResponsiveImgError } from '../utils/imageHandler';
 const SERVICES_DATA = [
   {
     id: 'invisible-grills',
+    routeId: 'invisible-grills',
     category: 'Invisible Grills',
     filename: 'service-invisible-grill',
     title: 'Balcony Invisible Safety Grills',
@@ -28,6 +30,7 @@ const SERVICES_DATA = [
   },
   {
     id: 'cloth-hangers',
+    routeId: 'cloth-hangers',
     category: 'Ceiling Cloth Hangers',
     filename: 'service-cloth-hanger',
     title: 'Ceiling Cloth Drying Hangers',
@@ -45,6 +48,7 @@ const SERVICES_DATA = [
   },
   {
     id: 'pigeon-nets',
+    routeId: 'safety-nets',
     category: 'Safety & Bird Nets',
     filename: 'service-pigeon-net',
     title: 'Pigeon & Balcony Safety Nets',
@@ -62,6 +66,7 @@ const SERVICES_DATA = [
   },
   {
     id: 'bird-spikes',
+    routeId: 'bird-spikes',
     category: 'Safety & Bird Nets',
     filename: 'service-bird-spikes',
     title: 'Stainless Steel Bird Spikes',
@@ -79,6 +84,7 @@ const SERVICES_DATA = [
   },
   {
     id: 'french-window-grills',
+    routeId: 'french-window-protection',
     category: 'Invisible Grills',
     filename: 'service-window-grill',
     title: 'French Window Invisible Grills',
@@ -96,6 +102,7 @@ const SERVICES_DATA = [
   },
   {
     id: 'child-safety-shields',
+    routeId: 'toddler-balcony-shields',
     category: 'Invisible Grills',
     filename: 'service-child-safety',
     title: 'Toddler & Pet Balcony Shields',
@@ -129,6 +136,12 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
 
   const handleImgError = (e) => {
     handleResponsiveImgError(e.currentTarget);
+  };
+
+  const handleServiceNavigate = (service) => {
+    if (onSelectService) {
+      onSelectService(service.routeId || service.id);
+    }
   };
 
   const handleQuoteClick = (serviceTitle) => {
@@ -197,17 +210,29 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
         </div>
 
         {/* =========================================================================
-            2. APPLE PRODUCT CARDS GRID
+            2. APPLE PRODUCT CARDS GRID (WITH BUTTER-SMOOTH HOVER & CLICKABLE VISUALS)
             ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="group rounded-[28px] apple-card-surface hover:shadow-apple-hover transition-all duration-500 overflow-hidden flex flex-col text-left"
+              className="group relative rounded-[28px] apple-card-surface hover:shadow-apple-hover transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 overflow-hidden flex flex-col text-left"
             >
               
-              {/* Card Image Showcase with HTML5 <picture> */}
-              <div className="relative w-full aspect-[16/11] overflow-hidden bg-zinc-950">
+              {/* Card Image Showcase with Butter-Smooth Hover Animation & Click-to-Navigate */}
+              <div 
+                onClick={() => handleServiceNavigate(service)}
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleServiceNavigate(service);
+                  }
+                }}
+                aria-label={`Explore architectural details for ${service.title}`}
+                className="relative w-full aspect-[16/11] overflow-hidden bg-zinc-950 cursor-pointer select-none"
+              >
                 <picture className="block w-full h-full">
                   <source 
                     media="(min-width: 768px)" 
@@ -219,20 +244,28 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                     data-fallback-mobile={service.fallbackMobile}
                     onError={handleImgError}
                     alt={`${service.title} - Aura Grills Bangalore`}
-                    className="w-full h-full object-cover object-center group-hover:scale-104 transition-transform duration-700"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-108"
                     loading="lazy"
                   />
                 </picture>
 
-                {/* Subtle top & bottom vignette */}
+                {/* Subtle top & bottom vignettes */}
                 <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/70 to-transparent pointer-events-none" />
+                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/75 to-transparent pointer-events-none" />
 
                 {/* Top Material Grade Badge */}
                 <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none">
                   <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-semibold uppercase tracking-wider text-white/95 border border-white/15 shadow-apple-sm">
                     {service.materialBadge}
                   </span>
+                </div>
+
+                {/* Interactive Butter-Smooth Center Pill on Mouse Over */}
+                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out flex items-center justify-center pointer-events-none">
+                  <div className="px-4 py-2 rounded-full bg-white/95 backdrop-blur-md text-zinc-950 font-semibold text-xs tracking-apple-tight shadow-apple-float flex items-center gap-1.5 transform translate-y-3 group-hover:translate-y-0 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                    <span>Explore Architecture</span>
+                    <ArrowRight className="w-3.5 h-3.5 text-zinc-800" />
+                  </div>
                 </div>
 
                 {/* Bottom Subtitle Preview */}
@@ -251,7 +284,10 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                     {service.category}
                   </div>
 
-                  <h3 className="text-xl font-semibold text-zinc-950 tracking-apple-tight leading-snug group-hover:text-emerald-700 transition-colors">
+                  <h3 
+                    onClick={() => handleServiceNavigate(service)}
+                    className="text-xl font-semibold text-zinc-950 tracking-apple-tight leading-snug group-hover:text-emerald-700 transition-colors cursor-pointer"
+                  >
                     {service.title}
                   </h3>
                   
@@ -298,7 +334,7 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                   {onSelectService && (
                     <button
                       type="button"
-                      onClick={() => onSelectService(service.id)}
+                      onClick={() => handleServiceNavigate(service)}
                       className="p-2.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 transition-all duration-300 active:scale-95 cursor-pointer"
                       title="Explore architectural details"
                       aria-label={`View architectural details for ${service.title}`}

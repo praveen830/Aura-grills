@@ -34,6 +34,7 @@ function MainLayout() {
 
   const handleOpenService = (serviceId) => {
     navigate(getServiceUrl(serviceId));
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenBooking = (serviceName = '') => {
@@ -53,17 +54,17 @@ function MainLayout() {
           <Hero onOpenBooking={handleOpenBooking} />
         )}
 
-        {/* SECTION 01B: Apple Hardware Bento Grid (Engineering Core & Precision) */}
-        {!selectedPlaceId && !selectedServiceId && (
-          <HardwareBentoGrid onOpenBooking={handleOpenBooking} />
-        )}
-
-        {/* SECTION 02: Mana Services (Architectural Safety Suite) */}
+        {/* SECTION 02: Mana Services (Architectural Safety Suite - 6 Services directly below Hero) */}
         {!selectedPlaceId && !selectedServiceId && (
           <ServicesSection 
             onOpenBooking={handleOpenBooking} 
             onSelectService={handleOpenService}
           />
+        )}
+
+        {/* SECTION 03: Apple Hardware Bento Grid (Engineering Core & Precision) */}
+        {!selectedPlaceId && !selectedServiceId && (
+          <HardwareBentoGrid onOpenBooking={handleOpenBooking} />
         )}
 
         {/* SECTION 03: Safety Measurements & Engineering Laser Protocol */}
