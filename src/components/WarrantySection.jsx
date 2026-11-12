@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { 
   RotateCcw, 
-  Award, 
   CheckCircle2, 
   Calendar, 
   Phone, 
@@ -58,18 +57,16 @@ export default function WarrantySection({ onOpenBooking }) {
         
         {/* Apple Keynote Section Header */}
         <div className="text-left max-w-3xl space-y-4 pb-4 border-b border-zinc-200/80">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100/80 backdrop-blur-md shadow-apple-sm text-[11px] font-semibold text-zinc-700 tracking-apple-tight">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <Award className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="uppercase tracking-wider">10-Year Stamped Guarantee</span>
+          <div className="text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-zinc-400">
+            Aura 10-Year Stamped Guarantee
           </div>
 
-          <h2 className="text-apple-section font-semibold tracking-apple-tight text-zinc-950 leading-[1.08]">
+          <h2 className="text-apple-section font-medium tracking-apple-tight text-zinc-950 leading-[1.12]">
             Ten years of complete protection.{' '}
             <span className="text-gradient-apple-dark block sm:inline">Stamped in steel.</span>
           </h2>
 
-          <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed max-w-2xl">
+          <p className="text-apple-subhead text-zinc-500 font-normal leading-relaxed max-w-2xl">
             Every Aura installation is backed by an official serialized 10-year metallurgical warranty bond. Tap the certificate below to examine our independent NABL laboratory chemical composition test.
           </p>
         </div>
@@ -103,9 +100,9 @@ export default function WarrantySection({ onOpenBooking }) {
                 {/* -------------------------------------------------------------
                     FRONT FACE: Official Stamped Warranty Bond
                     ------------------------------------------------------------- */}
-                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-[28px] p-6 sm:p-7 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white border border-white/12 shadow-apple-card hover:shadow-apple-hover flex flex-col justify-between overflow-hidden">
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] rounded-[28px] p-6 sm:p-7 bg-gradient-to-br from-zinc-950 via-zinc-900 to-black text-white border border-white/10 shadow-apple-float flex flex-col justify-between overflow-hidden">
                   
-                  {/* Subtle decorative security background */}
+                  {/* Subtle ambient lighting */}
                   <div className="absolute -right-16 -top-16 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
                   <div className="absolute -left-16 -bottom-16 w-56 h-56 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none" />
 
@@ -115,39 +112,39 @@ export default function WarrantySection({ onOpenBooking }) {
                       <div className="flex items-center gap-2.5">
                         <AuraLogo className="w-8 h-8 rounded-full border border-emerald-400/40" />
                         <div>
-                          <div className="text-xs font-bold tracking-apple-tight text-white">AURA GRILLS™</div>
-                          <div className="text-[9px] font-mono text-emerald-400">SERIAL: AG-NABL-2026-SS316</div>
+                          <div className="text-xs font-medium tracking-apple-tight text-white">AURA GRILLS™</div>
+                          <div className="text-[9px] font-mono text-zinc-400">SERIAL: AG-NABL-2026-SS316</div>
                         </div>
                       </div>
-                      <span className="px-2.5 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/40 text-[9px] font-semibold text-emerald-300 uppercase tracking-widest">
+                      <span className="px-2.5 py-1 rounded-full bg-zinc-800/80 text-[9px] font-medium text-zinc-300 uppercase tracking-widest">
                         AUTHENTIC BOND
                       </span>
                     </div>
 
                     <div className="space-y-1">
-                      <div className="text-[10px] uppercase font-bold tracking-widest text-emerald-400">
+                      <div className="text-[10px] uppercase font-medium tracking-widest text-zinc-400">
                         OFFICIAL RESIDENTIAL COVENANT
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-bold text-white tracking-apple-tight leading-snug">
+                      <h3 className="text-xl sm:text-2xl font-medium text-white tracking-apple-tight leading-snug">
                         10-Year Stamped Manufacturer Warranty
                       </h3>
-                      <p className="text-xs text-zinc-400 leading-relaxed pt-1">
+                      <p className="text-xs text-zinc-400 font-normal leading-relaxed pt-1">
                         Issued to verified Bengaluru high-rise balcony owners for aerospace SS-316 high-tensile invisible cabling and 6063-T6 anodized track systems.
                       </p>
                     </div>
 
                     {/* Coverage Scope List */}
-                    <div className="space-y-2 pt-2 border-t border-zinc-800/80 text-xs text-zinc-300">
+                    <div className="space-y-2 pt-2 border-t border-zinc-800/80 text-xs text-zinc-300 font-normal">
                       <div className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                         <span>100% Free Replacement against Rust or Pitting</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                         <span>Certified 400kg Structural Impact Immunity</span>
                       </div>
                       <div className="flex items-center gap-2">
-                        <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
                         <span>100% Facade Integrity &amp; RWA Standard Compliance</span>
                       </div>
                     </div>
@@ -157,8 +154,8 @@ export default function WarrantySection({ onOpenBooking }) {
                   <div className="pt-4 border-t border-zinc-800 relative z-10 flex items-end justify-between">
                     <div>
                       <div className="text-[9px] text-zinc-500 uppercase font-mono">AUTHORIZED SEAL</div>
-                      <div className="w-20 h-20 rounded-full border-2 border-dashed border-emerald-400/60 flex items-center justify-center text-center p-1 mt-1 bg-emerald-950/40">
-                        <div className="text-[8px] font-bold uppercase text-emerald-300 leading-tight">
+                      <div className="w-20 h-20 rounded-full border border-dashed border-emerald-400/50 flex items-center justify-center text-center p-1 mt-1 bg-emerald-950/30">
+                        <div className="text-[8px] font-medium uppercase text-emerald-300 leading-tight">
                           AURA GRILLS<br />★ 10-YR ★<br />CERTIFIED
                         </div>
                       </div>
@@ -166,13 +163,13 @@ export default function WarrantySection({ onOpenBooking }) {
 
                     <div className="text-right space-y-1">
                       <div className="text-[10px] font-mono text-zinc-400">NABL QA Chief Engineer</div>
-                      <div className="text-xs font-bold text-emerald-400 italic">S. Gopinath (QA Head)</div>
+                      <div className="text-xs font-medium text-zinc-200 italic">S. Gopinath (QA Head)</div>
                       <div className="text-[9px] text-zinc-500 font-mono">BENGALURU QA CELL</div>
                     </div>
                   </div>
 
                   {/* Flip Prompt Footer */}
-                  <div className="mt-3 pt-2 text-center border-t border-zinc-800/80 text-[10px] font-semibold text-emerald-400/90 flex items-center justify-center gap-1.5 group-hover:text-emerald-300 transition-colors">
+                  <div className="mt-3 pt-2 text-center border-t border-zinc-800/80 text-[10px] font-medium text-zinc-400 flex items-center justify-center gap-1.5 group-hover:text-zinc-200 transition-colors">
                     <RotateCcw className="w-3.5 h-3.5" />
                     <span>Tap to view NABL metallurgical test table ↺</span>
                   </div>
@@ -182,20 +179,20 @@ export default function WarrantySection({ onOpenBooking }) {
                 {/* -------------------------------------------------------------
                     BACK FACE: NABL Chemical Composition Table
                     ------------------------------------------------------------- */}
-                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[28px] p-6 sm:p-7 bg-zinc-950 text-white border border-white/12 shadow-apple-card flex flex-col justify-between overflow-hidden">
+                <div className="absolute inset-0 w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-[28px] p-6 sm:p-7 bg-zinc-950 text-white border border-white/10 shadow-apple-float flex flex-col justify-between overflow-hidden">
                   
                   <div className="space-y-4">
                     <div className="flex items-center justify-between border-b border-zinc-800 pb-3">
                       <div>
-                        <div className="text-xs font-bold text-white tracking-apple-tight">NABL METALLURGICAL TEST REPORT</div>
+                        <div className="text-xs font-medium text-white tracking-apple-tight">NABL METALLURGICAL TEST REPORT</div>
                         <div className="text-[9px] font-mono text-zinc-400">TEST REF: NABL-CHEM-316-BLR</div>
                       </div>
-                      <span className="px-2.5 py-1 rounded-full bg-emerald-950 border border-emerald-500/40 text-[9px] font-bold text-emerald-400 uppercase">
+                      <span className="px-2.5 py-1 rounded-full bg-zinc-800 text-[9px] font-medium text-zinc-300 uppercase">
                         PASSED 100%
                       </span>
                     </div>
 
-                    <p className="text-xs text-zinc-400 leading-relaxed">
+                    <p className="text-xs text-zinc-400 font-normal leading-relaxed">
                       Spectrometry chemical analysis verifying virgin AISI SS-316 grade raw wire composition with molybdenum:
                     </p>
 
@@ -210,30 +207,30 @@ export default function WarrantySection({ onOpenBooking }) {
                             <th className="p-2.5">Result</th>
                           </tr>
                         </thead>
-                        <tbody className="divide-y divide-zinc-800/80 text-zinc-300">
+                        <tbody className="divide-y divide-zinc-800/80 text-zinc-300 font-normal">
                           <tr>
-                            <td className="p-2.5 font-bold text-white">Chromium (Cr)</td>
+                            <td className="p-2.5 font-medium text-white">Chromium (Cr)</td>
                             <td className="p-2.5 text-zinc-400">16.0–18.0%</td>
-                            <td className="p-2.5 font-mono text-emerald-400 font-bold">17.20%</td>
-                            <td className="p-2.5 text-emerald-400">Pass ✓</td>
+                            <td className="p-2.5 font-mono text-zinc-200">17.20%</td>
+                            <td className="p-2.5 text-emerald-400 font-medium">Pass ✓</td>
                           </tr>
                           <tr>
-                            <td className="p-2.5 font-bold text-white">Nickel (Ni)</td>
+                            <td className="p-2.5 font-medium text-white">Nickel (Ni)</td>
                             <td className="p-2.5 text-zinc-400">10.0–14.0%</td>
-                            <td className="p-2.5 font-mono text-emerald-400 font-bold">12.15%</td>
-                            <td className="p-2.5 text-emerald-400">Pass ✓</td>
+                            <td className="p-2.5 font-mono text-zinc-200">12.15%</td>
+                            <td className="p-2.5 text-emerald-400 font-medium">Pass ✓</td>
                           </tr>
                           <tr>
-                            <td className="p-2.5 font-bold text-white">Molybdenum (Mo)</td>
+                            <td className="p-2.5 font-medium text-white">Molybdenum (Mo)</td>
                             <td className="p-2.5 text-zinc-400">2.0–3.0%</td>
-                            <td className="p-2.5 font-mono text-emerald-400 font-bold">2.45%</td>
-                            <td className="p-2.5 text-emerald-400">Pass ✓</td>
+                            <td className="p-2.5 font-mono text-zinc-200">2.45%</td>
+                            <td className="p-2.5 text-emerald-400 font-medium">Pass ✓</td>
                           </tr>
                           <tr>
-                            <td className="p-2.5 font-bold text-white">Carbon (C)</td>
+                            <td className="p-2.5 font-medium text-white">Carbon (C)</td>
                             <td className="p-2.5 text-zinc-400">&lt; 0.08%</td>
-                            <td className="p-2.5 font-mono text-emerald-400 font-bold">0.03%</td>
-                            <td className="p-2.5 text-emerald-400">Pass ✓</td>
+                            <td className="p-2.5 font-mono text-zinc-200">0.03%</td>
+                            <td className="p-2.5 text-emerald-400 font-medium">Pass ✓</td>
                           </tr>
                         </tbody>
                       </table>
@@ -241,7 +238,7 @@ export default function WarrantySection({ onOpenBooking }) {
                   </div>
 
                   {/* Return Prompt */}
-                  <div className="mt-3 pt-2 text-center border-t border-zinc-800 text-[10px] font-semibold text-emerald-400 flex items-center justify-center gap-1.5">
+                  <div className="mt-3 pt-2 text-center border-t border-zinc-800 text-[10px] font-medium text-zinc-400 flex items-center justify-center gap-1.5">
                     <RotateCcw className="w-3.5 h-3.5" />
                     <span>Tap to return to Warranty Bond certificate ↺</span>
                   </div>
@@ -256,26 +253,26 @@ export default function WarrantySection({ onOpenBooking }) {
               RIGHT COLUMN: 4-POINT MATERIAL INTEGRITY CHECKLIST
               ========================================================================= */}
           <div className="lg:col-span-7 space-y-4 flex flex-col justify-between">
-            <div className="space-y-3.5">
+            <div className="space-y-3">
               {checklistItems.map((item) => (
                 <div
                   key={item.num}
-                  className="p-5 sm:p-6 rounded-[24px] bg-zinc-50/80 border border-black/5 hover:border-emerald-500/30 hover:bg-white hover:shadow-apple-card transition-all duration-300 group text-left"
+                  className="p-5 sm:p-6 rounded-[24px] apple-card-surface hover:shadow-apple-hover transition-all duration-300 group text-left"
                 >
                   <div className="flex items-center justify-between gap-3 mb-2">
                     <div className="flex items-center gap-3">
-                      <span className="w-7 h-7 rounded-full bg-zinc-900 text-white font-mono text-xs font-bold flex items-center justify-center shrink-0">
+                      <span className="w-7 h-7 rounded-full bg-zinc-900 text-white font-mono text-xs font-medium flex items-center justify-center shrink-0">
                         {item.num}
                       </span>
-                      <h3 className="text-sm sm:text-base font-bold text-zinc-950 tracking-apple-tight">
+                      <h3 className="text-sm sm:text-base font-medium text-zinc-950 tracking-apple-tight">
                         {item.title}
                       </h3>
                     </div>
-                    <span className="px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 font-semibold text-[10px] tracking-apple-tight shrink-0 border border-emerald-200/80">
+                    <span className="px-2.5 py-1 rounded-full bg-zinc-100 text-zinc-600 font-normal text-[10px] tracking-apple-tight shrink-0">
                       {item.tag}
                     </span>
                   </div>
-                  <p className="text-xs sm:text-sm text-zinc-600 font-normal leading-relaxed pl-10 tracking-apple-normal">
+                  <p className="text-xs sm:text-sm text-zinc-500 font-normal leading-relaxed pl-10">
                     {item.desc}
                   </p>
                 </div>
@@ -287,18 +284,18 @@ export default function WarrantySection({ onOpenBooking }) {
               <button
                 type="button"
                 onClick={handleBooking}
-                className="flex-1 py-3.5 px-6 rounded-full bg-zinc-900 hover:bg-black text-white font-semibold text-xs sm:text-sm tracking-apple-tight transition shadow-apple-card hover:shadow-apple-hover flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
+                className="flex-1 py-3 px-6 rounded-full bg-zinc-950 hover:bg-black text-white font-medium text-xs sm:text-[13px] tracking-apple-tight transition shadow-apple-sm hover:shadow-apple-hover flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
               >
-                <Calendar className="w-4 h-4 text-zinc-300" />
+                <Calendar className="w-3.5 h-3.5 text-zinc-400" />
                 <span>Request Physical Sample &amp; Test Bond</span>
                 <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
               </button>
 
               <a
                 href="tel:+918523068882"
-                className="py-3.5 px-5 rounded-full bg-white hover:bg-zinc-100 text-zinc-900 border border-zinc-200/80 font-semibold text-xs sm:text-sm tracking-apple-tight transition shadow-xs flex items-center justify-center gap-2 active:scale-95 text-center"
+                className="py-3 px-5 rounded-full bg-zinc-100 hover:bg-zinc-200/70 text-zinc-800 font-medium text-xs sm:text-[13px] tracking-apple-tight transition flex items-center justify-center gap-2 active:scale-95 text-center"
               >
-                <Phone className="w-4 h-4 text-emerald-600" />
+                <Phone className="w-3.5 h-3.5 text-zinc-600" />
                 <span>Call Helpline</span>
               </a>
             </div>

@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import { 
   ChevronDown, 
-  ShieldCheck, 
-  Sparkles, 
-  CheckCircle2, 
-  FileText, 
   ArrowRight
 } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 /**
  * SearchAIEngineSection - Google Search AI & SGE Semantic Authority Engine
@@ -14,7 +11,7 @@ import {
  * Features:
  * - Semantic Schema.org FAQPage microdata markup
  * - Direct answers for high-intent queries (Price per sq.ft, RWA approvals, Fire egress, SS-316 vs Iron)
- * - True Apple design DNA: Borderless surfaces, fluid typography, smooth disclosure animations
+ * - True Apple design DNA: Borderless surfaces, poised typography, smooth disclosure animations
  */
 
 const FAQS = [
@@ -91,23 +88,22 @@ export default function SearchAIEngineSection({ onOpenBooking }) {
         
         {/* Apple Keynote Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-zinc-100/80 backdrop-blur-md text-[11px] font-semibold text-zinc-700 tracking-apple-tight">
-            <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="uppercase tracking-wider">Search AI &amp; Engineering Authority</span>
+          <div className="text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-zinc-400">
+            Search AI &amp; Architectural Authority
           </div>
 
-          <h2 className="text-apple-section font-semibold tracking-apple-tight text-zinc-950 leading-[1.08]">
+          <h2 className="text-apple-section font-medium tracking-apple-tight text-zinc-950 leading-[1.12]">
             Frequently asked questions,{' '}
             <span className="text-gradient-apple-dark block sm:inline">answered with precision.</span>
           </h2>
 
-          <p className="text-apple-subhead text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-apple-subhead text-zinc-500 font-normal leading-relaxed max-w-2xl mx-auto">
             Direct, certified architectural specifications addressing tensile ratings, RWA elevation approvals, fire safety, and fair square-foot pricing in Bengaluru.
           </p>
         </div>
 
         {/* Minimal Category Filter Tabs */}
-        <div className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-1.5 p-1 rounded-full bg-zinc-100/90 border border-black/5 max-w-4xl mx-auto">
           {CATEGORIES.map((cat) => {
             const isActive = activeCategory === cat;
             return (
@@ -115,10 +111,10 @@ export default function SearchAIEngineSection({ onOpenBooking }) {
                 key={cat}
                 type="button"
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-xs font-semibold tracking-apple-tight transition-all duration-300 cursor-pointer ${
+                className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-medium tracking-apple-tight transition-all duration-300 cursor-pointer ${
                   isActive
                     ? 'bg-zinc-950 text-white shadow-apple-sm'
-                    : 'bg-[#F5F5F7] text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/70'
+                    : 'text-zinc-600 hover:text-zinc-950 hover:bg-zinc-200/50'
                 }`}
               >
                 {cat}
@@ -127,132 +123,104 @@ export default function SearchAIEngineSection({ onOpenBooking }) {
           })}
         </div>
 
-        {/* Two-Column Structured Accordion Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Column: Authority Callout Banner */}
-          <div className="lg:col-span-4 space-y-6">
-            <div className="apple-card-surface bg-[#F5F5F7] p-6 sm:p-8 rounded-[28px] space-y-5">
-              <div className="w-12 h-12 rounded-2xl bg-white shadow-apple-sm flex items-center justify-center text-emerald-600">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-
-              <div className="space-y-2">
-                <h3 className="text-lg font-semibold text-zinc-950 tracking-apple-tight">
-                  Certified Architectural Compliance
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-600 leading-relaxed">
-                  Every Aura installation meets Bureau of Indian Standards (BIS) structural tensile benchmarks and fire department safety escape guidelines.
-                </p>
-              </div>
-
-              <div className="space-y-2.5 pt-4 border-t border-zinc-200/60 text-xs text-zinc-700 font-medium">
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>ISO 9001:2015 Certified Fabrication</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>10-Year Physical Replacement Bond</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
-                  <span>Zero-Elevation RWA Facade Approval</span>
-                </div>
-              </div>
-
-              {onOpenBooking && (
-                <div className="pt-2">
-                  <button
-                    type="button"
-                    onClick={() => onOpenBooking('Laser Survey')}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-4 rounded-full bg-zinc-950 hover:bg-black text-white text-xs font-semibold tracking-apple-tight transition-all duration-300 shadow-apple-sm active:scale-95"
-                  >
-                    <span>Request Society Approval Kit</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-zinc-300" />
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {/* Quick Contact Micro-Card */}
-            <div className="p-6 rounded-[24px] border border-zinc-200/80 bg-white space-y-2">
-              <div className="flex items-center gap-2 text-zinc-900 text-xs font-semibold uppercase tracking-wider">
-                <FileText className="w-4 h-4 text-emerald-600" />
-                <span>Technical Support Desk</span>
-              </div>
-              <p className="text-xs text-zinc-500 leading-relaxed">
-                Need customized load calculations for penthouses, double-height balconies, or duplexes? Our structural team is available 7 days a week.
-              </p>
-            </div>
-          </div>
-
-          {/* Right Column: Interactive Schema Accordions */}
-          <div className="lg:col-span-8 space-y-4">
-            {filteredFaqs.map((faq, index) => {
-              const isOpen = openIndex === index;
-              return (
-                <div
-                  key={index}
-                  itemScope
-                  itemProp="mainEntity"
-                  itemType="https://schema.org/Question"
-                  className="rounded-[24px] bg-[#F5F5F7] transition-all duration-300 overflow-hidden"
+        {/* Apple-Style Disclosure Accordion List */}
+        <div className="max-w-4xl mx-auto space-y-3.5">
+          {filteredFaqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <div
+                key={faq.question}
+                itemScope
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
+                className="apple-card-surface hover:shadow-apple-hover transition-all duration-300 overflow-hidden text-left"
+              >
+                {/* Question Trigger */}
+                <button
+                  type="button"
+                  onClick={() => toggleAccordion(idx)}
+                  aria-expanded={isOpen}
+                  className="w-full p-5 sm:p-6 flex items-center justify-between gap-4 text-left cursor-pointer select-none"
                 >
-                  <button
-                    type="button"
-                    onClick={() => toggleAccordion(index)}
-                    aria-expanded={isOpen}
-                    className="w-full p-5 sm:p-6 text-left flex items-start justify-between gap-4 cursor-pointer"
-                  >
-                    <div className="space-y-1.5 flex-1">
-                      <span className="text-[10px] font-semibold uppercase tracking-wider text-emerald-700 block">
-                        {faq.category}
-                      </span>
-                      <h3 
-                        itemProp="name"
-                        className="text-base sm:text-lg font-semibold text-zinc-950 tracking-apple-tight leading-snug"
-                      >
-                        {faq.question}
-                      </h3>
-                    </div>
-
-                    <div className={`w-8 h-8 rounded-full bg-white shadow-apple-sm flex items-center justify-center text-zinc-700 shrink-0 transition-transform duration-300 ${isOpen ? 'rotate-180 bg-zinc-950 text-white' : ''}`}>
-                      <ChevronDown className="w-4 h-4" />
-                    </div>
-                  </button>
-
-                  {isOpen && (
-                    <div 
-                      itemScope 
-                      itemProp="acceptedAnswer" 
-                      itemType="https://schema.org/Answer"
-                      className="px-5 sm:px-6 pb-6 pt-1 text-sm text-zinc-600 space-y-4 border-t border-zinc-200/50"
+                  <div className="space-y-1">
+                    <span className="text-[10px] uppercase font-medium tracking-[0.16em] text-zinc-400">
+                      {faq.category}
+                    </span>
+                    <h3 
+                      itemProp="name" 
+                      className="text-base sm:text-lg font-medium text-zinc-950 tracking-apple-tight leading-snug"
                     >
-                      <div itemProp="text" className="leading-relaxed">
-                        {faq.answer}
-                      </div>
+                      {faq.question}
+                    </h3>
+                  </div>
 
-                      {faq.highlights && (
-                        <div className="flex flex-wrap items-center gap-2 pt-2">
-                          {faq.highlights.map((h, i) => (
-                            <span 
-                              key={i} 
-                              className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white text-zinc-800 text-xs font-medium shadow-xs"
-                            >
-                              <CheckCircle2 className="w-3 h-3 text-emerald-600 shrink-0" />
-                              <span>{h}</span>
-                            </span>
-                          ))}
-                        </div>
-                      )}
+                  <div className={`w-8 h-8 rounded-full bg-zinc-100 flex items-center justify-center shrink-0 transition-transform duration-300 ${
+                    isOpen ? 'rotate-180 bg-zinc-900 text-white' : 'text-zinc-600'
+                  }`}>
+                    <ChevronDown className="w-4 h-4" />
+                  </div>
+                </button>
+
+                {/* Answer Content */}
+                {isOpen && (
+                  <div
+                    itemScope
+                    itemProp="acceptedAnswer"
+                    itemType="https://schema.org/Answer"
+                    className="px-5 sm:px-6 pb-6 pt-1 border-t border-zinc-100 space-y-4"
+                  >
+                    <p 
+                      itemProp="text" 
+                      className="text-xs sm:text-sm text-zinc-500 font-normal leading-relaxed"
+                    >
+                      {faq.answer}
+                    </p>
+
+                    {/* Spec Highlights */}
+                    <div className="flex flex-wrap items-center gap-2 pt-1">
+                      {faq.highlights.map((highlight, hIdx) => (
+                        <span 
+                          key={hIdx}
+                          className="px-3 py-1 rounded-full bg-zinc-100/80 text-zinc-600 text-xs font-normal"
+                        >
+                          {highlight}
+                        </span>
+                      ))}
                     </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
 
+        {/* Technical Inquiry Direct Action */}
+        <div className="max-w-xl mx-auto text-center pt-4 space-y-3">
+          <p className="text-xs sm:text-[13px] text-zinc-500 font-normal">
+            Have a custom balcony question or specialized facade configuration?
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20have%20a%20technical%20question%20regarding%20invisible%20safety%20grills%20for%20my%20balcony."
+              target="_blank"
+              rel="noreferrer"
+              className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-zinc-100 hover:bg-zinc-200/70 text-zinc-800 font-medium text-xs sm:text-[13px] tracking-apple-tight transition flex items-center justify-center gap-2 active:scale-95 text-center"
+            >
+              <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Ask Our Technical Lead on WhatsApp</span>
+            </a>
+
+            {onOpenBooking && (
+              <button
+                type="button"
+                onClick={() => onOpenBooking('Technical Advisory')}
+                className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-zinc-950 hover:bg-black text-white font-medium text-xs sm:text-[13px] tracking-apple-tight transition shadow-apple-sm active:scale-95 flex items-center justify-center gap-1.5 cursor-pointer"
+              >
+                <span>Request Architectural Callback</span>
+                <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
+              </button>
+            )}
+          </div>
         </div>
 
       </div>
