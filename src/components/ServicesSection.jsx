@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import { 
-  CheckCircle2, 
   Calendar, 
-  Layers, 
   ChevronRight,
   ArrowRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { handleResponsiveImgError } from '../utils/imageHandler';
 
+/**
+ * Section 02 - Architectural Safety Portfolio (Mana 6 Services Lineup)
+ * True Apple Design DNA: 100% unobstructed photography, poised typography,
+ * quiet micro-spec rows, and butter-smooth hover interactions.
+ */
 const SERVICES_DATA = [
   {
     id: 'invisible-grills',
@@ -24,7 +27,7 @@ const SERVICES_DATA = [
     specs: [
       '400kg breaking load per cable strand',
       'Champagne 6063-T6 aluminum track',
-      '10-year stamped rustproof replacement warranty'
+      '10-year stamped rustproof warranty'
     ],
     whatsappText: 'Hello Aura Grills! I want to speak directly with an expert for SS-316 Invisible Safety Grills for my balcony in Bangalore.'
   },
@@ -94,7 +97,7 @@ const SERVICES_DATA = [
     fallbackMobile: '/images/services/ig-french-window.jpg',
     description: 'Flush-mounted invisible safety cabling for floor-to-ceiling French windows and sliding glass balcony doors. Preserves architectural aesthetics.',
     specs: [
-      'Zero-drill option for delicate UPVC frames',
+      'Zero-drill option for UPVC frames',
       '10-second emergency rescue fire release',
       'Precision concealed tension track'
     ],
@@ -113,7 +116,7 @@ const SERVICES_DATA = [
     description: 'Reinforced 50mm narrow pitch safety barrier preventing toddlers from slipping through or climbing railing balustrades. Maximum peace of mind.',
     specs: [
       'Strict 50mm zero-foothold laser pitch',
-      'Soft virgin nylon transparent protective jacket',
+      'Soft virgin nylon protective jacket',
       'Tested against extreme child impact forces'
     ],
     whatsappText: 'Hello Aura Grills! I want to speak directly with an expert for Toddler & Pet Balcony Shields in Bangalore.'
@@ -166,28 +169,28 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12 sm:space-y-16">
         
         {/* =========================================================================
-            1. APPLE KEYNOTE SECTION HEADER & MINIMALIST FILTER TABS
+            1. APPLE KEYNOTE SECTION HEADER & SEGMENTED FILTER TABS
             ========================================================================= */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6 border-b border-zinc-200/80">
           
-          <div className="space-y-3.5 text-left max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-apple-sm text-[11px] font-semibold text-zinc-700 tracking-apple-tight">
-              <Layers className="w-3.5 h-3.5 text-emerald-600" />
-              <span className="uppercase tracking-wider">Explore the Lineup</span>
+          <div className="space-y-3 text-left max-w-2xl">
+            {/* Subtle Quiet Eyebrow */}
+            <div className="text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-zinc-400">
+              Aura Architectural Safety Portfolio
             </div>
 
-            <h2 className="text-apple-section font-semibold tracking-apple-tight text-zinc-950 leading-[1.08]">
+            <h2 className="text-apple-section font-medium tracking-apple-tight text-zinc-950 leading-[1.12]">
               Which safety system is right{' '}
               <span className="text-gradient-apple-dark block sm:inline">for your home?</span>
             </h2>
 
-            <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed">
+            <p className="text-apple-subhead text-zinc-500 font-normal leading-relaxed">
               From aerospace-grade SS-316 balcony cabling to space-saving ceiling drying systems, engineered with architectural quiet luxury.
             </p>
           </div>
 
           {/* Apple-style Segmented Filter Pill Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-full bg-white/80 backdrop-blur-md shadow-apple-sm border border-black/5 self-start md:self-auto">
+          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-full bg-zinc-200/60 backdrop-blur-md border border-black/5 self-start md:self-auto">
             {FILTER_TABS.map((tab) => {
               const isActive = activeTab === tab.id;
               return (
@@ -195,10 +198,10 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
-                  className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-semibold tracking-apple-tight transition-all duration-300 cursor-pointer ${
+                  className={`px-3.5 sm:px-4 py-1.5 rounded-full text-xs font-medium tracking-apple-tight transition-all duration-300 cursor-pointer ${
                     isActive
                       ? 'bg-zinc-950 text-white shadow-apple-sm'
-                      : 'text-zinc-600 hover:text-zinc-950 hover:bg-black/5'
+                      : 'text-zinc-600 hover:text-zinc-950 hover:bg-white/60'
                   }`}
                 >
                   {tab.label}
@@ -210,28 +213,19 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
         </div>
 
         {/* =========================================================================
-            2. APPLE PRODUCT CARDS GRID (WITH BUTTER-SMOOTH HOVER & CLICKABLE VISUALS)
+            2. APPLE PRODUCT CARDS GRID (100% UNOBSTRUCTED PHOTOGRAPHY & BUTTER-SMOOTH HOVER)
             ========================================================================= */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {filteredServices.map((service) => (
             <div
               key={service.id}
-              className="group relative rounded-[28px] apple-card-surface hover:shadow-apple-hover transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 overflow-hidden flex flex-col text-left"
+              onClick={() => handleServiceNavigate(service)}
+              className="group relative rounded-[28px] apple-card-surface hover:shadow-apple-hover transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 overflow-hidden flex flex-col text-left cursor-pointer select-none"
             >
               
-              {/* Card Image Showcase with Butter-Smooth Hover Animation & Click-to-Navigate */}
+              {/* Pristine Architectural Photography (Zero Plastered Corner Badges, Zero Bottom Gradient Banner) */}
               <div 
-                onClick={() => handleServiceNavigate(service)}
-                role="button"
-                tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === 'Enter' || e.key === ' ') {
-                    e.preventDefault();
-                    handleServiceNavigate(service);
-                  }
-                }}
-                aria-label={`Explore architectural details for ${service.title}`}
-                className="relative w-full aspect-[16/11] overflow-hidden bg-zinc-950 cursor-pointer select-none"
+                className="relative w-full aspect-[16/11] overflow-hidden bg-zinc-100"
               >
                 <picture className="block w-full h-full">
                   <source 
@@ -244,98 +238,88 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                     data-fallback-mobile={service.fallbackMobile}
                     onError={handleImgError}
                     alt={`${service.title} - Aura Grills Bangalore`}
-                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-108"
+                    className="w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-104"
                     loading="lazy"
                   />
                 </picture>
 
-                {/* Subtle top & bottom vignettes */}
-                <div className="absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-black/50 to-transparent pointer-events-none" />
-                <div className="absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-black/75 to-transparent pointer-events-none" />
+                {/* Subtle Natural Edge Vignette */}
+                <div className="absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
 
-                {/* Top Material Grade Badge */}
-                <div className="absolute top-3.5 left-3.5 z-10 pointer-events-none">
-                  <span className="px-3 py-1 rounded-full bg-black/60 backdrop-blur-md text-[10px] font-semibold uppercase tracking-wider text-white/95 border border-white/15 shadow-apple-sm">
-                    {service.materialBadge}
-                  </span>
-                </div>
-
-                {/* Interactive Butter-Smooth Center Pill on Mouse Over */}
-                <div className="absolute inset-0 bg-black/25 opacity-0 group-hover:opacity-100 transition-opacity duration-400 ease-out flex items-center justify-center pointer-events-none">
-                  <div className="px-4 py-2 rounded-full bg-white/95 backdrop-blur-md text-zinc-950 font-semibold text-xs tracking-apple-tight shadow-apple-float flex items-center gap-1.5 transform translate-y-3 group-hover:translate-y-0 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                    <span>Explore Architecture</span>
+                {/* Butter-Smooth Explore Affordance (Slides gracefully on mouse over) */}
+                <div className="absolute top-3.5 right-3.5 z-10 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)] transform translate-y-1 group-hover:translate-y-0 pointer-events-none">
+                  <div className="w-8 h-8 rounded-full bg-white/95 backdrop-blur-md text-zinc-950 flex items-center justify-center shadow-apple-sm">
                     <ArrowRight className="w-3.5 h-3.5 text-zinc-800" />
                   </div>
                 </div>
-
-                {/* Bottom Subtitle Preview */}
-                <div className="absolute bottom-3 left-3.5 right-3.5 z-10 pointer-events-none">
-                  <span className="text-[11px] font-medium text-white/90 drop-shadow-sm truncate block tracking-apple-tight">
-                    {service.subtitle}
-                  </span>
-                </div>
               </div>
 
-              {/* Card Body */}
+              {/* Card Editorial Body */}
               <div className="p-6 sm:p-7 space-y-4 flex-1 flex flex-col justify-between">
                 
                 <div className="space-y-3">
-                  <div className="text-[11px] font-semibold uppercase tracking-wider text-emerald-700">
+                  {/* Category Micro-Label */}
+                  <div className="text-[11px] font-medium uppercase tracking-[0.16em] text-zinc-400">
                     {service.category}
                   </div>
 
+                  {/* Poised Title */}
                   <h3 
-                    onClick={() => handleServiceNavigate(service)}
-                    className="text-xl font-semibold text-zinc-950 tracking-apple-tight leading-snug group-hover:text-emerald-700 transition-colors cursor-pointer"
+                    className="text-lg sm:text-xl font-medium text-zinc-950 tracking-apple-tight leading-snug group-hover:text-emerald-700 transition-colors"
                   >
                     {service.title}
                   </h3>
                   
-                  <p className="text-sm text-zinc-600 font-normal leading-relaxed line-clamp-2">
+                  {/* Single Clean Editorial Sentence */}
+                  <p className="text-xs sm:text-[13px] text-zinc-500 font-normal leading-relaxed line-clamp-2">
                     {service.description}
                   </p>
 
-                  {/* 3 Engineering Specifications */}
-                  <ul className="space-y-2 pt-3 border-t border-zinc-100 text-xs sm:text-[13px] text-zinc-700 font-medium">
+                  {/* Clean Apple Micro-Specs Row (Quiet Dots, Zero Clunky Checkmarks) */}
+                  <div className="space-y-1.5 pt-3.5 border-t border-zinc-100/90 text-xs text-zinc-600 font-normal">
                     {service.specs.map((spec, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
-                        <span className="leading-tight">{spec}</span>
-                      </li>
+                      <div key={i} className="flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-zinc-300 shrink-0" />
+                        <span className="leading-snug text-zinc-600 truncate">{spec}</span>
+                      </div>
                     ))}
-                  </ul>
+                  </div>
                 </div>
 
-                {/* Apple-Style Conversion Actions */}
-                <div className="pt-5 border-t border-zinc-100 flex items-center gap-2">
-                  {/* Button 1: Survey / Booking */}
+                {/* Apple-Style Refined Actions */}
+                <div 
+                  className="pt-5 border-t border-zinc-100/90 flex items-center gap-2"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {/* Button 1: Book Survey */}
                   <button
                     type="button"
                     onClick={() => handleQuoteClick(service.title)}
-                    className="flex-1 py-2.5 px-3.5 rounded-full bg-zinc-950 hover:bg-black text-white font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 shadow-apple-sm active:scale-95 cursor-pointer"
+                    className="flex-1 py-2.5 px-4 rounded-full bg-zinc-950 hover:bg-black text-white font-medium text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 shadow-apple-sm active:scale-95 cursor-pointer"
                   >
-                    <Calendar className="w-3.5 h-3.5 text-zinc-300" />
-                    <span>Free Survey</span>
+                    <Calendar className="w-3.5 h-3.5 text-zinc-400" />
+                    <span>Book Survey</span>
                   </button>
 
-                  {/* Button 2: WhatsApp Directly */}
+                  {/* Button 2: Subtle WhatsApp Chat */}
                   <a
                     href={`https://wa.me/918523068882?text=${encodeURIComponent(service.whatsappText)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="py-2.5 px-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 shadow-apple-sm active:scale-95"
+                    className="py-2.5 px-3.5 rounded-full bg-zinc-100 hover:bg-zinc-200/70 text-zinc-800 font-medium text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 active:scale-95"
                     aria-label={`Chat directly on WhatsApp for ${service.title}`}
                     title="WhatsApp Quote"
                   >
-                    <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
+                    <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-600" />
                     <span>Quote</span>
                   </a>
 
+                  {/* Button 3: Clean Chevron Link */}
                   {onSelectService && (
                     <button
                       type="button"
                       onClick={() => handleServiceNavigate(service)}
-                      className="p-2.5 rounded-full bg-zinc-100 hover:bg-zinc-200 text-zinc-700 hover:text-zinc-950 transition-all duration-300 active:scale-95 cursor-pointer"
+                      className="w-9 h-9 rounded-full bg-zinc-100 hover:bg-zinc-200/70 text-zinc-600 hover:text-zinc-950 flex items-center justify-center transition-all duration-300 active:scale-95 cursor-pointer shrink-0"
                       title="Explore architectural details"
                       aria-label={`View architectural details for ${service.title}`}
                     >
@@ -351,8 +335,8 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
         </div>
 
         {/* Apple Store Footnote Guarantee */}
-        <div className="text-center pt-4">
-          <p className="text-xs sm:text-sm text-zinc-500 max-w-xl mx-auto">
+        <div className="text-center pt-2">
+          <p className="text-xs sm:text-[13px] text-zinc-400 font-normal max-w-xl mx-auto">
             All systems installed with laser-guided alignment, backed by our 10-year stamped replacement guarantee.
           </p>
         </div>
