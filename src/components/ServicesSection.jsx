@@ -301,12 +301,12 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                     <span>Book Survey</span>
                   </button>
 
-                  {/* Button 2: Subtle WhatsApp Chat */}
+                  {/* Button 2: Highlighted WhatsApp Action */}
                   <a
                     href={`https://wa.me/918523068882?text=${encodeURIComponent(service.whatsappText)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="py-2.5 px-3.5 rounded-full bg-zinc-100 hover:bg-zinc-200/70 text-zinc-800 font-medium text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 active:scale-95"
+                    className="py-2.5 px-3.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-950 border border-emerald-300/80 font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 active:scale-95 shadow-xs"
                     aria-label={`Chat directly on WhatsApp for ${service.title}`}
                     title="WhatsApp Quote"
                   >
