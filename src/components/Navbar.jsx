@@ -96,17 +96,18 @@ export default function Navbar({ onGoToDashboard, onOpenBooking }) {
             }}
             className="flex items-center gap-2.5 group cursor-pointer"
           >
-            <div className="relative">
-              <AuraLogo className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-sm transition-transform duration-500 group-hover:scale-105" />
-              <span className="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 bg-emerald-500 rounded-full border-2 border-white" />
-            </div>
-            <div className="flex flex-col text-left">
-              <span className="text-sm font-semibold tracking-apple-tight text-zinc-900 flex items-center gap-1 leading-tight">
-                AURA <span className="text-emerald-700 font-bold">GRILLS</span>
-              </span>
-              <span className="text-[9px] tracking-wider uppercase font-semibold text-zinc-500 leading-tight">
-                SS-316 Architectural Safety
-              </span>
+            <div className="flex items-center gap-2.5 group cursor-pointer">
+              <div className="relative">
+                <AuraLogo className="w-8 h-8 sm:w-9 sm:h-9 shrink-0 drop-shadow-sm transition-transform duration-500 group-hover:scale-105" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-sm font-medium tracking-apple-tight text-zinc-950 flex items-center gap-1 leading-tight">
+                  AURA <span className="text-zinc-950 font-semibold">GRILLS</span>
+                </span>
+                <span className="text-[9px] tracking-[0.16em] uppercase font-medium text-zinc-400 leading-tight">
+                  Architectural Safety
+                </span>
+              </div>
             </div>
           </Link>
 
@@ -117,7 +118,7 @@ export default function Navbar({ onGoToDashboard, onOpenBooking }) {
                 key={link.name}
                 href={link.href}
                 onClick={(e) => handleScrollTo(e, link.href)}
-                className="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-black/[0.04] transition-all duration-200 tracking-apple-normal whitespace-nowrap"
+                className="px-3.5 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-black/[0.04] transition-all duration-200 tracking-apple-tight whitespace-nowrap"
               >
                 {link.name}
               </a>
@@ -125,23 +126,23 @@ export default function Navbar({ onGoToDashboard, onOpenBooking }) {
           </nav>
 
           {/* Desktop Right CTA: Sleek Apple Pill Button */}
-          <div className="hidden lg:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2.5">
             <a
               href="tel:+918523068882"
-              className="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-700 hover:text-zinc-950 hover:bg-black/[0.04] transition-all flex items-center gap-1.5"
+              className="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-black/[0.04] transition-all flex items-center gap-1.5"
               title="Call Aura Grills Helpline"
             >
-              <Phone className="w-3.5 h-3.5 text-zinc-600" />
-              <span className="text-zinc-800 font-semibold">+91 85230 68882</span>
+              <Phone className="w-3.5 h-3.5 text-zinc-500" />
+              <span className="text-zinc-800 font-medium">+91 85230 68882</span>
             </a>
 
             <button
               type="button"
               onClick={handleBookClick}
-              className="px-4 py-2 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-semibold tracking-apple-tight transition-all duration-300 shadow-apple-sm hover:shadow-apple-card flex items-center gap-1.5 active:scale-95 cursor-pointer"
+              className="px-4 py-2 rounded-full bg-zinc-950 hover:bg-black text-white text-xs font-medium tracking-apple-tight transition-all duration-300 shadow-apple-sm hover:shadow-apple-hover flex items-center gap-1.5 active:scale-95 cursor-pointer"
             >
               <span>Book Site Survey</span>
-              <ArrowRight className="w-3.5 h-3.5 text-zinc-400 group-hover:translate-x-0.5 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
             </button>
           </div>
 
