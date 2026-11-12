@@ -83,13 +83,11 @@ export default function ContactSection() {
         
         {/* Apple Keynote Section Header */}
         <div className="text-left max-w-3xl space-y-4 pb-4 border-b border-zinc-900">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 border border-white/15 text-[11px] font-semibold text-emerald-400 tracking-apple-tight uppercase">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            <Truck className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Express Van Dispatch • Bengaluru Helpline</span>
+          <div className="text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-zinc-400">
+            Express Van Dispatch • Bengaluru Helpline
           </div>
 
-          <h2 className="text-apple-section font-semibold text-white tracking-apple-tight leading-[1.08]">
+          <h2 className="text-apple-section font-medium text-white tracking-apple-tight leading-[1.12]">
             Schedule your free doorstep{' '}
             <span className="text-gradient-silver block sm:inline">laser survey today.</span>
           </h2>

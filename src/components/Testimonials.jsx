@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Building2, Star } from 'lucide-react';
+import { CheckCircle2, Star } from 'lucide-react';
 
 export default function Testimonials() {
   const reviews = [
@@ -65,18 +65,16 @@ export default function Testimonials() {
         
         {/* Apple Keynote Section Header */}
         <div className="text-center max-w-3xl mx-auto space-y-4">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/90 backdrop-blur-md shadow-apple-sm text-[11px] font-semibold text-zinc-700 tracking-apple-tight">
-            <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <Building2 className="w-3.5 h-3.5 text-emerald-600" />
-            <span className="uppercase tracking-wider">Verified Homeowner Endorsements</span>
+          <div className="text-[11px] sm:text-xs font-medium tracking-[0.18em] uppercase text-zinc-400">
+            Verified Homeowner Endorsements
           </div>
 
-          <h2 className="text-apple-section font-semibold tracking-apple-tight text-zinc-950 leading-[1.08]">
+          <h2 className="text-apple-section font-medium tracking-apple-tight text-zinc-950 leading-[1.12]">
             Trusted by families across{' '}
             <span className="text-gradient-apple-dark block sm:inline">Bengaluru's finest towers.</span>
           </h2>
 
-          <p className="text-apple-subhead text-zinc-600 font-normal leading-relaxed max-w-2xl mx-auto">
+          <p className="text-apple-subhead text-zinc-500 font-normal leading-relaxed max-w-2xl mx-auto">
             Read genuine reflections from residents living across iconic high-rises in Whitefield, Sarjapur, HSR Layout, Indiranagar, and Hebbal.
           </p>
         </div>
@@ -86,7 +84,7 @@ export default function Testimonials() {
           {reviews.map((rev) => (
             <div
               key={rev.id}
-              className="rounded-[28px] p-6 sm:p-8 bg-white border border-black/6 shadow-apple-card hover:shadow-apple-hover transition-all duration-500 flex flex-col justify-between group"
+              className="rounded-[28px] p-6 sm:p-8 apple-card-surface hover:shadow-apple-hover transition-all duration-500 flex flex-col justify-between group"
             >
               <div className="space-y-4">
                 {/* Top Row: Star Rating + Verified Badge */}
@@ -97,7 +95,7 @@ export default function Testimonials() {
                     ))}
                   </div>
 
-                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-semibold border border-emerald-200/80 tracking-apple-tight">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-zinc-100 text-zinc-600 text-[10px] font-normal tracking-apple-tight">
                     <CheckCircle2 className="w-3 h-3 text-emerald-600" />
                     <span>Verified Installation</span>
                   </span>

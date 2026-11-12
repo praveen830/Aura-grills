@@ -57,8 +57,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://wa.me" />
 
-    <!-- Preload Critical Brand Medallion Logo -->
+    <!-- Preload Critical Above-The-Fold Assets for Instant LCP -->
     <link rel="preload" as="image" href="/images/aura-grills-logo.jpg" />
+    <link rel="preload" as="image" href="/images/mobile/hero-main-balcony.jpg" media="(max-width: 767px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/desktop/hero-main-balcony.jpg" media="(min-width: 768px)" fetchpriority="high" />
 
     <!-- Primary SEO -->
     <title>Aura Grills™ | Invisible Grills with Stainless Steel | Bangalore Balcony Safety</title>
@@ -166,7 +168,7 @@
     }
     </script>
   </head>
-  <body class="bg-slate-50 text-slate-900 antialiased">
+  <body class="bg-white text-zinc-950 font-sans antialiased selection:bg-emerald-600 selection:text-white">
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

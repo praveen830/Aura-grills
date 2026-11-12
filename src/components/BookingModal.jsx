@@ -11,11 +11,14 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  useEffect(() => {
+  // Synchronize initialService when modal opens or initialService changes
+  const [prevInitialService, setPrevInitialService] = useState(initialService);
+  if (initialService !== prevInitialService) {
+    setPrevInitialService(initialService);
     if (initialService) {
       setFormData(prev => ({ ...prev, installationType: initialService }));
     }
-  }, [initialService, isOpen]);
+  }
 
   const handleClose = () => {
     setIsSubmitted(false);
