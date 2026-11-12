@@ -125,20 +125,20 @@ export default function Hero({ onOpenBooking }) {
             <button
               type="button"
               onClick={handleSurveyClick}
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-zinc-950 hover:bg-black text-white font-semibold text-xs sm:text-[13px] tracking-apple-tight transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-zinc-950 hover:bg-black text-white font-bold text-xs sm:text-[13px] tracking-apple-tight transition-all duration-300 shadow-md hover:shadow-lg flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
             >
               <Calendar className="w-4 h-4 text-emerald-400" />
               <span>Schedule Free Survey</span>
               <ArrowRight className="w-3.5 h-3.5 text-zinc-400" />
             </button>
 
-            {/* Button 2: Direct Call (Crisp Emerald Pill with Border) */}
+            {/* Button 2: Direct Call (Solid Emerald Green with White Phone Icon) */}
             <a
               href="tel:+918523068882"
-              className="w-full sm:w-auto px-6 py-3 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-950 border border-emerald-300/80 font-semibold text-xs sm:text-[13px] tracking-apple-tight transition-all duration-200 shadow-sm flex items-center justify-center gap-2 active:scale-95 text-center"
+              className="w-full sm:w-auto px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-[13px] tracking-apple-tight transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 active:scale-95 text-center"
             >
-              <Phone className="w-4 h-4 text-emerald-600" />
-              <span>+91 85230 68882</span>
+              <Phone className="w-4 h-4 text-white" />
+              <span>Call +91 85230 68882</span>
             </a>
           </div>
 

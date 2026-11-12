@@ -253,20 +253,20 @@ export default function BangalorePlacesDashboard({
                 <div className="grid grid-cols-3 gap-2">
                   <a
                     href="tel:+918523068882"
-                    className="py-2.5 sm:py-3 rounded-full bg-white/95 hover:bg-white text-zinc-950 font-medium text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-apple-sm active:scale-95 transition text-center"
+                    className="py-2.5 sm:py-3 rounded-full bg-[#0071e3] hover:bg-[#0062c4] text-white font-bold text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition text-center"
                     title="Call Corridor Supervisor"
                   >
-                    <Phone className="w-3.5 h-3.5 text-zinc-700 shrink-0" />
+                    <Phone className="w-3.5 h-3.5 text-white shrink-0" />
                     <span>Call</span>
                   </a>
 
                   <button
                     onClick={scrollToForm}
                     type="button"
-                    className="py-2.5 sm:py-3 rounded-full bg-zinc-950/95 hover:bg-black text-white font-medium text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-apple-sm active:scale-95 transition cursor-pointer text-center"
+                    className="py-2.5 sm:py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition cursor-pointer text-center"
                     title="Book Free Site Visit"
                   >
-                    <Calendar className="w-3.5 h-3.5 text-zinc-300 shrink-0" />
+                    <Calendar className="w-3.5 h-3.5 text-white shrink-0" />
                     <span>Free Visit</span>
                   </button>
 
@@ -276,7 +276,7 @@ export default function BangalorePlacesDashboard({
                     )}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="py-2.5 sm:py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-medium text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-apple-sm active:scale-95 transition text-center"
+                    className="py-2.5 sm:py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition text-center"
                     title="Chat on WhatsApp"
                   >
                     <WhatsAppIcon className="w-3.5 h-3.5 text-white shrink-0" />

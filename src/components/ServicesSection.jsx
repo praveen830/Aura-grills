@@ -306,11 +306,11 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                     href={`https://wa.me/918523068882?text=${encodeURIComponent(service.whatsappText)}`}
                     target="_blank"
                     rel="noreferrer"
-                    className="py-2.5 px-3.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-950 border border-emerald-300/80 font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 active:scale-95 shadow-xs"
+                    className="py-2.5 px-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 active:scale-95 shadow-sm"
                     aria-label={`Chat directly on WhatsApp for ${service.title}`}
                     title="WhatsApp Quote"
                   >
-                    <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-600" />
+                    <WhatsAppIcon className="w-3.5 h-3.5 text-white" />
                     <span>Quote</span>
                   </a>
 
