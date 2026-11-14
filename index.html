@@ -10,6 +10,7 @@
       gtag('config', 'AW-17577365128');
     </script>
     <script is:inline>
+      // Fires for Call and WhatsApp clicks (Contact conversion)
       function gtag_report_conversion(url) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
@@ -18,6 +19,22 @@
         };
         gtag('event', 'conversion', {
           'send_to': 'AW-17577365128/8IR5CP_Oq64dEIidxbIB',
+          'value': 1.0,
+          'currency': 'INR',
+          'event_callback': callback
+        });
+        return false;
+      }
+
+      // Fires for Quotation / Book Site Survey Form submissions (Submit lead form conversion)
+      function gtag_report_lead_form(url) {
+        var callback = function () {
+          if (typeof(url) != 'undefined') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17577365128/L7frCKKGr64dEIidxbIB',
           'value': 1.0,
           'currency': 'INR',
           'event_callback': callback

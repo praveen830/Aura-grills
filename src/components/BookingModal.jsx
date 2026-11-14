@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Phone, CheckCircle2, ShieldCheck, ArrowRight, Calendar } from 'lucide-react';
-import { gtag_report_conversion } from '../utils/gtag';
+import { gtag_report_conversion, gtag_report_lead_form } from '../utils/gtag';
 
 export default function BookingModal({ isOpen, onClose, initialService }) {
   const [formData, setFormData] = useState({
@@ -59,7 +59,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(text)}`;
 
     setIsSubmitted(true);
-    gtag_report_conversion();
+    gtag_report_lead_form();
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 400);

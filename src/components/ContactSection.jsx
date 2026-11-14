@@ -9,7 +9,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
-import { gtag_report_conversion } from '../utils/gtag';
+import { gtag_report_conversion, gtag_report_lead_form } from '../utils/gtag';
 
 const SLOTS = [
   { id: 'today', label: 'Today Express', highlight: true, note: 'Same-day van dispatch' },
@@ -57,7 +57,7 @@ export default function ContactSection() {
     const genTicket = `AG-SRV-${Math.floor(1000 + Math.random() * 9000)}`;
     setTicketId(genTicket);
     setIsSubmitted(true);
-    gtag_report_conversion();
+    gtag_report_lead_form();
 
     const message = `*AURA GRILLS — EXPRESS SURVEY TICKET: ${genTicket}*\n\n` +
       `👤 *Customer Name:* ${name || 'Homeowner'}\n` +

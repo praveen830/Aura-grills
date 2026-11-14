@@ -17,7 +17,7 @@ import { BANGALORE_PLACES } from '../data/bangaloreHubsData';
 import { AURAB_SERVICES } from '../data/aurabServicesData';
 import AurabServiceDetailView from './AurabServiceDetailView';
 import { Link } from '../router';
-import { gtag_report_conversion } from '../utils/gtag';
+import { gtag_report_conversion, gtag_report_lead_form } from '../utils/gtag';
 
 /**
  * BangalorePlacesDashboard - Apple Store / City Hub Regional Corridors
@@ -98,7 +98,7 @@ export default function BangalorePlacesDashboard({
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(message)}`;
 
     setIsFormSubmitted(true);
-    gtag_report_conversion();
+    gtag_report_lead_form();
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 400);

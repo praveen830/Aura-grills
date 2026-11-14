@@ -10,7 +10,7 @@ import {
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { Link } from '../router';
-import { gtag_report_conversion } from '../utils/gtag';
+import { gtag_report_conversion, gtag_report_lead_form } from '../utils/gtag';
 
 export default function AurabServiceDetailView({ 
   service, 
@@ -136,7 +136,7 @@ export default function AurabServiceDetailView({
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(message)}`;
 
     setIsFormSubmitted(true);
-    gtag_report_conversion();
+    gtag_report_lead_form();
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 400);
