@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X, Phone, CheckCircle2, ShieldCheck, ArrowRight, Calendar } from 'lucide-react';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function BookingModal({ isOpen, onClose, initialService }) {
   const [formData, setFormData] = useState({
@@ -58,6 +59,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(text)}`;
 
     setIsSubmitted(true);
+    gtag_report_conversion();
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 400);
@@ -217,6 +219,7 @@ export default function BookingModal({ isOpen, onClose, initialService }) {
               <div className="text-center pt-1">
                 <a
                   href="tel:+918523068882"
+                  onClick={() => gtag_report_conversion()}
                   className="inline-flex items-center gap-1.5 text-xs text-zinc-500 hover:text-zinc-950 transition font-medium"
                 >
                   <Phone className="w-3.5 h-3.5 text-emerald-600" />

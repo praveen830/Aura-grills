@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calculator, MessageSquare, Phone, Calendar, CheckCircle2 } from 'lucide-react';
 import { BANGALORE_LOCATIONS } from '../data/bangaloreLocations';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function BalconyCalculator({ onOpenBooking }) {
   const [selectedHub, setSelectedHub] = useState(BANGALORE_LOCATIONS[0].mainPlace);
@@ -14,6 +15,7 @@ export default function BalconyCalculator({ onOpenBooking }) {
   const estimatedCost = totalSqFt * ratePerSqFt;
 
   const handleSendToWhatsApp = () => {
+    gtag_report_conversion();
     const text = `*Aura Grills - Invisible Grill Price Estimate*\n` +
       `📍 *Location:* ${selectedHub}\n` +
       `🛡️ *Type:* ${installationType}\n` +
@@ -236,6 +238,7 @@ export default function BalconyCalculator({ onOpenBooking }) {
               <div className="text-center pt-1">
                 <a
                   href="tel:+918523068882"
+                  onClick={() => gtag_report_conversion()}
                   className="text-[11px] text-slate-400 hover:text-emerald-400 transition inline-flex items-center gap-1 font-semibold"
                 >
                   <Phone className="w-3 h-3 text-emerald-400" />

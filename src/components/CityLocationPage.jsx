@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MessageSquare, Calendar, MapPin, Building, Check, ArrowLeft, Star } from 'lucide-react';
 import GrillVisualizer from './GrillVisualizer';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function CityLocationPage({ location, onBack, onOpenBooking }) {
   if (!location) return null;
@@ -172,6 +173,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
               <div className="p-3 bg-slate-900 flex items-center justify-between gap-1.5 sm:gap-2.5 z-10 border-t border-slate-800">
                 <a
                   href="tel:+918523068882"
+                  onClick={() => gtag_report_conversion()}
                   className="flex-1 min-w-0 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-2 sm:py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-[11px] sm:text-xs font-bold transition-all shadow-md text-center"
                 >
                   <Phone className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -190,6 +192,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
                   href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20am%20interested%20in%20a%20site%20visit%20for%20${encodeURIComponent(location.mainPlace)}.%20Please%20share%20details.`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => gtag_report_conversion()}
                   className="flex-1 min-w-0 inline-flex items-center justify-center gap-1 sm:gap-1.5 px-2 sm:px-3 py-2 sm:py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-[11px] sm:text-xs font-bold transition-all shadow-md text-center"
                 >
                   <MessageSquare className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
@@ -417,6 +420,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
                 href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20am%20in%20${encodeURIComponent(location.mainPlace)}%20and%20want%20to%20schedule%20a%20site%20visit.`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => gtag_report_conversion()}
                 className="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-1.5 shadow-sm"
               >
                 <MessageSquare className="w-4 h-4" />
@@ -424,6 +428,7 @@ export default function CityLocationPage({ location, onBack, onOpenBooking }) {
               </a>
               <a
                 href="tel:+918523068882"
+                onClick={() => gtag_report_conversion()}
                 className="px-4 py-3 rounded-xl bg-slate-900 text-white font-bold text-xs uppercase tracking-wider"
               >
                 Call

@@ -8,6 +8,7 @@ import {
   HardHat 
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function InstallationSafetyProcess({ onOpenBooking, placeName }) {
   const currentArea = placeName || 'Bangalore';
@@ -100,6 +101,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
           <div className="p-4 pt-0 grid grid-cols-3 gap-2">
             <a
               href="tel:+918523068882"
+              onClick={() => gtag_report_conversion()}
               className="py-2.5 px-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs text-center active:scale-95"
               title="Call"
             >
@@ -113,6 +115,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
               )}`}
               target="_blank"
               rel="noreferrer"
+              onClick={() => gtag_report_conversion()}
               className="py-2.5 px-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs text-center active:scale-95"
               title="WhatsApp"
             >
@@ -190,6 +193,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
           <div className="p-4 pt-0 grid grid-cols-3 gap-2">
             <a
               href="tel:+918523068882"
+              onClick={() => gtag_report_conversion()}
               className="py-2.5 px-2 rounded-xl bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs text-center active:scale-95"
               title="Call"
             >
@@ -203,6 +207,7 @@ export default function InstallationSafetyProcess({ onOpenBooking, placeName }) 
               )}`}
               target="_blank"
               rel="noreferrer"
+              onClick={() => gtag_report_conversion()}
               className="py-2.5 px-2 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold transition flex items-center justify-center gap-1.5 shadow-xs text-center active:scale-95"
               title="WhatsApp"
             >

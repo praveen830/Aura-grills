@@ -9,6 +9,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { gtag_report_conversion } from '../utils/gtag';
 
 const SLOTS = [
   { id: 'today', label: 'Today Express', highlight: true, note: 'Same-day van dispatch' },
@@ -56,6 +57,7 @@ export default function ContactSection() {
     const genTicket = `AG-SRV-${Math.floor(1000 + Math.random() * 9000)}`;
     setTicketId(genTicket);
     setIsSubmitted(true);
+    gtag_report_conversion();
 
     const message = `*AURA GRILLS — EXPRESS SURVEY TICKET: ${genTicket}*\n\n` +
       `👤 *Customer Name:* ${name || 'Homeowner'}\n` +
@@ -131,6 +133,7 @@ export default function ContactSection() {
 
               <a
                 href="tel:+918523068882"
+                onClick={() => gtag_report_conversion()}
                 className="w-full py-3.5 px-4 rounded-full bg-white hover:bg-zinc-200 text-zinc-950 font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-2 transition active:scale-95 text-center shadow-xs"
               >
                 <Phone className="w-4 h-4 text-emerald-600" />
@@ -162,6 +165,7 @@ export default function ContactSection() {
                 href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20would%20like%20to%20get%20a%20quick%20quote%20for%20balcony%20invisible%20safety%20grills%20in%20Bengaluru."
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => gtag_report_conversion()}
                 className="w-full py-3.5 px-4 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-semibold text-xs tracking-apple-tight flex items-center justify-center gap-2 transition shadow-md active:scale-95"
               >
                 <WhatsAppIcon className="w-4 h-4 text-white" />

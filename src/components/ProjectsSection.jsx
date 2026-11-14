@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { handleResponsiveImgError } from '../utils/imageHandler';
+import { gtag_report_conversion } from '../utils/gtag';
 
 const PROJECTS_DATA = [
   {
@@ -330,6 +331,7 @@ export default function ProjectsSection({ onOpenBooking }) {
                     href={`https://wa.me/918523068882?text=${encodeURIComponent(project.whatsappMsg)}`}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => gtag_report_conversion()}
                     className="py-2.5 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba59] text-white font-black text-xs flex items-center justify-center gap-1.5 transition shadow-xs active:scale-95 shrink-0"
                     aria-label={`WhatsApp query for ${project.society}`}
                   >

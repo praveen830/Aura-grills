@@ -20,6 +20,7 @@ import {
 import WhatsAppIcon from './WhatsAppIcon';
 import AuraLogo from './AuraLogo';
 import { Link } from '../router';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function Footer({ onOpenBooking }) {
   const [isSitemapOpen, setIsSitemapOpen] = useState(false);
@@ -201,6 +202,7 @@ export default function Footer({ onOpenBooking }) {
             </button>
             <a
               href="tel:+918523068882"
+              onClick={() => gtag_report_conversion()}
               className="py-3 px-6 rounded-2xl bg-zinc-800 hover:bg-zinc-700 text-white font-bold text-xs uppercase tracking-wider transition border border-zinc-700 flex items-center justify-center gap-2 text-center"
             >
               <Phone className="w-4 h-4 text-emerald-400" />
@@ -240,6 +242,7 @@ export default function Footer({ onOpenBooking }) {
                   href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20need%20help%20with%20balcony%20invisible%20safety%20grills."
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => gtag_report_conversion()}
                   className="hover:text-emerald-400 transition flex items-center gap-2 group"
                 >
                   <ArrowRight className="w-3 h-3 text-zinc-600 group-hover:text-emerald-400 group-hover:translate-x-0.5 transition" />
@@ -394,6 +397,7 @@ export default function Footer({ onOpenBooking }) {
               {/* Direct Phone Card */}
               <a
                 href="tel:+918523068882"
+                onClick={() => gtag_report_conversion()}
                 className="flex items-center gap-3 p-3 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 text-white transition group"
               >
                 <div className="w-8 h-8 rounded-xl bg-emerald-950 text-emerald-400 flex items-center justify-center shrink-0">
@@ -411,6 +415,7 @@ export default function Footer({ onOpenBooking }) {
                 href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20am%20looking%20for%20balcony%20invisible%20safety%20grills%20and%20cloth%20hangers%20in%20Bangalore."
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => gtag_report_conversion()}
                 className="flex items-center gap-3 p-3 rounded-2xl bg-zinc-900/80 border border-zinc-800 hover:border-emerald-500/50 text-white transition group"
               >
                 <div className="w-8 h-8 rounded-xl bg-[#25D366]/20 text-[#25D366] flex items-center justify-center shrink-0">

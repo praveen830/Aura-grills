@@ -7,6 +7,7 @@ import ProblemSolution from './ProblemSolution';
 import RealGallery from './RealGallery';
 import WarrantySection from './WarrantySection';
 import Footer from './Footer';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function SnapSliderHome({ onSelectCity, onOpenBooking, onOpenLocationDetail }) {
   return (
@@ -232,6 +233,7 @@ export default function SnapSliderHome({ onSelectCity, onOpenBooking, onOpenLoca
                       href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20am%20looking%20for%20invisible%20grills%20in%20${encodeURIComponent(loc.mainPlace)}.`}
                       target="_blank"
                       rel="noopener noreferrer"
+                      onClick={() => gtag_report_conversion()}
                       className="p-3.5 rounded-2xl bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-[#16A34A] border border-slate-200 transition shrink-0"
                       title="WhatsApp Inquiry"
                     >

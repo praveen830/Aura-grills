@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Camera, MessageSquare, X, ArrowUpRight } from 'lucide-react';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function ProjectGallery({ onOpenBooking }) {
   const [activeCategory, setActiveCategory] = useState('All');
@@ -301,6 +302,7 @@ export default function ProjectGallery({ onOpenBooking }) {
                   href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20want%20this%20exact%20invisible%20grill%20setup%20at%20${encodeURIComponent(inspectedProject.title)}.`}
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => gtag_report_conversion()}
                   className="flex-1 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider text-center flex items-center justify-center gap-2 shadow-md transition"
                 >
                   <MessageSquare className="w-4 h-4" />

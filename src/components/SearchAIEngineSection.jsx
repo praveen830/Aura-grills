@@ -4,6 +4,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { gtag_report_conversion } from '../utils/gtag';
 
 /**
  * SearchAIEngineSection - Google Search AI & SGE Semantic Authority Engine
@@ -204,6 +205,7 @@ export default function SearchAIEngineSection({ onOpenBooking }) {
               href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20have%20a%20technical%20question%20regarding%20invisible%20safety%20grills%20for%20my%20balcony."
               target="_blank"
               rel="noreferrer"
+              onClick={() => gtag_report_conversion()}
               className="w-full sm:w-auto px-5 py-2.5 rounded-full bg-zinc-100 hover:bg-zinc-200/70 text-zinc-800 font-medium text-xs sm:text-[13px] tracking-apple-tight transition flex items-center justify-center gap-2 active:scale-95 text-center"
             >
               <WhatsAppIcon className="w-3.5 h-3.5 text-emerald-600" />

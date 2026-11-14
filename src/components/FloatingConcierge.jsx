@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { gtag_report_conversion } from '../utils/gtag';
 
 /**
  * Floating Concierge Dock (Desktop only: md:flex)
@@ -13,6 +14,7 @@ export default function FloatingConcierge() {
         {/* Direct Call Pill */}
         <a
           href="tel:+918523068882"
+          onClick={() => gtag_report_conversion()}
           aria-label="Direct Phone Call to Aura Grills Helpline"
           className="flex items-center gap-2 px-4 py-2 rounded-full bg-zinc-900 hover:bg-black text-white text-xs font-semibold tracking-apple-tight transition-all duration-300 active:scale-95 group shadow-xs"
         >
@@ -25,6 +27,7 @@ export default function FloatingConcierge() {
           href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20am%20interested%20in%20SS-316%20invisible%20safety%20grills%20with%20stainless%20steel%20for%20my%20balcony."
           target="_blank"
           rel="noreferrer"
+          onClick={() => gtag_report_conversion()}
           aria-label="Chat with Aura Grills on WhatsApp"
           className="flex items-center gap-1.5 px-3.5 py-2 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold tracking-apple-tight transition-all duration-300 active:scale-95 shadow-xs"
           title="Instant WhatsApp Quote"

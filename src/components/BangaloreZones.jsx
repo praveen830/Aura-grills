@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Building, ShieldCheck, MessageSquare, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function BangaloreZones({ onOpenBooking }) {
   const [activeZone, setActiveZone] = useState('All Bangalore');
@@ -195,6 +196,7 @@ export default function BangaloreZones({ onOpenBooking }) {
                 href={`https://wa.me/918523068882?text=${encodeURIComponent(current.whatsappIntent)}`}
                 target="_blank"
                 rel="noreferrer"
+                onClick={() => gtag_report_conversion()}
                 className="w-full py-3.5 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold uppercase tracking-wider flex items-center justify-center gap-2 shadow-lg shadow-emerald-600/25 transition cursor-pointer"
               >
                 <MessageSquare className="w-4 h-4" />

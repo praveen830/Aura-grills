@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { MapPin, Building, Wrench, UserCheck, Phone, MessageSquare, ArrowRight, Check, Star, Search } from 'lucide-react';
 import { BANGALORE_LOCATIONS } from '../data/bangaloreLocations';
 import GrillVisualizer from './GrillVisualizer';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function BangaloreExplorer({ onSelectLocation, onOpenBooking }) {
   const [selectedZone, setSelectedZone] = useState('All');
@@ -275,6 +276,7 @@ export default function BangaloreExplorer({ onSelectLocation, onOpenBooking }) {
                   href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20am%20in%20${encodeURIComponent(activeLoc.mainPlace)}%20and%20want%20to%20book%20a%20free%20laser%20survey.`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => gtag_report_conversion()}
                   className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold flex items-center justify-center gap-1.5 shadow-sm transition"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
@@ -282,6 +284,7 @@ export default function BangaloreExplorer({ onSelectLocation, onOpenBooking }) {
                 </a>
                 <a
                   href="tel:+918523068882"
+                  onClick={() => gtag_report_conversion()}
                   className="px-3.5 py-2.5 rounded-xl bg-white hover:bg-slate-100 text-slate-800 text-xs font-bold border border-slate-300 flex items-center justify-center gap-1.5 shadow-xs"
                 >
                   <Phone className="w-3.5 h-3.5 text-emerald-600" />

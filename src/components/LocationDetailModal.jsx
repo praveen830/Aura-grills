@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { X, MapPin, Building, ShieldCheck, Wrench, Phone, MessageSquare, Check, Star, ArrowRight, Zap, Flame, Eye, Sparkles, Heart } from 'lucide-react';
 import GrillVisualizer from './GrillVisualizer';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function LocationDetailModal({ location, onClose, onOpenBooking }) {
   const [activeSubPlace, setActiveSubPlace] = useState('');
@@ -230,6 +231,7 @@ export default function LocationDetailModal({ location, onClose, onOpenBooking }
                 href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20am%20in%20${encodeURIComponent(currentSubPlace || location.mainPlace)}%20and%20want%20to%20schedule%20a%20free%20laser%20survey.`}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => gtag_report_conversion()}
                 className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-xs uppercase tracking-wider flex items-center justify-center gap-1.5 shadow-md transition"
               >
                 <MessageSquare className="w-3.5 h-3.5" />
@@ -237,6 +239,7 @@ export default function LocationDetailModal({ location, onClose, onOpenBooking }
               </a>
               <a
                 href="tel:+918523068882"
+                onClick={() => gtag_report_conversion()}
                 className="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs border border-slate-700 flex items-center justify-center gap-1.5"
               >
                 <Phone className="w-3.5 h-3.5 text-emerald-400" />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { INSTALLER_STORIES } from '../data/installerStories';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function InstagramStories({ onOpenBooking }) {
   const [activeStoryIndex, setActiveStoryIndex] = useState(null);
@@ -204,6 +205,7 @@ export default function InstagramStories({ onOpenBooking }) {
                   href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20saw%20your%20story%20about%20"${encodeURIComponent(activeStory.title)}"%20and%20want%20a%20quote.`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => gtag_report_conversion()}
                   className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs uppercase tracking-wider shadow-lg transition"
                 >
                   <MessageSquare className="w-4 h-4" />

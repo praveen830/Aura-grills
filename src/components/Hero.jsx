@@ -9,6 +9,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { handleResponsiveImgError } from '../utils/imageHandler';
+import { gtag_report_conversion } from '../utils/gtag';
 
 /**
  * Section 01 (#intro) - True Apple Keynote Billboard Hero
@@ -135,6 +136,7 @@ export default function Hero({ onOpenBooking }) {
             {/* Button 2: Direct Call (Solid Emerald Green with White Phone Icon) */}
             <a
               href="tel:+918523068882"
+              onClick={() => gtag_report_conversion()}
               className="w-full sm:w-auto px-6 py-3 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-[13px] tracking-apple-tight transition-all duration-200 shadow-md hover:shadow-lg flex items-center justify-center gap-2 active:scale-95 text-center"
             >
               <Phone className="w-4 h-4 text-white" />

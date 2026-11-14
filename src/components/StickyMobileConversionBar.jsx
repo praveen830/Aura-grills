@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Calendar } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
+import { gtag_report_conversion } from '../utils/gtag';
 
 /**
  * Sticky Mobile Conversion Dock (md:hidden)
@@ -32,6 +33,7 @@ export default function StickyMobileConversionBar({ onOpenBooking }) {
         {/* 1. Direct Call Now: Royal Action Blue with White Phone Icon */}
         <a
           href="tel:+918523068882"
+          onClick={() => gtag_report_conversion()}
           className="flex-1 py-2.5 px-3 rounded-full bg-[#0071e3] hover:bg-[#0062c4] text-white font-bold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 active:scale-95 transition shadow-sm"
           aria-label="Call Aura Grills Direct"
         >
@@ -44,6 +46,7 @@ export default function StickyMobileConversionBar({ onOpenBooking }) {
           href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20am%20interested%20in%20SS-316%20invisible%20safety%20grills%20for%20my%20balcony."
           target="_blank"
           rel="noreferrer"
+          onClick={() => gtag_report_conversion()}
           className="flex-1 py-2.5 px-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 active:scale-95 transition shadow-sm"
           aria-label="Chat on WhatsApp"
         >

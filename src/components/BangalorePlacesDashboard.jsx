@@ -17,6 +17,7 @@ import { BANGALORE_PLACES } from '../data/bangaloreHubsData';
 import { AURAB_SERVICES } from '../data/aurabServicesData';
 import AurabServiceDetailView from './AurabServiceDetailView';
 import { Link } from '../router';
+import { gtag_report_conversion } from '../utils/gtag';
 
 /**
  * BangalorePlacesDashboard - Apple Store / City Hub Regional Corridors
@@ -97,6 +98,7 @@ export default function BangalorePlacesDashboard({
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(message)}`;
 
     setIsFormSubmitted(true);
+    gtag_report_conversion();
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 400);
@@ -253,6 +255,7 @@ export default function BangalorePlacesDashboard({
                 <div className="grid grid-cols-3 gap-2">
                   <a
                     href="tel:+918523068882"
+                    onClick={() => gtag_report_conversion()}
                     className="py-2.5 sm:py-3 rounded-full bg-[#0071e3] hover:bg-[#0062c4] text-white font-bold text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition text-center"
                     title="Call Corridor Supervisor"
                   >
@@ -276,6 +279,7 @@ export default function BangalorePlacesDashboard({
                     )}`}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => gtag_report_conversion()}
                     className="py-2.5 sm:py-3 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs sm:text-[13px] flex items-center justify-center gap-1.5 shadow-md active:scale-95 transition text-center"
                     title="Chat on WhatsApp"
                   >

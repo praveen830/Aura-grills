@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { Link } from '../router';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function AurabServiceDetailView({ 
   service, 
@@ -135,6 +136,7 @@ export default function AurabServiceDetailView({
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(message)}`;
 
     setIsFormSubmitted(true);
+    gtag_report_conversion();
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 400);
@@ -201,6 +203,7 @@ export default function AurabServiceDetailView({
         <div className="grid grid-cols-3 gap-2 sm:gap-3.5 pt-4 pb-2 px-1 max-w-md sm:max-w-lg mx-auto w-full">
           <a
             href="tel:+918523068882"
+            onClick={() => gtag_report_conversion()}
             className="py-3 px-2 rounded-2xl bg-white hover:bg-zinc-50 text-zinc-950 font-black text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md border border-zinc-200 active:scale-95 transition text-center"
             title="Call"
           >
@@ -224,6 +227,7 @@ export default function AurabServiceDetailView({
             )}`}
             target="_blank"
             rel="noreferrer"
+            onClick={() => gtag_report_conversion()}
             className="py-3 px-2 rounded-2xl bg-white hover:bg-zinc-50 text-zinc-950 font-black text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-md border border-zinc-200 active:scale-95 transition text-center"
             title="WhatsApp"
           >

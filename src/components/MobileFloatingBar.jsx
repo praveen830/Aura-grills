@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, MessageSquare, Calendar, Calculator } from 'lucide-react';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function MobileFloatingBar({ onOpenBooking, onOpenCalculator }) {
   return (
@@ -7,6 +8,7 @@ export default function MobileFloatingBar({ onOpenBooking, onOpenCalculator }) {
       {/* Direct Call Button */}
       <a
         href="tel:+918523068882"
+        onClick={() => gtag_report_conversion()}
         className="flex-1 flex items-center justify-center gap-1 py-2.5 rounded-xl bg-slate-900 text-white font-black text-[11px] uppercase tracking-wider active:scale-95 transition shadow-sm"
         title="Call Aura Grills Bangalore Now"
       >
@@ -19,6 +21,7 @@ export default function MobileFloatingBar({ onOpenBooking, onOpenCalculator }) {
         href="https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20am%20looking%20for%20invisible%20grills%20installation%20in%20Bangalore."
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => gtag_report_conversion()}
         className="flex-1 flex items-center justify-center gap-1 py-2.5 rounded-xl bg-emerald-600 text-white font-black text-[11px] uppercase tracking-wider active:scale-95 transition shadow-md shadow-emerald-600/30"
         title="WhatsApp Direct"
       >

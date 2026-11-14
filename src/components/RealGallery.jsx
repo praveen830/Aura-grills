@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Heart, MessageSquare, CheckCircle2 } from 'lucide-react';
 import { BANGALORE_LOCATIONS } from '../data/bangaloreLocations';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function RealGallery({ onOpenBooking, onSelectLocation }) {
   const [activeFilter, setActiveFilter] = useState('All');
@@ -242,7 +243,10 @@ export default function RealGallery({ onOpenBooking, onSelectLocation }) {
                     href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20love%20this%20installation%20at%20${encodeURIComponent(item.title)}.%20Can%20you%20do%20the%20same%20for%20my%20balcony?`}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      gtag_report_conversion();
+                    }}
                     className="p-2 rounded-xl bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white transition flex items-center gap-1 font-bold text-[11px]"
                     title="Inquire about this design on WhatsApp"
                   >
@@ -316,6 +320,7 @@ export default function RealGallery({ onOpenBooking, onSelectLocation }) {
                   href={`https://wa.me/918523068882?text=Hi%20Aura%20Guilds!%20I%20want%20this%20exact%20invisible%20grill%20installation%20(${encodeURIComponent(selectedImage.title)}).`}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => gtag_report_conversion()}
                   className="flex-1 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs uppercase tracking-wider text-center flex items-center justify-center gap-2 shadow-md"
                 >
                   <MessageSquare className="w-4 h-4" />

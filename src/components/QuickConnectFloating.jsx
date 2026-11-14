@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone } from 'lucide-react';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function QuickConnectFloating() {
   return (
@@ -9,6 +10,7 @@ export default function QuickConnectFloating() {
         href="https://wa.me/918523068882?text=Hello%20Aura%20Guilds%2C%20I%20am%20interested%20in%20SS-316%20invisible%20safety%20grills%20for%20my%20balcony.%20Please%20share%20details%20and%20free%20site%20measurement%20availability."
         target="_blank"
         rel="noreferrer"
+        onClick={() => gtag_report_conversion()}
         aria-label="Chat with Aura Grills on WhatsApp"
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white shadow-[0_4px_25px_rgba(37,211,102,0.6)] transition-all duration-300 hover:scale-110 active:scale-95 group cursor-pointer border-2 border-white/20"
       >
@@ -28,6 +30,7 @@ export default function QuickConnectFloating() {
       {/* Floating Direct Call Pill (Mobile only, bottom-left) */}
       <a
         href="tel:+918523068882"
+        onClick={() => gtag_report_conversion()}
         aria-label="Direct Phone Call"
         className="md:hidden fixed bottom-6 left-5 z-50 flex items-center gap-2 px-4 py-3 rounded-full bg-[#101714]/95 backdrop-blur-md border border-[#16A34A]/50 text-slate-100 shadow-[0_0_20px_rgba(0,0,0,0.8)] active:scale-95 transition-all text-xs font-semibold uppercase tracking-wider group cursor-pointer"
       >

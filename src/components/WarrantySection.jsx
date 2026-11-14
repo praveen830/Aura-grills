@@ -7,6 +7,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import AuraLogo from './AuraLogo';
+import { gtag_report_conversion } from '../utils/gtag';
 
 /**
  * Section 04 (#warranty) - AppleCare-Grade 10-Year Stamped Guarantee
@@ -293,6 +294,7 @@ export default function WarrantySection({ onOpenBooking }) {
 
               <a
                 href="tel:+918523068882"
+                onClick={() => gtag_report_conversion()}
                 className="py-3 px-5 rounded-full bg-zinc-100 hover:bg-zinc-200/70 text-zinc-800 font-medium text-xs sm:text-[13px] tracking-apple-tight transition flex items-center justify-center gap-2 active:scale-95 text-center"
               >
                 <Phone className="w-3.5 h-3.5 text-zinc-600" />

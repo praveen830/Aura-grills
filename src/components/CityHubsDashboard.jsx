@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { MapPin, Building, MessageSquare, ArrowRight, Calendar } from 'lucide-react';
+import { gtag_report_conversion } from '../utils/gtag';
 
 const BANGALORE_HUBS = [
   {
@@ -334,6 +335,7 @@ export default function CityHubsDashboard({ onOpenBooking }) {
               )}`}
               target="_blank"
               rel="noreferrer"
+              onClick={() => gtag_report_conversion()}
               className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-[#25D366] hover:bg-[#20ba5a] text-white text-xs font-bold transition shadow-sm cursor-pointer"
             >
               <MessageSquare className="w-3.5 h-3.5 fill-white text-white" />

@@ -3,6 +3,7 @@ import { Menu, X, ArrowRight, Phone, Calendar } from 'lucide-react';
 import AuraLogo from './AuraLogo';
 import WhatsAppIcon from './WhatsAppIcon';
 import { useRouter, Link } from '../router';
+import { gtag_report_conversion } from '../utils/gtag';
 
 export default function Navbar({ onGoToDashboard, onOpenBooking }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -129,6 +130,7 @@ export default function Navbar({ onGoToDashboard, onOpenBooking }) {
           <div className="hidden lg:flex items-center gap-2.5">
             <a
               href="tel:+918523068882"
+              onClick={() => gtag_report_conversion()}
               className="px-3 py-1.5 rounded-full text-xs font-medium text-zinc-600 hover:text-zinc-950 hover:bg-black/[0.04] transition-all flex items-center gap-1.5"
               title="Call Aura Grills Helpline"
             >
@@ -150,6 +152,7 @@ export default function Navbar({ onGoToDashboard, onOpenBooking }) {
           <div className="lg:hidden flex items-center gap-1.5">
             <a
               href="tel:+918523068882"
+              onClick={() => gtag_report_conversion()}
               className="px-3 py-1.5 rounded-full bg-zinc-900 text-white text-[11px] font-semibold flex items-center gap-1 shadow-xs active:scale-95 transition"
               aria-label="Direct Phone Call"
             >
@@ -216,6 +219,7 @@ export default function Navbar({ onGoToDashboard, onOpenBooking }) {
               <div className="grid grid-cols-2 gap-2.5">
                 <a
                   href="tel:+918523068882"
+                  onClick={() => gtag_report_conversion()}
                   className="py-3 rounded-2xl bg-white/10 hover:bg-white/15 text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition text-center"
                 >
                   <Phone className="w-3.5 h-3.5 text-emerald-400" />
@@ -225,6 +229,7 @@ export default function Navbar({ onGoToDashboard, onOpenBooking }) {
                   href="https://wa.me/918523068882?text=Hello%20Aura%20Grills!%20I%20am%20interested%20in%20SS-316%20invisible%20safety%20grills."
                   target="_blank"
                   rel="noreferrer"
+                  onClick={() => gtag_report_conversion()}
                   className="py-3 rounded-2xl bg-[#25D366] hover:bg-[#20ba59] text-white text-xs font-semibold flex items-center justify-center gap-1.5 transition text-center"
                 >
                   <WhatsAppIcon className="w-3.5 h-3.5 text-white" />

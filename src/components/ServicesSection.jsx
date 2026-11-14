@@ -6,6 +6,7 @@ import {
 } from 'lucide-react';
 import WhatsAppIcon from './WhatsAppIcon';
 import { handleResponsiveImgError } from '../utils/imageHandler';
+import { gtag_report_conversion } from '../utils/gtag';
 
 /**
  * Section 02 - Architectural Safety Portfolio (Mana 6 Services Lineup)
@@ -306,6 +307,7 @@ export default function ServicesSection({ onOpenBooking, onSelectService }) {
                     href={`https://wa.me/918523068882?text=${encodeURIComponent(service.whatsappText)}`}
                     target="_blank"
                     rel="noreferrer"
+                    onClick={() => gtag_report_conversion()}
                     className="py-2.5 px-3.5 rounded-full bg-[#25D366] hover:bg-[#20ba59] text-white font-bold text-xs tracking-apple-tight flex items-center justify-center gap-1.5 transition-all duration-300 active:scale-95 shadow-sm"
                     aria-label={`Chat directly on WhatsApp for ${service.title}`}
                     title="WhatsApp Quote"
