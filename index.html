@@ -9,8 +9,19 @@
       gtag('js', new Date());
       gtag('config', 'AW-17577365128');
 
-      // Fires for Call and WhatsApp clicks (Contact conversion)
+      // Deduplication lock to guarantee conversion events fire ONLY ONCE per click
+      var _lastContactConversion = 0;
+      var _lastLeadFormConversion = 0;
+
+      // Fires for Call and WhatsApp clicks (Contact conversion) - Debounced to prevent duplicate fires
       function gtag_report_conversion(url) {
+        var now = Date.now();
+        if (now - _lastContactConversion < 1000) {
+          // Suppress duplicate calls within 1 second
+          return false;
+        }
+        _lastContactConversion = now;
+
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
@@ -25,8 +36,15 @@
         return false;
       }
 
-      // Fires for Quotation / Book Site Survey Form submissions (Submit lead form conversion)
+      // Fires for Quotation / Book Site Survey Form submissions (Submit lead form conversion) - Debounced
       function gtag_report_lead_form(url, userData) {
+        var now = Date.now();
+        if (now - _lastLeadFormConversion < 1500) {
+          // Suppress duplicate form submissions within 1.5 seconds
+          return false;
+        }
+        _lastLeadFormConversion = now;
+
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
