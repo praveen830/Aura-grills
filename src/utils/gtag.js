@@ -23,10 +23,11 @@ export function gtag_report_conversion(url) {
  * Fires the Google Ads conversion event for Quotation / Book Site Survey Form submissions.
  *
  * @param {string} [url] - Optional URL to redirect to after reporting
+ * @param {Object} [userData] - Optional customer data ({ phone, name }) for Google Ads Enhanced Conversions
  */
-export function gtag_report_lead_form(url) {
+export function gtag_report_lead_form(url, userData) {
   if (typeof window !== 'undefined' && typeof window.gtag_report_lead_form === 'function') {
-    return window.gtag_report_lead_form(url);
+    return window.gtag_report_lead_form(url, userData);
   }
 }
 

@@ -57,7 +57,7 @@ export default function ContactSection() {
     const genTicket = `AG-SRV-${Math.floor(1000 + Math.random() * 9000)}`;
     setTicketId(genTicket);
     setIsSubmitted(true);
-    gtag_report_lead_form();
+    gtag_report_lead_form(undefined, { name, phone: cleanPhone || phone });
 
     const message = `*AURA GRILLS — EXPRESS SURVEY TICKET: ${genTicket}*\n\n` +
       `👤 *Customer Name:* ${name || 'Homeowner'}\n` +

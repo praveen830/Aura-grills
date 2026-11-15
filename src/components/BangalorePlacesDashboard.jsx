@@ -98,7 +98,7 @@ export default function BangalorePlacesDashboard({
     const whatsappUrl = `https://wa.me/918523068882?text=${encodeURIComponent(message)}`;
 
     setIsFormSubmitted(true);
-    gtag_report_lead_form();
+    gtag_report_lead_form(undefined, { name, phone });
     setTimeout(() => {
       window.open(whatsappUrl, '_blank');
     }, 400);

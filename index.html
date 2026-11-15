@@ -2,14 +2,13 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17577365128"></script>
-    <script is:inline>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=AW-17577365128"></script>
+    <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'AW-17577365128');
-    </script>
-    <script is:inline>
+
       // Fires for Call and WhatsApp clicks (Contact conversion)
       function gtag_report_conversion(url) {
         var callback = function () {
@@ -27,12 +26,21 @@
       }
 
       // Fires for Quotation / Book Site Survey Form submissions (Submit lead form conversion)
-      function gtag_report_lead_form(url) {
+      function gtag_report_lead_form(url, userData) {
         var callback = function () {
           if (typeof(url) != 'undefined') {
             window.location = url;
           }
         };
+
+        if (userData && userData.phone) {
+          var cleanPhone = String(userData.phone).replace(/\D/g, '');
+          var formattedPhone = cleanPhone.length === 10 ? '+91' + cleanPhone : (cleanPhone.startsWith('91') && cleanPhone.length === 12 ? '+' + cleanPhone : userData.phone);
+          gtag('set', 'user_data', {
+            'phone_number': formattedPhone
+          });
+        }
+
         gtag('event', 'conversion', {
           'send_to': 'AW-17577365128/L7frCKKGr64dEIidxbIB',
           'value': 1.0,
